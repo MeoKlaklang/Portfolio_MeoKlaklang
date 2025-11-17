@@ -13,11 +13,7 @@ export default function Home() {
 	const [activeZone, setActiveZone] = useState(null);
 
 	// Achtergrondkleur (optioneel subtiele tint)
-	const background = useTransform(
-		x,
-		[-300, 0, 300],
-		["#f5f5ff", "#ffffff", "#f5f5ff"]
-	);
+	const background = useTransform(x, [-300, 0, 300], ["#f5f5ff", "#ffffff", "#f5f5ff"]);
 
 	// Functie: bepaal in welke zone de kat zit
 	useEffect(() => {
@@ -83,7 +79,11 @@ export default function Home() {
 							}
 							initial={{ opacity: 0, scale: 0.95 }}
 							animate={{ opacity: 1, scale: 1 }}
-							exit={{ opacity: 0, scale: 0.95 }}
+							exit={{
+								opacity: 0,
+								scale: 0.9,
+								transition: { duration: 0.25, ease: "easeInOut" },
+							}}
 							transition={{ duration: 0.6, ease: "easeOut" }}
 							alt="project preview"
 						/>
@@ -108,6 +108,14 @@ export default function Home() {
 						mass: 0.9,
 					}}
 				/>
+
+				{/* ====== Vlieger rechtsboven ====== */}
+				<img className="kite" src="/vlieger.png" alt="vlieger" aria-hidden="true" />
+
+				<div className="mill-wrapper">
+					<img className="mill" src="/molen.png" alt="molen" aria-hidden="true" />
+					<img className="mill-steel" src="/molen-steel.png" alt="molen steel" aria-hidden="true" />
+				</div>
 			</main>
 
 			{/* Footer */}
