@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=Afacad:wght@300;400;500&display=swap");
+
+.skills-container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 80px 120px;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-block {
+  font-family: "Afacad", sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: black;
+
+
+  
+}
+
+.skills-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.skills-block p {
+  margin-top: -9px;      /* verwijder grote browser-marge */
+  margin-bottom: 40px;   /* subtiele ruimte onder paragrafen */
+    
+
+}
+
+.skills-divider {
+  height: 1px;
+  background: #000;
+  margin: -10px 0 20px 0;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .skills-column {
+    gap: 30px;
+  }
+}

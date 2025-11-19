@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=Afacad:wght@300;400;500&display=swap");
+
+.intro-container {
+  width: 100%;
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  box-sizing: border-box;
+  align-items: start;
+  gap: 40px;
+  padding-left:100px;
+}
+
+/* ===== TITLES ===== */
+.intro-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10rem;
+  margin: 0;
+  font-weight: 200;
+  line-height: 0.9;
+  color: black;
+}
+
+.intro-subtitle {
+    padding-left: 90px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 7rem;
+  margin: 0 0 30px 0;
+  font-weight: 200;
+  color: black;
+}
+
+.intro-subtitle span {
+  font-weight: 400;
+}
+
+/* ===== BODY TEXT ===== */
+.intro-text {
+    padding-left: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    font-family: "Afacad", sans-serif;
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 900px;
+}
+
+.intro-text .col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* ===== RIGHT SIDE IMAGE ===== */
+.intro-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image {
+    margin-top: 50px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .intro-container {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .intro-right {
+    order: -1;
+  }
+
+  .intro-title {
+    font-size: 4rem;
+  }
+
+  .intro-subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+.intro-container {
+  position: relative; /* belangrijk zodat absolute posities werken! */
+}
+
+.intro-arrow {
+  position: absolute;
+  width: 750px; /* grootte van jouw PNG */
+  bottom: 60px; /* zet hem waar je wil */
+  left: 490px;  /* zet hem waar je wil */
+  opacity: 0.7;
+  pointer-events: none;
+  user-select: none;
+
+  animation: arrow-wiggle 3s ease-in-out infinite;
+}
+
+@keyframes arrow-wiggle {
+  0% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(-3deg); }
+}
