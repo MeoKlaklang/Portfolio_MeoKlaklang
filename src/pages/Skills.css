@@ -8,6 +8,30 @@
   padding: 80px 120px;
   gap: 60px;
   box-sizing: border-box;
+    position: relative; /* nodig zodat absolute positioning werkt */
+
+}
+
+/* Positie vlieger */
+.skills-kite {
+  position: absolute;
+  right: 29%;     /* perfect zoals op jouw voorbeeld */
+  top: 53%;       /* horizontaal goed */
+  width: 350px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
+  animation: kiteFloat 6s ease-in-out infinite;
+}
+
+/* Zelfde animatie als op home */
+@keyframes kiteFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
 }
 
 .skills-column {
