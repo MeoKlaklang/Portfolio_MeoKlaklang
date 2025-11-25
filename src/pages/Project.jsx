@@ -47,12 +47,12 @@ export default function Projects() {
 			{/* TITELS */}
 			<header className="projects-header">
 				<motion.h1 className="projects-title" variants={titleVariants}>
-					projecten
+					Expertlab
 				</motion.h1>
 
 				<div className="projects-subrow">
 					<motion.h2 className="projects-subtitle" variants={titleVariants}>
-						2023-2025
+						2025
 					</motion.h2>
 
 					<motion.div
@@ -68,36 +68,27 @@ export default function Projects() {
 				<motion.div className="projects-column" variants={categoryVariants}>
 					<div className="projects-col-header">
 						<span className="projects-index">0.1</span>
-						<span className="projects-label">UX/UI</span>
+						<span className="projects-label">Dierenbescherming Mechelen</span>
 					</div>
-					<ul className="projects-list">
-						<li>animal festival</li>
-						<li>aeronix</li>
-					</ul>
+				
 				</motion.div>
 
 				{/* 0.2 CODING */}
 				<motion.div className="projects-column" variants={categoryVariants}>
 					<div className="projects-col-header">
 						<span className="projects-index">0.2</span>
-						<span className="projects-label">CODING</span>
+						<span className="projects-label">Spline</span>
 					</div>
-					<ul className="projects-list">
-						<li>duimelijntje</li>
-						<li>petbridge</li>
-						<li>souplet</li>
-					</ul>
+				
 				</motion.div>
 
 				{/* 0.3 DESIGN */}
 				<motion.div className="projects-column" variants={categoryVariants}>
 					<div className="projects-col-header">
 						<span className="projects-index">0.3</span>
-						<span className="projects-label">DESIGN</span>
+						<span className="projects-label">Laserlady</span>
 					</div>
-					<ul className="projects-list">
-						<li>duff</li>
-					</ul>
+			
 				</motion.div>
 			</motion.div>
 		</motion.div>

@@ -2,60 +2,77 @@ import "./ProjectAnimal.css";
 import { motion } from "framer-motion";
 
 export default function ProjectAnimal() {
-    return (
-        <div className="project-container">
+	return (
+		<div className="project-container">
+			{/* TITEL */}
+			<motion.div className="project-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }} viewport={{ once: false, amount: 0.3 }}>
+				<div className="project-title-block">
+					<span className="project-index">0.1 Dierenbescherming</span>
 
-            {/* HEADER */}
-            <motion.div
-                className="project-header"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.3 }}
-            >
-                <h2 className="project-index">0.1 UX/UI</h2>
-                <h1 className="project-title">animal festival</h1>
-            </motion.div>
+					<h2 className="project-title">Mechelen</h2>
+				</div>
+			</motion.div>
 
-            {/* TEKST EN MOCKUPS */}
-            <div className="project-content">
+			{/* INTRO BLOKKEN + FOTO */}
+			<div className="project-row">
+				<motion.div className="project-text" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }} viewport={{ once: false }}>
+					<h3 className="project-subtitle">Wat is dierenbescherming Mechelen?</h3>
+					<p>
+						Dierenbescherming Mechelen is een organisatie die zich inzet voor het opvangen, verzorgen en herplaatsen van dieren (zoals honden en katten) in en rond Mechelen. Ze beheren onder andere een opvang- en adoptieservice voor viervoeters die
+						op zoek zijn naar een nieuw thuis.
+					</p>
 
-                {/* LINKER TEKSTKOLOM */}
-                <motion.div
-                    className="project-text"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                    viewport={{ once: false }}
-                >
-                    <p>
-                        Animal Festival is een applicatie die is ontworpen om gebruikers snel
-                        en efficiënt toegang te geven tot het festival­schema en verschillende
-                        activiteiten te verkennen via een intuïtief en doordacht ontwerp.
-                        Daarnaast stelt de app gebruikers in staat om tickets te kopen en alle
-                        belangrijke festival­informatie op één handige plek te vinden.
-                    </p>
+					<h3 className="project-subtitle">Waarom een redesign?</h3>
 
-                    {/* POSTER */}
-                    <img src="/animal festival home.png" alt="poster" className="project-poster" />
+					<ul className="project-bullets">
+						<li>Belangrijke informatie is moeilijk vindbaar.</li>
+						<li>Navigatie leidt gebruikers naar verkeerde tabs.</li>
+						<li>Te veel ongestructureerde tekst → informatie-overload.</li>
+						<li>Call-to-actions zijn onduidelijk en slecht geplaatst.</li>
+						<li>Proces van opvanggezin worden is niet helder uitgelegd.</li>
+						<li>Gebruikers missen structuur, visuals en vertrouwen.</li>
+						<li>Website volgt moderne UX/UI-principes niet.</li>
+					</ul>
+				</motion.div>
 
-                    {/* KNOP */}
-                    <button className="project-button">bekijk project</button>
-                </motion.div>
+				{/* FOTO */}
+				<motion.img
+					className="project-image"
+					src="/mechelen-home.gif" // Zet jouw gif of png hier
+					alt="Mockup dierenbescherming"
+					initial={{ opacity: 0, scale: 0.95 }}
+					whileInView={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+					viewport={{ once: false }}
+				/>
+			</div>
 
-                {/* RECHTER MOCKUPS */}
-                <motion.div
-                    className="project-mockups"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-                    viewport={{ once: false }}
-                >
-                    <img src="/animal festival info.png" alt="info screen" className="mockup big" />
-                    <img src="/animal festival map.png" alt="map screen" className="mockup small" />
-                </motion.div>
+			{/* CONCURRENTIE ANALYSE */}
+			<motion.h3 className="project-subtitle2" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: false }}>
+				Concurrentie analyse
+			</motion.h3>
 
-            </div>
-        </div>
-    );
+			<div className="project-competitor-grid">
+				<motion.div className="competitor-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: false }}>
+					<h4>Dierenasiel Genk</h4>
+					<p>
+						Heeft aparte pagina’s voor honden/katten-adoptie met formulieren en duidelijke uitleg. Beschikt ook over een specifieke pagina rond opvanggezinnen, maar deze is eerder tekstgedreven en niet super prominent in de algemene flow van de site.
+					</p>
+				</motion.div>
+
+				<motion.div className="competitor-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: false }}>
+					<h4>Dierenasiel Ieper</h4>
+					<p>Website focust vooral op “dieren in het asiel” en adoptie-informatie. Info over opvanggezinnen verschijnt vooral via externe platformen zoals Facebook en adopteersites, niet als duidelijke UX-flow op de hoofdsite</p>
+				</motion.div>
+
+				<motion.div className="competitor-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} viewport={{ once: false }}>
+					<h4>Het Dierenthuisje (geel)</h4>
+					<p>
+						Profiel als “dierenopvang” voor oudere, zieke en moeilijk plaatsbare dieren, met sterke storytelling en veel emotionele content. Zoekt wel opvang-/pleeggezinnen (bv. voor kittens), maar die oproepen zitten vooral in losse posts/pagina’s,
+						niet in een heldere, stap-voor-stap UX-flow “opvanggezin worden”
+					</p>
+				</motion.div>
+			</div>
+		</div>
+	);
 }
