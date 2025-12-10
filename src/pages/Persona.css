@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Afacad:wght@300;400;500&display=swap");
+
+.persona-container {
+	width: 100%;
+	padding: 80px 120px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	box-sizing: border-box;
+}
+
+/* TITEL */
+.persona-title {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 3.2rem;
+	font-weight: 300;
+	margin: 0;
+	color: black;
+	margin-left: 85px;
+	margin-bottom: -60px; /* was standaard ± 30–40px */
+}
+
+/* GRID */
+.persona-grid {
+	display: grid;
+	grid-template-columns: 1.1fr 1fr;
+	gap: 80px;
+	align-items: flex-start;
+	margin-left: 85px;
+}
+
+/* LINKERTEKST */
+.persona-text {
+	font-family: "Afacad", sans-serif;
+	font-size: 1rem;
+	color: black;
+	line-height: 1.55;
+	max-width: 500px;
+}
+
+.persona-name {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+.persona-info {
+	font-size: 1rem;
+	margin-bottom: 25px;
+	line-height: 1.4;
+}
+
+.persona-description {
+	margin-bottom: 20px;
+	color: #444;
+	font-size: 1rem;
+	line-height: 1.55;
+}
+
+/* RECHTERAFBEELDING (journey map) */
+.persona-image {
+    width: 150%;            /* past netjes in de kolom */
+    max-width: 650px;       /* veel realistischer */
+    object-fit: contain;
+    justify-self: center;   /* centreert in de kolom */
+}
+
+.persona-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    cursor: pointer;
+}
+
+/* afbeelding standaard tonen */
+.persona-image {
+    width: 100%;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+/* figma embed: standaard verborgen */
+.persona-figma {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* wanneer je hovert: afbeelding verdwijnt, figma embed verschijnt */
+.persona-image-wrapper:hover .persona-image {
+    opacity: 0;
+}
+
+.persona-image-wrapper:hover .persona-figma {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+	.persona-container {
+		padding: 40px 24px;
+	}
+
+	.persona-grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.persona-image {
+		max-width: 100%;
+	}
+}

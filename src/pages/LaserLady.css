@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Afacad:wght@300;400;500&display=swap");
+
+/* --------------------------------------------- */
+/* LASERLADY CONTAINER */
+/* --------------------------------------------- */
+
+.laserlady-container {
+    width: 100%;
+    padding: 80px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------- */
+/* TITEL */
+/* --------------------------------------------- */
+
+.laserlady-title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 5rem;
+    font-weight: 200;
+    margin: 0;
+    color: black;
+    padding-left: 90px;
+}
+
+/* --------------------------------------------- */
+/* INTRO */
+/* --------------------------------------------- */
+
+.laserlady-intro {
+    max-width: 600px;
+    margin-left: 85px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.laserlady-intro h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.laserlady-intro p {
+    font-family: "Afacad", sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #444;
+    margin: 0;
+}
+
+/* --------------------------------------------- */
+/* AFBEELDING */
+/* --------------------------------------------- */
+
+.laserlady-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.laserlady-image {
+    max-width: 750px;
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+/* --------------------------------------------- */
+/* CONCURRENTIE ANALYSE */
+/* --------------------------------------------- */
+
+.laserlady-analysis {
+    max-width: 850px;
+    margin-left: 85px;
+    margin-top: 20px;
+}
+
+.laserlady-analysis h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.laserlady-analysis p {
+    font-family: "Afacad", sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #444;
+}
+
+/* ======================================================== */
+/* PERSONA-SECTIE (GEÏNTEGREERD BINNEN LASERLADY) */
+/* GEFIXT: geen dubbele padding, uitlijning zoals screenshot */
+/* ======================================================== */
+
+.laserlady-container .persona-container {
+    padding: 0;              /* VERWIJDERT TE VEEL WIT */
+    margin-top: 40px;        /* Perfecte ruimte onder analyse */
+}
+
+/* Persona titel mooi uitlijnen */
+.laserlady-container .persona-title {
+    margin-left: 85px;
+    margin-bottom: -20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+}
+
+/* Persona grid mooi links */
+.laserlady-container .persona-grid {
+    margin-left: 85px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+/* LINKERTEKST */
+.persona-text {
+    font-family: "Afacad", sans-serif;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.55;
+    max-width: 500px;
+}
+
+.persona-name {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.persona-info {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.persona-description {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+/* RECHTERKOLOM — Journey Map Image */
+.persona-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    cursor: pointer;
+}
+
+.persona-image {
+    width: 100%;
+    display: block;
+    transition: opacity 0.4s ease;
+    object-fit: contain;
+}
+
+/* Figma embed on hover */
+.persona-figma {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover effect */
+.persona-image-wrapper:hover .persona-image {
+    opacity: 0;
+}
+
+.persona-image-wrapper:hover .persona-figma {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* --------------------------------------------- */
+/* SKETCH WIREFRAME TITLE */
+/* --------------------------------------------- */
+
+.laserlady-sketch-title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-left: 85px;
+    margin-bottom: 20px;
+}
+
+/* --------------------------------------------- */
+/* GRID MET 4 SKETCHKAARTEN */
+/* --------------------------------------------- */
+
+.laserlady-sketch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
+    padding-left: 85px;
+    padding-right: 85px;
+}
+
+.laserlady-sketch-card {
+    background: #f1f1f1;
+    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.laserlady-sketch-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* --------------------------------------------- */
+/* PROBLEEM + OPLOSSING BLOKKEN */
+/* --------------------------------------------- */
+
+.laserlady-sketch-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding-left: 85px;
+    padding-right: 85px;
+    margin-top: 30px;
+}
+
+.laserlady-sketch-textblock h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.laserlady-sketch-textblock p {
+    font-family: "Afacad", sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #444;
+}
+
+/* --------------------------------------------- */
+/* RESPONSIVE */
+/* --------------------------------------------- */
+
+@media (max-width: 900px) {
+    .laserlady-sketch-grid {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .laserlady-sketch-bottom {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 40px;
+    }
+
+    .laserlady-sketch-title {
+        margin-left: 20px;
+    }
+}
+
+/* --------------------------------------------- */
+/* RESPONSIVE */
+/* --------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .laserlady-container {
+        padding: 40px 24px;
+    }
+
+    .laserlady-title {
+        margin-left: 20px;
+        font-size: 2.6rem;
+    }
+
+    .laserlady-intro,
+    .laserlady-analysis {
+        margin-left: 20px;
+        max-width: 100%;
+    }
+
+    /* Persona responsive */
+    .persona-title {
+        margin-left: 20px !important;
+    }
+
+    .persona-grid {
+        margin-left: 20px !important;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

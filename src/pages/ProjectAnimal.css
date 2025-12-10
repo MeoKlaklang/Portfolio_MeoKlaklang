@@ -61,7 +61,6 @@
 }
 
 .project-bullets {
-	margin-top: 10px;
 	padding-left: 20px;
 	font-size: 0.95rem;
 	line-height: 1.4;
@@ -94,6 +93,22 @@
 	font-size: 1.4rem;
 	margin-bottom: 6px;
 }
+
+.project-subtitle2 {
+	margin-bottom: -50px; /* of 0 als je het écht strak wil */
+}
+
+
+
+.competitor-line {
+    height: 0.5px;
+    background: #000;
+    margin:  auto 0 auto; /* centreren zoals in je voorbeeld */
+}
+
+
+
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {

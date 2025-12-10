@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Afacad:wght@300;400;500&display=swap");
+
+/* --------------------------------------------- */
+/* CONTAINER */
+/* --------------------------------------------- */
+
+.rive-container {
+	width: 100%;
+	padding: 80px 120px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	box-sizing: border-box;
+}
+
+/* --------------------------------------------- */
+/* TITEL */
+/* --------------------------------------------- */
+
+.rive-title {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 2.5rem;
+	font-weight: 300;
+	margin-left: 85px;
+	color: black;
+}
+
+/* --------------------------------------------- */
+/* 2 KAARTEN */
+/* --------------------------------------------- */
+
+.rive-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+
+.rive-card {
+	background: #ebebeb;
+	border-radius: 25px;
+	padding: 25px;
+	border: 1px solid rgba(0,0,0,0.15);
+	height: 270px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform .3s ease;
+}
+
+.rive-card img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	display: block;
+	border-radius: 12px;
+}
+
+/* --------------------------------------------- */
+/* PROBLEEM / OPLOSSING */
+/* --------------------------------------------- */
+
+.rive-text-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 80px;
+	padding-left: 85px;
+	padding-right: 85px;
+	margin-top: 10px;
+}
+
+.rive-textblock h3 {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+.rive-textblock p {
+	font-family: "Afacad", sans-serif;
+	font-size: 1rem;
+	line-height: 1.55;
+	color: #444;
+}
+
+/* CAT ANIMATION WRAPPER */
+.rive-cat-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Optioneel: laat de animatie soepel schalen */
+.rive-cat-wrapper canvas {
+    width: 550px !important;
+    height: 250px !important;
+}
+
+/* --------------------------------------------- */
+/* RESPONSIVE */
+/* --------------------------------------------- */
+
+@media (max-width: 900px) {
+	.rive-container {
+		padding: 40px 24px;
+	}
+
+	.rive-grid,
+	.rive-text-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.rive-title {
+		margin-left: 20px;
+	}
+
+	.rive-grid,
+	.rive-text-grid {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.rive-card {
+		height: 220px;
+	}
+}

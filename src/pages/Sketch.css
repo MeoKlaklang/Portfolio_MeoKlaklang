@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Afacad:wght@300;400;500&display=swap");
+
+/* --------------------------------------------- */
+/* CONTAINER */
+/* --------------------------------------------- */
+
+.sketch-container {
+	width: 100%;
+	padding: 80px 120px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	box-sizing: border-box;
+}
+
+/* TITLE */
+.sketch-title {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 3rem;
+	font-weight: 300;
+	margin-left: 85px;
+}
+
+/* --------------------------------------------- */
+/* FIRST 4 WIREFRAMES */
+/* --------------------------------------------- */
+
+.sketch-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px 60px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+
+.sketch-card {
+	background: #dfe0df;
+	border-radius: 25px;
+	padding: 20px;
+	border: 1px solid rgba(0,0,0,0.15);
+	height: 260px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sketch-card.green {
+	background: #e8f4e8 !important;
+}
+
+/* --------------------------------------------- */
+/* IMG CENTERING */
+/* --------------------------------------------- */
+
+.sketch-img,
+.sketch-large-card img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	display: block;
+	border-radius: 12px;
+}
+
+/* --------------------------------------------- */
+/* PROBLEEM + OPLOSSING (boven) */
+/* --------------------------------------------- */
+
+.sketch-bottom {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 80px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+
+.sketch-textblock h3 {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+.sketch-textblock p {
+	font-family: "Afacad", sans-serif;
+	color: #444;
+	line-height: 1.55;
+}
+
+/* --------------------------------------------- */
+/* 2 CARDS ROW 1 */
+/* --------------------------------------------- */
+
+.sketch-two-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+
+.sketch-large-card {
+	height: 330px;
+	border-radius: 25px;
+	padding: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sketch-large-card.gray {
+	background: #dfe0df;
+}
+
+.sketch-large-card.green {
+	background: #e8f4e8;
+}
+
+/* --------------------------------------------- */
+/* TEXT TITLES + PARAGRAPHS */
+/* --------------------------------------------- */
+
+.sketch-two-text {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 70px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+
+.sketch-two-text h3 {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+.sketch-two-text p {
+	font-family: "Afacad", sans-serif;
+	color: #444;
+	line-height: 1.55;
+}
+
+/* --------------------------------------------- */
+/* SECOND ROW */
+/* --------------------------------------------- */
+
+.second-row {
+	margin-top: 40px;
+}
+
+/* --------------------------------------------- */
+/* RESPONSIVE */
+/* --------------------------------------------- */
+
+@media (max-width: 900px) {
+	.sketch-container {
+		padding: 40px 24px;
+	}
+
+	.sketch-grid,
+	.sketch-bottom,
+	.sketch-two-grid,
+	.sketch-two-text {
+		grid-template-columns: 1fr;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

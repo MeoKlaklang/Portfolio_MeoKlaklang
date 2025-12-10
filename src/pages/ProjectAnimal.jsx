@@ -58,11 +58,26 @@ export default function ProjectAnimal() {
 					<p>
 						Heeft aparte pagina’s voor honden/katten-adoptie met formulieren en duidelijke uitleg. Beschikt ook over een specifieke pagina rond opvanggezinnen, maar deze is eerder tekstgedreven en niet super prominent in de algemene flow van de site.
 					</p>
+					<motion.div
+						className="competitor-line"
+						initial={{ width: 0 }}
+						whileInView={{ width: "80%" }} // zelfde effect, maar responsief
+						transition={{ duration: 0.6, ease: "easeOut" }}
+						viewport={{ once: false }}
+					/>
 				</motion.div>
 
 				<motion.div className="competitor-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: false }}>
 					<h4>Dierenasiel Ieper</h4>
 					<p>Website focust vooral op “dieren in het asiel” en adoptie-informatie. Info over opvanggezinnen verschijnt vooral via externe platformen zoals Facebook en adopteersites, niet als duidelijke UX-flow op de hoofdsite</p>
+
+					<motion.div
+						className="competitor-line"
+						initial={{ width: 0 }}
+						whileInView={{ width: "80%" }} // zelfde effect, maar responsief
+						transition={{ duration: 0.6, ease: "easeOut" }}
+						viewport={{ once: false }}
+					/>
 				</motion.div>
 
 				<motion.div className="competitor-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} viewport={{ once: false }}>
@@ -71,6 +86,13 @@ export default function ProjectAnimal() {
 						Profiel als “dierenopvang” voor oudere, zieke en moeilijk plaatsbare dieren, met sterke storytelling en veel emotionele content. Zoekt wel opvang-/pleeggezinnen (bv. voor kittens), maar die oproepen zitten vooral in losse posts/pagina’s,
 						niet in een heldere, stap-voor-stap UX-flow “opvanggezin worden”
 					</p>
+					<motion.div
+						className="competitor-line"
+						initial={{ width: 0 }}
+						whileInView={{ width: "80%" }} // zelfde effect, maar responsief
+						transition={{ duration: 0.6, ease: "easeOut" }}
+						viewport={{ once: false }}
+					/>
 				</motion.div>
 			</div>
 		</div>
