@@ -2,7 +2,6 @@ import "./Rive.css";
 import { motion } from "framer-motion";
 import Cat from "./Cat";
 
-
 export default function Rive() {
 	const cardAnim = {
 		hidden: { opacity: 0, y: 20 },
@@ -19,11 +18,11 @@ export default function Rive() {
 			{/* 2 KAARTEN */}
 			<motion.div className="rive-grid" initial="hidden" whileInView="visible" variants={{ visible: { transition: { staggerChildren: 0.12 } } }}>
 				<motion.div className="rive-card" variants={cardAnim} whileHover={{ scale: 1.03 }}>
-					<img src="/rive1.png" alt="Rive voorbeeld 1" />
+					<video src="/rive-kat.mp4" autoPlay loop muted playsInline className="rive-video" />
 				</motion.div>
 
-				<motion.div className="rive-card" variants={cardAnim} whileHover={{ scale: 1.03 }}>
-					<img src="/rive2.png" alt="Rive voorbeeld 2" />
+					<motion.div className="rive-card" variants={cardAnim} whileHover={{ scale: 1.03 }}>
+					<video src="/rive kat 2.mp4" autoPlay loop muted playsInline className="rive-video" />
 				</motion.div>
 			</motion.div>
 
@@ -31,12 +30,12 @@ export default function Rive() {
 			<div className="rive-text-grid">
 				<motion.div className="rive-textblock" initial="hidden" whileInView="visible" variants={cardAnim}>
 					<h3>Probleem</h3>
-					<p>De oorspronkelijke hero section van de opvangpagina was tekstzwaar en miste visuele hiërarchie. Hierdoor begrepen gebruikers niet meteen wat er van hen verwacht werd, waardoor ze sneller afhaakten.</p>
+					<p>Een issue dat ik bij rive had is dat je je files niet kan exporteren naar figma of een ander platform omdat dit betalend is.</p>
 				</motion.div>
 
 				<motion.div className="rive-textblock" initial="hidden" whileInView="visible" variants={cardAnim}>
 					<h3>Oplossing</h3>
-					<p>Met een Rive-animatie wordt de hero section dynamisch en visueel sterker. De animatie trekt de aandacht en ondersteunt de boodschap, waardoor de gebruiker sneller begrijpt wat de bedoeling is.</p>
+					<p>Opzoek werk gedaan hoe ik dit wel kon doen en dan embeded code ook gebruiken in mijn portfolio voor een mooier presentatie</p>
 				</motion.div>
 			</div>
 			{/* RIVE CAT ANIMATIE */}
