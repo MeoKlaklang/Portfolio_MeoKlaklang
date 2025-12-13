@@ -61,7 +61,7 @@ export default function Home() {
         <img className="portfolio" src={asset("port.png")} alt="portfolio" />
 
         <div className="name">
-          Meo <br /> Klaklang
+          Meo <br /> HAKHJXDKKJCDSKJCS
         </div>
 
         {/* ====== Project Preview ====== */}
