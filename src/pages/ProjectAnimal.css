@@ -107,6 +107,24 @@
 }
 
 
+.competitor-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	pointer-events: none;
+}
+
+.competitor-overlay-image {
+	max-width: 70vw;
+	max-height: 70vh;
+	border-radius: 16px;
+	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
 
 
 

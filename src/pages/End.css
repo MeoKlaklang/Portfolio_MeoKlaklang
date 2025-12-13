@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Josefin+Sans:wght@100;300;400;600&display=swap");
+
+/* ======= BASIS ======= */
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* ======= CONTAINER ======= */
+.home {
+	overflow: visible; /* laat content onder de pagina doorlopen */
+
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 50px;
+	box-sizing: border-box;
+	transition: background 0.4s ease;
+}
+
+/* ======= NAV ======= */
+.top {
+	display: flex;
+	align-items: center;
+}
+
+.tags {
+	display: flex;
+	gap: clamp(1.5rem, 4vw, 4rem);
+	padding-left: clamp(1rem, 4vw, 3rem);
+	font-family: "Outfit", sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.06em;
+}
+
+.tags a {
+	color: inherit;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+.tags a:hover {
+	opacity: 0.6;
+}
+
+/* ======= HERO ======= */
+.hero {
+	flex: 1;
+	position: relative;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	padding-bottom: 4rem;
+}
+
+.hero img.portfolio {
+	width: min(78vw, 900px);
+	height: auto;
+	display: block;
+	z-index: 2;
+}
+
+.name {
+	position: absolute;
+	left: 23%;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: 300;
+	line-height: 1.1;
+	font-size: clamp(2rem, 1.2vw, 1.2rem);
+}
+
+/* ======= PROJECT PREVIEW ======= */
+.project-preview {
+	position: absolute;
+	width: 50%;
+	max-width: 400px;
+	border-radius: 12px;
+	z-index: 2;
+	pointer-events: none;
+}
+
+/* ======= DRAGGABLE CAT ======= */
+.cat {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: min(20vw, 200px);
+	z-index: 3;
+	cursor: grab;
+	user-select: none;
+	pointer-events: auto;
+	transform: translate(-50%, -50%);
+	animation: cat-wiggle 3s ease-in-out infinite;
+	transition: filter 0.3s ease;
+}
+
+.cat:hover {
+	filter: brightness(1.1);
+}
+
+.cat:active {
+	cursor: grabbing;
+	animation: none;
+}
+
+@keyframes cat-wiggle {
+	0%,
+	100% {
+		rotate: 0deg;
+	}
+	25% {
+		rotate: 2deg;
+	}
+	50% {
+		rotate: -2deg;
+	}
+	75% {
+		rotate: 1deg;
+	}
+}
+
+/* ======= FOOTER ======= */
+.foot {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-top: 15px;
+	font-size: 0.9rem;
+	padding-right: 50px; /* ⬅︎ zelfde marge als .home rechts */
+}
+
+.foot::before {
+	content: "";
+	position: absolute;
+	top: 0; /* lijn boven de tekst */
+	left: 0;
+	right: 0;
+	height: 1px;
+	background-color: #000000;
+	margin: 0 50px; /* zelfde marge als .home */
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 700px) {
+	.home {
+		padding: 30px;
+	}
+
+	.name {
+		display: none;
+	}
+
+	.hero img.portfolio {
+		width: 90vw;
+	}
+
+	.cat {
+		width: 140px;
+	}
+}
+
+/* ======= VLIEGER RECHTSBOVEN ======= */
+.kite {
+	position: absolute;
+	top: -100px; /* of -5%, wat beter uitkomt */
+	right: 4%;
+	width: min(30vw, 360px); /* ← groter */
+	z-index: 2;
+	pointer-events: none;
+	user-select: none;
+	animation: kite-float 6s ease-in-out infinite;
+}
+
+@keyframes kite-float {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-12px) rotate(2deg);
+	}
+}
+
+@keyframes kite-float {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-12px) rotate(2deg);
+	}
+}
+
+/* ======= MOLEN CONTAINER ======= */
+.mill-wrapper {
+	position: absolute;
+	bottom: -50px; /* laat onderkant van de steel mooi op de lijn */
+	left: 4%;
+	width: clamp(100px, 12vw, 180px);
+	height: auto;
+	z-index: 5;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* ======= STEEL (staat stil) ======= */
+.mill-steel {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	z-index: 2;
+}
+
+/* ======= WIEKEN (draaien erbovenop) ======= */
+.mill {
+	position: absolute;
+	top: -10px;
+	left: 20px;
+	width: 100%;
+	height: auto;
+	transform-origin: 42% 48%; /* pas dit aan */
+	animation: mill-spin 20s linear infinite;
+	z-index: 3;
+}
+
+/* ======= ANIMATIE ======= */
+@keyframes mill-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+/* ======= DANKJEWEL ======= */
+.thankyou {
+	font-size: clamp(3rem, 10vw, 8rem);
+	font-weight: 300;
+	text-align: center;
+	z-index: 2;
+	color: #000;
+}
+

@@ -8,6 +8,7 @@ import Sketch from "./pages/Sketch";
 import Rive from "./pages/Rive";
 import Spline from "./pages/Spline";
 import LaserLady from "./pages/LaserLady";
+import End from "./pages/End";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 			<Rive />
 			<Spline />
 			<LaserLady />
+			<End />
 
 		</div>
 	);

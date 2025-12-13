@@ -50,8 +50,7 @@ export default function Home() {
 			<header className="top">
 				<nav className="tags">
 					<a href="#">UX/UI</a>
-					<a href="#">WEBDESIGN</a>
-					<a href="#">FRONT-END</a>
+				
 				</nav>
 			</header>
 

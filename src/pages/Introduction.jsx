@@ -61,31 +61,21 @@ export default function Introduction() {
 				<motion.div className="intro-text" variants={textVariants}>
 					<div className="col">
 						<p>
-							Hi! I’m Siriyakorn, but everyone calls me Meo. I’m 23 years old and
-							have a passion for web design and everything that combines creativity
-							with technology.
+							Hoi! Ik ben Siriyakorn, maar iedereen noemt me Meo. Ik ben 23 jaar oud en heb een passie voor webdesign en alles wat creativiteit met technologie combineert.
 						</p>
 
 						<p>
-							Born in Thailand but raised in Belgium, I now have the exciting
-							opportunity to return to my birth country for an internship. It feels
-							special to be able to reconnect with my roots while also bringing
-							with me the knowledge and experience I’ve gained in Belgium.
+							Ik ben geboren in Thailand maar opgegroeid in België. Nu krijg ik de boeiende kans om terug te keren naar mijn geboorteland voor een stage. Het voelt bijzonder om opnieuw verbinding te maken met mijn roots en tegelijk de kennis en ervaring mee te nemen die ik in België heb opgedaan.
 						</p>
 					</div>
 
 					<div className="col">
 						<p>
-							I’m currently in my fourth semester of the Multimedia and Creative
-							Technology program at Erasmus University College Brussels, where I
-							focus on UX/UI design. In addition to design, I’ve developed skills in
-							both front-end and back-end development.
+						Momenteel zit ik in mijn laatste jaar van de opleiding Multimedia en Creative Technology aan de Erasmushogeschool Brussel, waar ik me focus op UX/UI-design. Naast design heb ik ook vaardigheden ontwikkeld in zowel front-end als back-end development.
 						</p>
 
 						<p>
-							This technical background helps me create designs that are not only
-							visually engaging but also practical and buildable. I love finding that
-							balance between aesthetics and functionality.
+							Deze technische achtergrond helpt me om ontwerpen te maken die niet alleen visueel aantrekkelijk zijn, maar ook praktisch en realiseerbaar. Ik hou ervan om die balans te vinden tussen esthetiek en functionaliteit.
 						</p>
 					</div>
 				</motion.div>

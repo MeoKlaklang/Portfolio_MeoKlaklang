@@ -35,7 +35,7 @@ export default function Rive() {
 
 				<motion.div className="rive-textblock" initial="hidden" whileInView="visible" variants={cardAnim}>
 					<h3>Oplossing</h3>
-					<p>Opzoek werk gedaan hoe ik dit wel kon doen en dan embeded code ook gebruiken in mijn portfolio voor een mooier presentatie</p>
+					<p>Connecties gebruikt en gevraagd of de persoon mijn file kan exporteren.</p>
 				</motion.div>
 			</div>
 			{/* RIVE CAT ANIMATIE */}
