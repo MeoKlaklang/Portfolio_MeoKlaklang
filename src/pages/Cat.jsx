@@ -7,19 +7,26 @@ export default function CatMovement() {
   useEffect(() => {
     if (!canvasRef.current) return;
 
-    const layout = new Layout({ fit: Fit.Contain });
+    const base = import.meta.env.BASE_URL;
     const rive = new Rive({
-      src: "/cat_movement.riv",
+      src: `${base}cat_movement.riv`,
       canvas: canvasRef.current,
-      artboard: "Artboard",         // pas aan indien anders
-      stateMachines: "State Machine 1", // pas aan indien anders
       autoplay: true,
-      layout,
-      autoBind: true,
+      layout: new Layout({ fit: Fit.Contain }),
+
+      onLoad: () => console.log("✅ Rive loaded"),
+      onLoadError: (e) => console.error("❌ Rive load error:", e),
     });
 
     return () => rive.cleanup();
   }, []);
 
-  return <canvas ref={canvasRef} style={{ width: 200, height: 200 }} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      width={200}
+      height={200}
+      style={{ width: 200, height: 400, display: "block" }}
+    />
+  );
 }

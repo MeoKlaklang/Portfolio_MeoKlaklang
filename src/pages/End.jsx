@@ -23,12 +23,27 @@ export default function End() {
 				<h1 className="thankyou">Dankjewel</h1>
 
 				{/* ====== Vlieger rechtsboven ====== */}
-				<img className="kite" src="/vlieger.png" alt="vlieger" aria-hidden="true" />
+				<img
+					className="kite"
+					src={`${import.meta.env.BASE_URL}vlieger.png`}
+					alt="vlieger"
+					aria-hidden="true"
+				/>
 
 				{/* ====== Molen linksonder ====== */}
 				<div className="mill-wrapper">
-					<img className="mill" src="/molen.png" alt="molen" aria-hidden="true" />
-					<img className="mill-steel" src="/molen-steel.png" alt="molen steel" aria-hidden="true" />
+					<img
+						className="mill"
+						src={`${import.meta.env.BASE_URL}molen.png`}
+						alt="molen"
+						aria-hidden="true"
+					/>
+					<img
+						className="mill-steel"
+						src={`${import.meta.env.BASE_URL}molen-steel.png`}
+						alt="molen steel"
+						aria-hidden="true"
+					/>
 				</div>
 			</main>
 
