@@ -1,28 +1,46 @@
 import "./Projects.css";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion.create(Link);
 
 const containerVariants = {
-	hidden: { opacity: 0, y: 40 },
+	hidden: {
+		opacity: 0,
+		y: 40,
+	},
 	show: {
 		opacity: 1,
 		y: 0,
 		transition: {
 			duration: 0.7,
 			ease: "easeOut",
-			staggerChildren: 0.15,
+			staggerChildren: 0.12,
 		},
 	},
 };
 
 const titleVariants = {
-	hidden: { opacity: 0, y: 20 },
-	show: { opacity: 1, y: 0 },
+	hidden: {
+		opacity: 0,
+		y: 20,
+	},
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.6,
+			ease: "easeOut",
+		},
+	},
 };
 
 const lineVariants = {
-	hidden: { width: "0%" },
+	hidden: {
+		scaleX: 0,
+	},
 	show: {
-		width: "100%",
+		scaleX: 1,
 		transition: {
 			duration: 1.1,
 			ease: "easeOut",
@@ -30,67 +48,110 @@ const lineVariants = {
 	},
 };
 
-const categoryVariants = {
-	hidden: { opacity: 0, y: 20 },
-	show: { opacity: 1, y: 0 },
+const projectVariants = {
+	hidden: {
+		opacity: 0,
+		y: 20,
+	},
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.5,
+			ease: "easeOut",
+		},
+	},
 };
+
+const projects = [
+	{
+		index: "0.1",
+		title: "Het Mandje",
+		category: "UX/UI · Full-stack · Web platform",
+		href: "/Het-Mandje",
+	},
+	{
+		index: "0.2",
+		title: "Thumbelina",
+		category: "UI Design · React · Interactive Web Experience",
+		href: "/Thumbelina",
+	},
+	{
+		index: "0.3",
+		title: "PetBridge",
+		category: "iOS · UX/UI · SwiftUI",
+		href: "/PetBridge",
+	},
+	{
+		index: "0.4",
+		title: "Animal Festival",
+		category: "Branding · Graphic design",
+		href: "/AnimalFestival",
+	},
+	{
+		index: "0.5",
+		title: "Areonix",
+		category: "Web design · Front-end",
+		href: "/Aeronix",
+	},
+	{
+		index: "0.6",
+		title: "GISTDA",
+		category: "Editorial · Graphic design · Web",
+		href: "/Gistda",
+	},
+];
 
 export default function Projects() {
 	return (
-		<motion.div
+		<motion.section
+			id="projects"
 			className="projects-container"
 			variants={containerVariants}
 			initial="hidden"
 			whileInView="show"
-			viewport={{ once: false, amount: 0.3 }}
+			viewport={{
+				once: true,
+				amount: 0.2,
+			}}
 		>
-			{/* TITELS */}
 			<header className="projects-header">
 				<motion.h1 className="projects-title" variants={titleVariants}>
-					Expertlab
+					Selected
 				</motion.h1>
 
 				<div className="projects-subrow">
 					<motion.h2 className="projects-subtitle" variants={titleVariants}>
-						2025
+						projects
 					</motion.h2>
 
-					<motion.div
-						className="projects-line"
-						variants={lineVariants}
-					/>
+					<motion.div className="projects-line" variants={lineVariants} />
 				</div>
 			</header>
 
-			{/* CATEGORIEËN */}
 			<motion.div className="projects-grid">
-				{/* 0.1 UX/UI */}
-				<motion.div className="projects-column" variants={categoryVariants}>
-					<div className="projects-col-header">
-						<span className="projects-index">0.1</span>
-						<span className="projects-label">Dierenbescherming Mechelen</span>
-					</div>
-				
-				</motion.div>
+				{projects.map((project) => (
+					<MotionLink key={project.index} to={project.href} className="project-card" variants={projectVariants} whileHover={{ y: -5 }} transition={{ duration: 0.2 }} aria-label={`View ${project.title} project`} onClick={() => window.scrollTo(0, 0)}>
+						<div className="project-main">
+							<span className="projects-index">{project.index}</span>
 
-				{/* 0.2 CODING */}
-				<motion.div className="projects-column" variants={categoryVariants}>
-					<div className="projects-col-header">
-						<span className="projects-index">0.2</span>
-						<span className="projects-label">Spline</span>
-					</div>
-				
-				</motion.div>
+							<div className="project-content">
+								<div className="project-title-row">
+									<h3 className="projects-label">{project.title}</h3>
 
-				{/* 0.3 DESIGN */}
-				<motion.div className="projects-column" variants={categoryVariants}>
-					<div className="projects-col-header">
-						<span className="projects-index">0.3</span>
-						<span className="projects-label">Laserlady</span>
-					</div>
-			
-				</motion.div>
+									<span className="project-arrow" aria-hidden="true">
+										↗
+									</span>
+								</div>
+
+								<p className="project-category">{project.category}</p>
+							</div>
+						</div>
+
+						<span className="project-bottom-line" />
+					</MotionLink>
+				))}
 			</motion.div>
-		</motion.div>
+		</motion.section>
 	);
 }

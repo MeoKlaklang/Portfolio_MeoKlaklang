@@ -2,120 +2,292 @@
 
 .persona-container {
 	width: 100%;
-	padding: 80px 120px;
-	display: flex;
-	flex-direction: column;
-	gap: 60px;
+	padding: 18px 0 6px;
 	box-sizing: border-box;
 }
 
 /* TITEL */
+
 .persona-title {
+	margin: 0 0 20px;
+
 	font-family: "Josefin Sans", sans-serif;
-	font-size: 3.2rem;
+	font-size: clamp(1.6rem, 2.5vw, 2.2rem);
 	font-weight: 300;
-	margin: 0;
-	color: black;
-	margin-left: 85px;
-	margin-bottom: -60px; /* was standaard ± 30–40px */
+	line-height: 1.1;
+
+	color: #181818;
 }
 
-/* GRID */
-.persona-grid {
+/* HOOFDLAYOUT */
+
+.persona-layout {
 	display: grid;
-	grid-template-columns: 1.1fr 1fr;
-	gap: 80px;
-	align-items: flex-start;
-	margin-left: 85px;
+	grid-template-columns:
+		minmax(320px, 1.15fr)
+		minmax(260px, 0.85fr);
+	gap: 16px;
+
+	width: 100%;
 }
 
-/* LINKERTEKST */
-.persona-text {
-	font-family: "Afacad", sans-serif;
-	font-size: 1rem;
-	color: black;
-	line-height: 1.55;
-	max-width: 500px;
+/* ALGEMENE KAARTSTIJL */
+
+.persona-card {
+	box-sizing: border-box;
+	overflow: hidden;
+
+	border: 1px solid rgba(24, 24, 24, 0.1);
+	border-radius: 13px;
 }
+
+/* BLOK 1 — PRIMARY PERSONA */
+
+.persona-profile-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.persona-profile-image-wrapper {
+	width: 100%;
+	max-height: 165px;
+	aspect-ratio: 16 / 7;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 10px;
+	box-sizing: border-box;
+
+	overflow: hidden;
+}
+
+.persona-profile-image {
+	width: 100%;
+	height: 100%;
+
+	display: block;
+	object-fit: contain;
+}
+
+.persona-text {
+	padding: 16px;
+
+	font-family: "Afacad", sans-serif;
+	color: #1f1f1f;
+}
+
+/* LABELS */
+
+.persona-label {
+	margin: 0 0 5px;
+
+	font-family: "Afacad", sans-serif;
+	font-size: 0.62rem;
+	font-weight: 500;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+
+	color: #747965;
+}
+
+/* PERSONA-NAAM */
 
 .persona-name {
+	margin: 0 0 8px;
+
 	font-family: "Josefin Sans", sans-serif;
-	font-size: 1.8rem;
+	font-size: clamp(1.2rem, 1.7vw, 1.55rem);
 	font-weight: 300;
+	line-height: 1.15;
+
+	color: #181818;
+}
+
+/* KORTE INFO */
+
+.persona-info {
+	margin: 0 0 12px;
+
+	font-size: 0.82rem;
+	line-height: 1.35;
+	color: #666;
+}
+
+/* BESCHRIJVING */
+
+.persona-description {
+	margin: 0 0 8px;
+
+	font-size: 0.84rem;
+	line-height: 1.4;
+	color: #444;
+}
+
+.persona-description:last-child {
+	margin-bottom: 0;
+}
+
+/* BLOK 2 — RESEARCH VISUAL */
+
+.persona-visual-card {
+	display: flex;
+	flex-direction: column;
+
+	padding: 16px;
+}
+
+.persona-card-heading {
 	margin-bottom: 10px;
 }
 
-.persona-info {
-	font-size: 1rem;
-	margin-bottom: 25px;
-	line-height: 1.4;
+.persona-card-heading h3 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+	font-weight: 300;
+	line-height: 1.15;
+
+	color: #181818;
 }
 
-.persona-description {
-	margin-bottom: 20px;
-	color: #444;
-	font-size: 1rem;
-	line-height: 1.55;
+.persona-overview-image {
+	width: 100%;
+	height: 290px;
+	max-height: 290px;
+
+	display: block;
+	object-fit: contain;
+
+	border-radius: 8px;
+	background: #fff;
 }
 
-/* RECHTERAFBEELDING (journey map) */
-.persona-image {
-    width: 150%;            /* past netjes in de kolom */
-    max-width: 650px;       /* veel realistischer */
-    object-fit: contain;
-    justify-self: center;   /* centreert in de kolom */
+/* BLOK 3 — FIGMA CUSTOMER JOURNEY */
+
+.persona-journey-card {
+	grid-column: 1 / -1;
+
+	padding: 16px;
 }
 
-.persona-image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 650px;
-    cursor: pointer;
+.persona-journey-heading {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 16px;
+
+	margin-bottom: 10px;
 }
 
-/* afbeelding standaard tonen */
-.persona-image {
-    width: 100%;
-    display: block;
-    transition: opacity 0.4s ease;
+.persona-journey-heading h3 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+	font-weight: 300;
+	line-height: 1.15;
+
+	color: #181818;
 }
 
-/* figma embed: standaard verborgen */
+.persona-journey-note {
+	margin: 0;
+
+	font-family: "Afacad", sans-serif;
+	font-size: 0.72rem;
+	color: #777;
+}
+
 .persona-figma {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
+	width: 100%;
+	height: 330px;
+
+	display: block;
+
+	border: 0;
+	border-radius: 8px;
+	background: white;
 }
 
-/* wanneer je hovert: afbeelding verdwijnt, figma embed verschijnt */
-.persona-image-wrapper:hover .persona-image {
-    opacity: 0;
-}
+/* TABLET */
 
-.persona-image-wrapper:hover .persona-figma {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-
-/* RESPONSIVE */
 @media (max-width: 900px) {
+	.persona-layout {
+		grid-template-columns:
+			minmax(280px, 1.1fr)
+			minmax(230px, 0.9fr);
+		gap: 14px;
+	}
+
+	.persona-text,
+	.persona-visual-card,
+	.persona-journey-card {
+		padding: 14px;
+	}
+
+	.persona-profile-image-wrapper {
+		max-height: 155px;
+	}
+
+	.persona-overview-image {
+		height: 260px;
+		max-height: 260px;
+	}
+
+	.persona-figma {
+		height: 310px;
+	}
+}
+
+/* MOBIEL */
+
+@media (max-width: 700px) {
 	.persona-container {
-		padding: 40px 24px;
+		padding-top: 12px;
 	}
 
-	.persona-grid {
+	.persona-title {
+		margin-bottom: 16px;
+	}
+
+	.persona-layout {
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 12px;
 	}
 
-	.persona-image {
-		max-width: 100%;
+	.persona-card {
+		border-radius: 11px;
+	}
+
+	.persona-profile-image-wrapper {
+		max-height: 200px;
+		aspect-ratio: 16 / 9;
+	}
+
+	.persona-visual-card {
+		padding: 14px;
+	}
+
+	.persona-overview-image {
+		height: auto;
+		max-height: 280px;
+	}
+
+	.persona-journey-card {
+		grid-column: 1;
+		padding: 14px;
+	}
+
+	.persona-journey-heading {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+	}
+
+	.persona-figma {
+		height: 290px;
 	}
 }

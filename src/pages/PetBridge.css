@@ -1,0 +1,815 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Afacad:wght@300;400;500;600&display=swap");
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+	--petbridge-dark: #24282e;
+	--petbridge-accent: #ffffff;
+	--petbridge-grey: #777777;
+	--petbridge-light: #f3f3f3;
+	--petbridge-white: #ffffff;
+	--petbridge-black: #111111;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+.petbridge-page {
+	width: 100%;
+	overflow-x: hidden;
+
+	background-color: var(--petbridge-white);
+	color: var(--petbridge-black);
+
+	font-family: "Afacad", sans-serif;
+}
+
+.petbridge-page * {
+	box-sizing: border-box;
+}
+
+.petbridge-page h1,
+.petbridge-page h2,
+.petbridge-page h3,
+.petbridge-page p {
+	margin-top: 0;
+}
+
+.petbridge-page p {
+	font-size: 1.15rem;
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.petbridge-hero {
+	min-height: 100vh;
+
+	padding: 90px 7vw 70px;
+
+	display: grid;
+	grid-template-columns:
+		minmax(0, 0.9fr)
+		minmax(430px, 1.1fr);
+
+	align-items: center;
+	gap: 6vw;
+
+	background-color: var(--petbridge-dark);
+	color: var(--petbridge-white);
+}
+
+
+/* HERO COPY */
+
+.petbridge-hero-copy {
+	min-width: 0;
+}
+
+.petbridge-project-number {
+	margin-bottom: 42px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.95rem !important;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.petbridge-main-title {
+	margin-bottom: 45px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(5rem, 9vw, 10rem);
+	font-weight: 300;
+	line-height: 0.82;
+	letter-spacing: -0.05em;
+
+	color: var(--petbridge-accent);
+}
+
+.petbridge-meta {
+	padding: 20px 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.petbridge-meta p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.07em;
+}
+
+.petbridge-intro {
+	max-width: 570px;
+
+	margin: 38px 0 0;
+
+	font-size: 1.3rem !important;
+
+	color: #c7c7c7;
+}
+
+
+/* =========================================
+   HERO — PHONE SHOWCASE
+========================================= */
+
+.petbridge-hero-media {
+	width: 100%;
+	min-width: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.petbridge-phone-showcase {
+	position: relative;
+
+	width: min(100%, 760px);
+	height: 650px;
+
+	margin: 0 auto;
+}
+
+
+/* ALL PHONES */
+
+.petbridge-phone {
+	position: absolute;
+
+	display: block;
+
+	width: auto;
+	height: 78%;
+	max-width: 38%;
+
+	object-fit: contain;
+
+	filter: drop-shadow(
+		0 25px 30px rgba(0, 0, 0, 0.28)
+	);
+
+	transition:
+		transform 0.45s ease,
+		filter 0.45s ease;
+}
+
+
+/* LEFT */
+
+.petbridge-phone-1 {
+	left: 2%;
+	top: 14%;
+
+	transform: rotate(-7deg);
+
+	z-index: 1;
+}
+
+
+/* CENTER */
+
+.petbridge-phone-2 {
+	left: 50%;
+	top: 5%;
+
+	height: 88%;
+
+	transform: translateX(-50%);
+
+	z-index: 3;
+}
+
+
+/* RIGHT */
+
+.petbridge-phone-3 {
+	right: 2%;
+	top: 14%;
+
+	transform: rotate(7deg);
+
+	z-index: 2;
+}
+
+
+/* PHONE HOVER */
+
+.petbridge-phone-1:hover {
+	transform:
+		rotate(-4deg)
+		translateY(-12px);
+
+	z-index: 5;
+}
+
+.petbridge-phone-2:hover {
+	transform:
+		translateX(-50%)
+		translateY(-12px)
+		scale(1.02);
+
+	z-index: 5;
+}
+
+.petbridge-phone-3:hover {
+	transform:
+		rotate(4deg)
+		translateY(-12px);
+
+	z-index: 5;
+}
+
+.petbridge-phone:hover {
+	filter: drop-shadow(
+		0 35px 35px rgba(0, 0, 0, 0.38)
+	);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.petbridge-section {
+	padding: 120px 7vw;
+}
+
+.petbridge-section-heading {
+	margin-bottom: 65px;
+
+	display: flex;
+	align-items: baseline;
+	gap: 40px;
+}
+
+.petbridge-section-heading > span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1rem;
+	letter-spacing: 0.16em;
+}
+
+.petbridge-section-heading h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(4rem, 8vw, 7rem);
+	font-weight: 200;
+	line-height: 0.85;
+	letter-spacing: -0.04em;
+}
+
+
+/* =========================================
+   OVERVIEW
+========================================= */
+
+.petbridge-overview {
+	border-bottom: 1px solid var(--petbridge-black);
+}
+
+.petbridge-overview-grid {
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 1.1fr)
+		minmax(0, 1fr);
+
+	gap: 9vw;
+	align-items: start;
+}
+
+
+/* OVERVIEW COPY */
+
+.petbridge-overview-copy {
+	max-width: 720px;
+}
+
+.petbridge-overview-copy p:first-child {
+	margin-bottom: 30px;
+
+	font-size: clamp(1.7rem, 2.7vw, 2.7rem);
+	line-height: 1.3;
+	letter-spacing: -0.02em;
+}
+
+.petbridge-overview-copy p:last-child {
+	max-width: 600px;
+
+	color: var(--petbridge-grey);
+}
+
+
+/* DETAILS */
+
+.petbridge-details {
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 45px 35px;
+}
+
+.petbridge-details div {
+	padding-top: 15px;
+
+	border-top: 1px solid var(--petbridge-black);
+}
+
+.petbridge-details h3 {
+	margin-bottom: 14px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.petbridge-details p {
+	margin-bottom: 0;
+
+	color: var(--petbridge-grey);
+}
+
+
+/* =========================================
+   VIDEO / APP DEMO
+========================================= */
+
+.petbridge-video-section {
+	border-bottom: 1px solid var(--petbridge-black);
+
+	background-color: var(--petbridge-light);
+}
+
+.petbridge-video-wrapper {
+	width: 100%;
+	max-width: 1200px;
+
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	overflow: hidden;
+
+	background-color: var(--petbridge-dark);
+}
+
+.petbridge-demo-video {
+	display: block;
+
+	width: 100%;
+	height: auto;
+	max-height: 720px;
+
+	object-fit: contain;
+
+	background-color: var(--petbridge-dark);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.petbridge-navigation {
+	padding: 75px 7vw;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	gap: 40px;
+}
+
+.petbridge-back-link,
+.petbridge-next-project {
+	color: var(--petbridge-black);
+
+	text-decoration: none;
+}
+
+.petbridge-back-link {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1rem;
+	letter-spacing: 0.06em;
+
+	transition: opacity 0.25s ease;
+}
+
+.petbridge-next-project {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	gap: 8px;
+}
+
+.petbridge-next-project span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+	letter-spacing: 0.1em;
+
+	color: var(--petbridge-grey);
+}
+
+.petbridge-next-project strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 300;
+
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+}
+
+.petbridge-back-link:hover {
+	opacity: 0.55;
+}
+
+.petbridge-next-project:hover strong {
+	opacity: 0.55;
+
+	transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET
+   701px — 1050px
+========================================= */
+
+@media (max-width: 1050px) {
+
+	/* HERO */
+
+	.petbridge-hero {
+		min-height: auto;
+
+		padding:
+			130px 7vw
+			90px;
+
+		grid-template-columns: 1fr;
+
+		gap: 60px;
+	}
+
+	.petbridge-hero-copy {
+		max-width: 800px;
+	}
+
+	.petbridge-main-title {
+		font-size: clamp(5rem, 15vw, 9rem);
+	}
+
+	.petbridge-intro {
+		max-width: 650px;
+	}
+
+
+	/* PHONES */
+
+	.petbridge-phone-showcase {
+		width: min(100%, 720px);
+		height: 600px;
+	}
+
+	.petbridge-phone {
+		height: 76%;
+		max-width: 37%;
+	}
+
+	.petbridge-phone-2 {
+		height: 86%;
+	}
+
+
+	/* OVERVIEW */
+
+	.petbridge-overview-grid {
+		grid-template-columns: 1fr;
+
+		gap: 70px;
+	}
+
+	.petbridge-overview-copy {
+		max-width: 760px;
+	}
+
+	.petbridge-details {
+		max-width: 750px;
+	}
+
+
+	/* VIDEO */
+
+	.petbridge-video-wrapper {
+		max-width: 900px;
+	}
+}
+
+
+/* =========================================
+   MOBILE
+   max 700px
+========================================= */
+
+@media (max-width: 700px) {
+
+	/* GENERAL */
+
+	.petbridge-page p {
+		font-size: 1.05rem;
+	}
+
+	.petbridge-section {
+		padding: 85px 24px;
+	}
+
+
+	/* =====================================
+	   MOBILE HERO
+	===================================== */
+
+	.petbridge-hero {
+		min-height: auto;
+
+		padding:
+			100px 24px
+			60px;
+
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	.petbridge-project-number {
+		margin-bottom: 30px;
+
+		font-size: 0.78rem !important;
+	}
+
+	.petbridge-main-title {
+		margin-bottom: 35px;
+
+		font-size: clamp(3.8rem, 19vw, 6rem);
+
+		line-height: 0.9;
+		letter-spacing: -0.05em;
+	}
+
+	.petbridge-meta {
+		padding: 16px 0;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 6px;
+	}
+
+	.petbridge-meta p {
+		font-size: 0.78rem;
+	}
+
+	.petbridge-intro {
+		margin-top: 28px;
+
+		font-size: 1.12rem !important;
+	}
+
+
+	/* =====================================
+	   MOBILE PHONE SHOWCASE
+	===================================== */
+
+	.petbridge-hero-media {
+		width: calc(100% + 20px);
+
+		margin-left: -10px;
+	}
+
+	.petbridge-phone-showcase {
+		width: 100%;
+		height: 430px;
+	}
+
+	.petbridge-phone {
+		height: 65%;
+		max-width: 43%;
+
+		filter: drop-shadow(
+			0 15px 18px rgba(0, 0, 0, 0.25)
+		);
+	}
+
+
+	/* LEFT */
+
+	.petbridge-phone-1 {
+		left: -1%;
+		top: 19%;
+
+		transform: rotate(-6deg);
+	}
+
+
+	/* CENTER */
+
+	.petbridge-phone-2 {
+		left: 50%;
+		top: 5%;
+
+		height: 78%;
+
+		transform: translateX(-50%);
+	}
+
+
+	/* RIGHT */
+
+	.petbridge-phone-3 {
+		right: -1%;
+		top: 19%;
+
+		transform: rotate(6deg);
+	}
+
+
+	/* Disable hover movement on touch */
+
+	.petbridge-phone-1:hover {
+		transform: rotate(-6deg);
+	}
+
+	.petbridge-phone-2:hover {
+		transform: translateX(-50%);
+	}
+
+	.petbridge-phone-3:hover {
+		transform: rotate(6deg);
+	}
+
+
+	/* =====================================
+	   SECTION HEADINGS
+	===================================== */
+
+	.petbridge-section-heading {
+		margin-bottom: 50px;
+
+		align-items: flex-start;
+
+		gap: 18px;
+	}
+
+	.petbridge-section-heading > span {
+		padding-top: 7px;
+
+		font-size: 0.8rem;
+	}
+
+	.petbridge-section-heading h2 {
+		font-size: clamp(3rem, 15vw, 5rem);
+
+		line-height: 0.9;
+	}
+
+
+	/* =====================================
+	   OVERVIEW
+	===================================== */
+
+	.petbridge-overview-grid {
+		grid-template-columns: 1fr;
+
+		gap: 55px;
+	}
+
+	.petbridge-overview-copy p:first-child {
+		font-size: 1.6rem;
+
+		line-height: 1.3;
+	}
+
+	.petbridge-details {
+		grid-template-columns: 1fr;
+
+		gap: 30px;
+	}
+
+	.petbridge-details div {
+		padding-top: 12px;
+	}
+
+
+	/* =====================================
+	   VIDEO
+	===================================== */
+
+	.petbridge-video-wrapper {
+		width: 100%;
+
+		background: var(--petbridge-dark);
+	}
+
+	.petbridge-demo-video {
+		width: 100%;
+		height: auto;
+
+		max-height: 600px;
+	}
+
+
+	/* =====================================
+	   NAVIGATION
+	===================================== */
+
+	.petbridge-navigation {
+		padding: 60px 24px;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 55px;
+	}
+
+	.petbridge-next-project {
+		width: 100%;
+
+		align-items: flex-start;
+	}
+
+	.petbridge-next-project strong {
+		font-size: 2.3rem;
+	}
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+	.petbridge-hero {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.petbridge-main-title {
+		font-size: clamp(3.5rem, 18vw, 5rem);
+	}
+
+	.petbridge-phone-showcase {
+		height: 380px;
+	}
+
+	.petbridge-phone {
+		height: 63%;
+		max-width: 44%;
+	}
+
+	.petbridge-phone-2 {
+		height: 76%;
+	}
+
+	.petbridge-section {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.petbridge-navigation {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

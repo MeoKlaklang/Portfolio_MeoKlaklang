@@ -1,31 +1,38 @@
+import { Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Introduction from "./pages/Introduction";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Project";
-import ProjectAnimal from "./pages/ProjectAnimal";
-import Persona from "./pages/Persona";
-import Sketch from "./pages/Sketch";
-import Rive from "./pages/Rive";
-import Spline from "./pages/Spline";
-import LaserLady from "./pages/LaserLady";
-import End from "./pages/End";
+import HetMandje from "./pages/HetMandje";
+import Thumbelina from "./pages/Thumbelina";
+import PetBridge from "./pages/PetBridge";
+import AnimalFestival from "./pages/AnimalFestival";
+import Areonix from "./pages/Aeronix";
+import Gistda from "./pages/Gistda";
 
-function App() {
+function PortfolioHome() {
 	return (
-		<div>
+		<>
 			<Home />
 			<Introduction />
 			<Skills />
 			<Projects />
-			<ProjectAnimal />
-			<Persona />
-			<Sketch />
-			<Rive />
-			<Spline />
-			<LaserLady />
-			<End />
+		</>
+	);
+}
 
-		</div>
+function App() {
+	return (
+		<Routes>
+			<Route path="/" element={<PortfolioHome />} />
+			<Route path="/het-mandje" element={<HetMandje />} />
+			<Route path="/thumbelina" element={<Thumbelina />} />
+			<Route path="/petbridge" element={<PetBridge />} />
+			<Route path="/AnimalFestival" element={<AnimalFestival />} />
+			<Route path="/Aeronix" element={<Areonix />} />
+			<Route path="/Gistda" element={<Gistda />} />
+		</Routes>
 	);
 }
 

@@ -8,13 +8,13 @@ export default function Skills() {
 			<motion.div className="skills-column" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }} viewport={{ once: false, amount: 0.2 }}>
 				{/* Block 1 */}
 				<motion.div className="skills-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} viewport={{ once: false }}>
-					<h2 className="skills-title">educatie</h2>
+					<h2 className="skills-title">education</h2>
 					<p>
 						Erasmus Hogeschool Brussel
 						<br />
 						Multimedia en creatieve technologie
 						<br />
-						2023 - present
+						2023 - 2026
 					</p>
 
 					<p>
@@ -31,15 +31,15 @@ export default function Skills() {
 
 				{/* Block 2 */}
 				<motion.div className="skills-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }} viewport={{ once: false }}>
-					<h2 className="skills-title">talen</h2>
+					<h2 className="skills-title">languages</h2>
 					<p>
-						Nederlands
+						Netherlands - native 
 						<br />
-						Frans
+						French - fluent
+						<br /> 
+						English - fluent
 						<br />
-						Engels
-						<br />
-						Thai
+						Thai - advanced
 					</p>
 				</motion.div>
 
@@ -82,11 +82,11 @@ export default function Skills() {
 
 				{/* Block 2 */}
 				<motion.div className="skills-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }} viewport={{ once: false }}>
-					<h2 className="skills-title">programmeren</h2>
+					<h2 className="skills-title">programming</h2>
 					<p>
-						HTML
+						HTML/CSS
 						<br />
-						CSS
+						Next.js
 						<br />
 						Javascript
 						<br />
@@ -101,12 +101,15 @@ export default function Skills() {
 						MongoDB
 						<br />
 						MySQL
+						<br />
+						Supabase
 					</p>
 				</motion.div>
 			</motion.div>
 			{/* Vlieger rechts van kolom 2 */}
+			{/* Vlieger rechts van kolom 2 */}
 			<motion.img
-				src="/vlieger.png" // jouw bestand
+				src={`${import.meta.env.BASE_URL}vlieger.png`}
 				alt="kite"
 				className="skills-kite"
 				initial={{ opacity: 0, y: 30 }}
@@ -121,15 +124,15 @@ export default function Skills() {
 				<motion.div className="skills-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} viewport={{ once: false }}>
 					<h2 className="skills-title">soft skills</h2>
 					<p>
-						Teamspeler
+						Curious
 						<br />
-						Positieve houding
+						Feedback-oriented
 						<br />
-						Creatief
+						Collaborative
 						<br />
-						Stressbestendig
+						Problem-solving
 						<br />
-						Doorzettingsvermogen
+						Driven
 					</p>
 				</motion.div>
 
@@ -139,15 +142,15 @@ export default function Skills() {
 				<motion.div className="skills-block" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }} viewport={{ once: false }}>
 					<h2 className="skills-title">hobbys</h2>
 					<p>
-						Lopen
+						Running
 						<br />
-						Haken
+						Crocheting
 						<br />
-						Gamen
+						Gaming
 						<br />
-						Reizen
+						Traveling
 						<br />
-						Dierenverzorging
+						Animal Care
 					</p>
 				</motion.div>
 			</motion.div>

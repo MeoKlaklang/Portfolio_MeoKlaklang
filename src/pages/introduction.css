@@ -1,111 +1,507 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=Afacad:wght@300;400;500&display=swap");
 
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
 .intro-container {
-  width: 100%;
-  min-height: 80vh;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  box-sizing: border-box;
-  align-items: start;
-  gap: 40px;
-  padding-left:100px;
+	position: relative;
+
+	width: 100%;
+	min-height: 90vh;
+
+	display: grid;
+	grid-template-columns: minmax(0, 1.25fr) minmax(350px, 0.75fr);
+	align-items: center;
+
+	gap: 5vw;
+
+	padding: 100px 6vw 120px;
+
+	box-sizing: border-box;
+
+	overflow: hidden;
 }
 
-/* ===== TITLES ===== */
-.intro-title {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 10rem;
-  margin: 0;
-  font-weight: 200;
-  line-height: 0.9;
-  color: black;
+
+/* =========================================
+   LEFT
+========================================= */
+
+.intro-left {
+	position: relative;
+	z-index: 2;
 }
+
+
+/* TITLES */
+
+.intro-title {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(7rem, 10vw, 10rem);
+	font-weight: 200;
+
+	line-height: 0.8;
+
+	color: #000;
+}
+
 
 .intro-subtitle {
-    padding-left: 90px;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 7rem;
-  margin: 0 0 30px 0;
-  font-weight: 200;
-  color: black;
+	margin: 15px 0 45px;
+	padding-left: 90px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(4.5rem, 7vw, 7rem);
+	font-weight: 200;
+
+	line-height: 1;
+
+	color: #000;
 }
+
 
 .intro-subtitle span {
-  font-weight: 400;
+	font-weight: 400;
 }
 
-/* ===== BODY TEXT ===== */
+
+/* =========================================
+   BODY TEXT
+========================================= */
+
 .intro-text {
-    padding-left: 90px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 50px;
-    font-family: "Afacad", sans-serif;
-    font-size: 1rem;
-    line-height: 1.45;
-    max-width: 900px;
+	padding-left: 90px;
+
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	column-gap: 45px;
+
+	max-width: 900px;
+
+	font-family: "Afacad", sans-serif;
 }
+
 
 .intro-text .col {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 
+.intro-text p {
+	margin: 0 0 22px;
 
-/* ===== RIGHT SIDE IMAGE ===== */
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.55;
+
+	color: #333;
+}
+
+
+/* =========================================
+   PHOTO COLLAGE
+========================================= */
+
 .intro-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	position: relative;
+
+	width: 100%;
+	height: 680px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.intro-image {
-    margin-top: 50px;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
-  object-fit: cover;
+
+.intro-photo-collage {
+	position: relative;
+
+	width: 100%;
+	max-width: 500px;
+	height: 620px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .intro-container {
-    grid-template-columns: 1fr;
-    padding: 40px;
-  }
 
-  .intro-right {
-    order: -1;
-  }
+/* GENERAL IMAGE */
 
-  .intro-title {
-    font-size: 4rem;
-  }
+.intro-photo {
+	position: absolute;
 
-  .intro-subtitle {
-    font-size: 2.5rem;
-  }
+	display: block;
+
+	object-fit: cover;
+
+	border-radius: 18px;
+
+	box-shadow:
+		0 20px 50px rgba(0, 0, 0, 0.12);
+
+	transition:
+		box-shadow 0.3s ease,
+		z-index 0s;
 }
 
-.intro-container {
-  position: relative; /* belangrijk zodat absolute posities werken! */
+
+.intro-photo:hover {
+	z-index: 10;
+
+	box-shadow:
+		0 28px 65px rgba(0, 0, 0, 0.18);
 }
+
+
+/* MAIN */
+
+.intro-photo-main {
+	z-index: 3;
+
+	width: 62%;
+	height: 410px;
+
+	top: 40px;
+	left: 0;
+
+	object-position: center;
+}
+
+
+/* VERTICAL PHOTO */
+
+.intro-photo-secondary {
+	z-index: 2;
+
+	width: 49%;
+	height: 370px;
+
+	right: 0;
+	bottom: 10px;
+
+	object-position: center;
+}
+
+
+/* GROUP PHOTO */
+
+.intro-photo-third {
+	z-index: 4;
+
+	width: 54%;
+	height: 230px;
+
+	left: 12%;
+	bottom: 0;
+
+	object-position: center;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
 
 .intro-arrow {
-  position: absolute;
-  width: 750px; /* grootte van jouw PNG */
-  bottom: 60px; /* zet hem waar je wil */
-  left: 490px;  /* zet hem waar je wil */
-  opacity: 0.7;
-  pointer-events: none;
-  user-select: none;
+	position: absolute;
 
-  animation: arrow-wiggle 3s ease-in-out infinite;
+	z-index: 1;
+
+	width: min(42vw, 750px);
+
+	bottom: 35px;
+	left: 27%;
+
+	opacity: 0.55;
+
+	pointer-events: none;
+	user-select: none;
+
+	animation: arrow-wiggle 3s ease-in-out infinite;
 }
 
+
 @keyframes arrow-wiggle {
-  0% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-6px) rotate(2deg); }
-  100% { transform: translateY(0) rotate(-3deg); }
+
+	0% {
+		transform: translateY(0) rotate(-3deg);
+	}
+
+	50% {
+		transform: translateY(-6px) rotate(2deg);
+	}
+
+	100% {
+		transform: translateY(0) rotate(-3deg);
+	}
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+	.intro-container {
+		grid-template-columns: 1.1fr 0.9fr;
+
+		gap: 40px;
+
+		padding:
+			90px 45px
+			100px;
+	}
+
+
+	.intro-subtitle,
+	.intro-text {
+		padding-left: 45px;
+	}
+
+
+	.intro-text {
+		grid-template-columns: 1fr;
+
+		max-width: 600px;
+	}
+
+
+	.intro-right {
+		height: 620px;
+	}
+
+
+	.intro-photo-collage {
+		height: 570px;
+	}
+
+
+	.intro-photo-main {
+		width: 68%;
+		height: 370px;
+	}
+
+
+	.intro-photo-secondary {
+		width: 53%;
+		height: 330px;
+	}
+
+
+	.intro-photo-third {
+		width: 60%;
+		height: 200px;
+	}
+
+
+	.intro-arrow {
+		display: none;
+	}
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+	.intro-container {
+		min-height: auto;
+
+		display: flex;
+		flex-direction: column;
+
+		gap: 45px;
+
+		padding:
+			75px 22px
+			80px;
+
+		overflow: hidden;
+	}
+
+
+	/* TITLES */
+
+	.intro-title {
+		font-size: clamp(4.7rem, 24vw, 6.5rem);
+
+		line-height: 0.85;
+	}
+
+
+	.intro-subtitle {
+		margin:
+			10px 0
+			35px;
+
+		padding-left: 28px;
+
+		font-size: clamp(3rem, 15vw, 4.4rem);
+	}
+
+
+	/* TEXT */
+
+	.intro-text {
+		padding-left: 28px;
+		padding-right: 5px;
+
+		grid-template-columns: 1fr;
+
+		column-gap: 0;
+
+		max-width: none;
+	}
+
+
+	.intro-text p {
+		margin-bottom: 18px;
+
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+
+	/*
+	Instead of visually maintaining
+	two separate columns, everything
+	becomes one reading flow.
+	*/
+
+	.intro-text .col {
+		display: contents;
+	}
+
+
+	/* PHOTOS */
+
+	.intro-right {
+		width: 100%;
+		height: auto;
+
+		margin-top: 5px;
+	}
+
+
+	.intro-photo-collage {
+		width: 100%;
+		max-width: 450px;
+
+		height: 500px;
+
+		margin: 0 auto;
+	}
+
+
+	.intro-photo {
+		border-radius: 12px;
+
+		box-shadow:
+			0 15px 35px rgba(0, 0, 0, 0.12);
+	}
+
+
+	.intro-photo-main {
+		width: 64%;
+		height: 300px;
+
+		top: 0;
+		left: 0;
+	}
+
+
+	.intro-photo-secondary {
+		width: 49%;
+		height: 275px;
+
+		top: 170px;
+		right: 0;
+		bottom: auto;
+
+		z-index: 4;
+	}
+
+
+	.intro-photo-third {
+		width: 53%;
+		height: 180px;
+
+		left: 4%;
+		bottom: 0;
+
+		z-index: 5;
+	}
+
+
+	/* No arrow on mobile */
+
+	.intro-arrow {
+		display: none;
+	}
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+	.intro-container {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+
+	.intro-title {
+		font-size: 4.5rem;
+	}
+
+
+	.intro-subtitle {
+		padding-left: 18px;
+
+		font-size: 3rem;
+	}
+
+
+	.intro-text {
+		padding-left: 18px;
+	}
+
+
+	.intro-photo-collage {
+		height: 440px;
+	}
+
+
+	.intro-photo-main {
+		width: 67%;
+		height: 270px;
+	}
+
+
+	.intro-photo-secondary {
+		width: 50%;
+		height: 245px;
+
+		top: 150px;
+	}
+
+
+	.intro-photo-third {
+		width: 54%;
+		height: 155px;
+	}
+
 }

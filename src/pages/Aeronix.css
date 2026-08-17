@@ -1,0 +1,1596 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Afacad:wght@300;400;500;600&display=swap");
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+	--areonix-dark: #000000;
+	--areonix-white: #ffffff;
+	--areonix-black: #111111;
+	--areonix-grey: #777777;
+	--areonix-light: #f3f3f3;
+}
+
+/* =========================================
+   GENERAL
+========================================= */
+
+.areonix-page {
+	width: 100%;
+	overflow-x: hidden;
+
+	background: var(--areonix-white);
+	color: var(--areonix-black);
+
+	font-family: "Afacad", sans-serif;
+}
+
+.areonix-page * {
+	box-sizing: border-box;
+}
+
+.areonix-page h1,
+.areonix-page h2,
+.areonix-page h3,
+.areonix-page p {
+	margin-top: 0;
+}
+
+.areonix-page p {
+	font-size: 1.15rem;
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.areonix-hero {
+	min-height: 100vh;
+
+	padding: 90px 7vw 70px;
+
+	display: grid;
+	grid-template-columns:
+		minmax(0, 0.9fr)
+		minmax(400px, 1.1fr);
+
+	align-items: center;
+	gap: 7vw;
+
+	background: var(--areonix-dark);
+	color: var(--areonix-white);
+}
+
+.areonix-hero-copy {
+	min-width: 0;
+}
+
+.areonix-project-number {
+	margin-bottom: 42px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem !important;
+
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.areonix-main-title {
+	margin-bottom: 45px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(5rem, 10vw, 10rem);
+	font-weight: 200;
+
+	line-height: 0.82;
+	letter-spacing: -0.05em;
+
+	color: var(--areonix-white);
+}
+
+.areonix-meta {
+	padding: 20px 0;
+
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.75);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.areonix-meta p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.88rem;
+	letter-spacing: 0.07em;
+}
+
+.areonix-intro {
+	max-width: 570px;
+
+	margin: 38px 0 0;
+
+	font-size: 1.3rem !important;
+
+	color: #c7c7c7;
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.areonix-hero-media {
+	width: 100%;
+	min-width: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* =========================================
+   HERO DEVICE SHOWCASE
+========================================= */
+
+.areonix-hero-media {
+	width: 100%;
+	min-width: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* volledige showcase hoger */
+	transform: translateY(-300px);
+}
+
+.areonix-device-showcase {
+	position: relative;
+
+	width: 100%;
+	max-width: 820px;
+	height: 620px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* LAPTOP */
+
+.areonix-device-laptop {
+	position: absolute;
+
+	width: 94%;
+	height: auto;
+
+	right: -3%;
+	top: 16%;
+
+	transform: translateY(-50%);
+
+	object-fit: contain;
+
+	filter: drop-shadow(
+		0 30px 35px rgba(0, 0, 0, 0.28)
+	);
+
+	z-index: 1;
+
+	transition:
+		transform 0.45s ease,
+		filter 0.45s ease;
+}
+
+
+/* PHONE */
+
+.areonix-device-phone {
+	position: absolute;
+
+	/* groter dan voordien */
+	width: 34%;
+	height: auto;
+
+	/* mooi voor de laptop */
+	left: -3%;
+	top: 39%;
+
+	object-fit: contain;
+
+	filter: drop-shadow(
+		0 25px 28px rgba(0, 0, 0, 0.4)
+	);
+
+	z-index: 3;
+
+	transition:
+		transform 0.45s ease,
+		filter 0.45s ease;
+}
+
+
+/* HOVER */
+
+.areonix-device-showcase:hover .areonix-device-laptop {
+	transform:
+		translateY(-50%)
+		translateX(8px);
+}
+
+.areonix-device-showcase:hover .areonix-device-phone {
+	transform:
+		translateY(-12px)
+		rotate(-2deg);
+
+	filter: drop-shadow(
+		0 35px 32px rgba(0, 0, 0, 0.45)
+	);
+}
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+.areonix-section {
+	padding: 120px 7vw;
+}
+
+.areonix-section-heading {
+	margin-bottom: 70px;
+
+	display: flex;
+	align-items: baseline;
+
+	gap: 40px;
+}
+
+.areonix-section-heading > span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+	letter-spacing: 0.16em;
+}
+
+.areonix-section-heading h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(4rem, 8vw, 7rem);
+	font-weight: 200;
+
+	line-height: 0.85;
+	letter-spacing: -0.04em;
+}
+
+.areonix-large-text {
+	font-size: clamp(1.8rem, 3vw, 3rem) !important;
+
+	line-height: 1.25 !important;
+	letter-spacing: -0.02em;
+}
+
+/* =========================================
+   OVERVIEW
+========================================= */
+
+.areonix-overview {
+	border-bottom: 1px solid var(--areonix-black);
+}
+
+.areonix-overview-grid {
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 1.1fr)
+		minmax(0, 1fr);
+
+	gap: 9vw;
+
+	align-items: start;
+}
+
+.areonix-overview-copy {
+	max-width: 720px;
+}
+
+.areonix-overview-copy p:first-child {
+	margin-bottom: 30px;
+
+	font-size: clamp(1.7rem, 2.7vw, 2.7rem);
+
+	line-height: 1.3;
+	letter-spacing: -0.02em;
+}
+
+.areonix-overview-copy p:last-child {
+	max-width: 620px;
+
+	color: var(--areonix-grey);
+}
+
+/* DETAILS */
+
+.areonix-details {
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 45px 35px;
+}
+
+.areonix-details div {
+	padding-top: 15px;
+
+	border-top: 1px solid var(--areonix-black);
+}
+
+.areonix-details h3 {
+	margin-bottom: 14px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.areonix-details p {
+	margin-bottom: 0;
+
+	color: var(--areonix-grey);
+}
+
+/* =========================================
+   CAMPAIGN
+========================================= */
+
+.areonix-campaign {
+	background: var(--areonix-dark);
+	color: var(--areonix-white);
+
+	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================
+   CAMPAIGN INTRO
+========================================= */
+
+.areonix-campaign-intro {
+	width: 100%;
+	max-width: none;
+
+	margin: 0 0 100px;
+
+	display: grid;
+	grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+
+	align-items: center;
+
+	gap: 8vw;
+}
+
+.areonix-campaign-intro-copy {
+	max-width: 750px;
+}
+
+.areonix-campaign-intro .areonix-large-text {
+	margin-bottom: 28px;
+}
+
+.areonix-campaign-intro-copy > p:last-child {
+	max-width: 600px;
+
+	margin-bottom: 0;
+
+	color: var(--areonix-grey);
+}
+
+
+/* LOGO */
+
+.areonix-campaign-logo {
+	width: 100%;
+	min-height: 300px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 50px;
+
+	background: var(--areonix-dark);
+
+	overflow: hidden;
+}
+
+.areonix-campaign-logo img {
+	display: block;
+
+	width: 100%;
+	max-width: 380px;
+	height: auto;
+
+	object-fit: contain;
+
+	transition: transform 0.4s ease;
+}
+
+.areonix-campaign-logo:hover img {
+	transform: scale(1.04);
+}
+
+
+/* =========================================
+   CAMPAIGN — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+	.areonix-campaign-intro {
+		grid-template-columns: 1fr;
+		gap: 50px;
+		margin-bottom: 75px;
+	}
+
+	.areonix-campaign-intro-copy {
+		max-width: 700px;
+	}
+
+	.areonix-campaign-logo {
+		min-height: 240px;
+		padding: 40px;
+	}
+
+	.areonix-campaign-logo img {
+		max-width: 320px;
+	}
+}
+
+
+/* =========================================
+   CAMPAIGN — MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+	/* INTRO */
+
+	.areonix-campaign-intro {
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 40px;
+
+		margin: 0 0 60px;
+	}
+
+	.areonix-campaign-intro-copy {
+		width: 100%;
+		max-width: none;
+	}
+
+	.areonix-campaign-intro .areonix-large-text {
+		margin-bottom: 20px;
+
+		font-size: 1.5rem !important;
+		line-height: 1.3 !important;
+	}
+
+	.areonix-campaign-intro-copy > p:last-child {
+		width: 100%;
+		max-width: none;
+
+		margin: 0;
+
+		font-size: 1rem;
+		line-height: 1.55;
+
+		color: var(--areonix-grey);
+	}
+
+
+	/* LOGO */
+
+	.areonix-campaign-logo {
+		width: 100%;
+
+		min-height: 190px;
+
+		padding: 30px 20px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background: var(--areonix-dark);
+	}
+
+	.areonix-campaign-logo img {
+		width: 75%;
+		max-width: 260px;
+		height: auto;
+
+		object-fit: contain;
+	}
+
+
+	/* geen hover-effect nodig op mobiel */
+
+	.areonix-campaign-logo:hover img {
+		transform: none;
+	}
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+	.areonix-campaign-intro {
+		gap: 30px;
+		margin-bottom: 50px;
+	}
+
+	.areonix-campaign-intro .areonix-large-text {
+		font-size: 1.35rem !important;
+	}
+
+	.areonix-campaign-intro-copy > p:last-child {
+		font-size: 0.95rem;
+	}
+
+	.areonix-campaign-logo {
+		min-height: 160px;
+		padding: 25px 15px;
+	}
+
+	.areonix-campaign-logo img {
+		width: 80%;
+		max-width: 220px;
+	}
+}
+/* =========================================
+   SHOWCASE LABEL
+========================================= */
+
+.areonix-showcase-label {
+	margin-bottom: 35px;
+	padding-top: 18px;
+
+	display: grid;
+
+	grid-template-columns: 70px minmax(0, 500px);
+
+	gap: 25px;
+
+	border-top: 1px solid var(--areonix-black);
+}
+
+.areonix-showcase-label > span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+
+	letter-spacing: 0.12em;
+
+	color: var(--areonix-grey);
+}
+
+.areonix-showcase-label h3 {
+	margin: 0 0 8px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1.15rem;
+	font-weight: 500;
+
+	letter-spacing: 0.04em;
+}
+
+.areonix-showcase-label p {
+	margin: 0;
+
+	font-size: 1rem;
+
+	color: var(--areonix-grey);
+}
+
+
+/* =========================================
+   SOCIAL CAMPAIGN
+========================================= */
+
+.areonix-campaign-showcase {
+	width: 100%;
+}
+
+
+/* THREE IMAGES */
+
+.areonix-social-grid {
+	width: 100%;
+
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+
+	gap: 22px;
+}
+
+.areonix-social-card {
+	position: relative;
+
+	width: 100%;
+
+	overflow: hidden;
+
+	background: #ffffff;
+}
+
+.areonix-social-card img {
+	display: block;
+
+	width: 100%;
+	aspect-ratio: 1 / 1;
+
+	object-fit: cover;
+
+	transition:
+		transform 0.45s ease,
+		filter 0.45s ease;
+}
+
+
+/* subtle interaction */
+
+.areonix-social-card:hover img {
+	transform: scale(1.025);
+
+	filter: brightness(0.96);
+}
+
+
+/* =========================================
+   LOGO ANIMATION
+========================================= */
+
+.areonix-logo-showcase {
+	margin-top: 130px;
+}
+
+.areonix-logo-video-container {
+	position: relative;
+
+	width: 100%;
+
+	overflow: hidden;
+
+	background: var(--areonix-dark);
+}
+
+.areonix-campaign-video {
+	display: block;
+
+	width: 100%;
+	height: min(65vw, 680px);
+
+	object-fit: cover;
+
+	background: var(--areonix-dark);
+}
+
+
+/* small label over video */
+
+.areonix-video-label {
+	position: absolute;
+
+	left: 25px;
+	bottom: 22px;
+
+	padding: 9px 13px;
+
+	background: rgba(0, 0, 0, 0.55);
+
+	color: #ffffff;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.72rem;
+
+	letter-spacing: 0.12em;
+
+	text-transform: uppercase;
+
+	backdrop-filter: blur(8px);
+}
+
+//* =========================================
+   BRAND IDENTITY
+========================================= */
+
+.areonix-brand {
+	background: #eeeeee;
+	color: var(--areonix-black);
+}
+
+.areonix-brand-heading {
+	color: var(--areonix-black);
+}
+
+.areonix-brand-intro {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 8vw;
+	align-items: start;
+	margin-bottom: 90px;
+}
+
+.areonix-brand-intro p {
+	margin-bottom: 0;
+}
+
+
+/* =========================================
+   BRAND BOOK
+========================================= */
+
+.areonix-brandbook {
+	width: 100%;
+	margin-top: 30px;
+}
+
+
+/* TOP INFO */
+
+.areonix-brandbook-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding-bottom: 18px;
+	margin-bottom: 35px;
+
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+
+/* =========================================
+   BOOK VIEWER
+========================================= */
+
+.areonix-book-viewer {
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: 70px minmax(0, 1fr) 70px;
+
+	align-items: center;
+
+	gap: 30px;
+}
+
+
+/* =========================================
+   BOOK
+========================================= */
+
+.areonix-book {
+	position: relative;
+
+	width: 100%;
+	max-width: 1200px;
+
+	margin: 0 auto;
+
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	background: #ffffff;
+
+	box-shadow:
+		0 30px 70px rgba(0, 0, 0, 0.13),
+		0 8px 20px rgba(0, 0, 0, 0.08);
+
+	overflow: hidden;
+}
+
+
+/* =========================================
+   BOOK PAGES
+========================================= */
+
+.areonix-book-page {
+	position: relative;
+
+	width: 100%;
+
+	background: #ffffff;
+
+	overflow: hidden;
+}
+
+.areonix-book-page img {
+	display: block;
+
+	width: 100%;
+	height: auto;
+
+	object-fit: contain;
+}
+
+
+/* LEFT PAGE DEPTH */
+
+.areonix-book-page-left {
+	box-shadow:
+		inset -20px 0 30px -30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* RIGHT PAGE DEPTH */
+
+.areonix-book-page-right {
+	box-shadow:
+		inset 20px 0 30px -30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   BOOK SPINE
+========================================= */
+
+.areonix-book-spine {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+
+	left: 50%;
+
+	width: 2px;
+
+	transform: translateX(-50%);
+
+	background: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.05),
+		rgba(0, 0, 0, 0.18),
+		rgba(255, 255, 255, 0.4)
+	);
+
+	pointer-events: none;
+
+	z-index: 10;
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.areonix-book-arrow {
+	width: 58px;
+	height: 58px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0;
+
+	border: 1px solid var(--areonix-black);
+	border-radius: 50%;
+
+	background: transparent;
+
+	color: var(--areonix-black);
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.5rem;
+
+	cursor: pointer;
+
+	transition:
+		background 0.25s ease,
+		color 0.25s ease,
+		transform 0.25s ease,
+		opacity 0.25s ease;
+}
+
+
+/* LEFT HOVER */
+
+.areonix-book-arrow-left:hover:not(:disabled) {
+	background: var(--areonix-black);
+
+	color: #ffffff;
+
+	transform: translateX(-5px);
+}
+
+
+/* RIGHT HOVER */
+
+.areonix-book-arrow-right:hover:not(:disabled) {
+	background: var(--areonix-black);
+
+	color: #ffffff;
+
+	transform: translateX(5px);
+}
+
+
+/* DISABLED */
+
+.areonix-book-arrow:disabled {
+	opacity: 0.18;
+
+	cursor: default;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.areonix-brandbook-progress {
+	width: calc(100% - 200px);
+
+	margin: 35px auto 0;
+}
+
+.areonix-brandbook-progress-track {
+	width: 100%;
+	height: 1px;
+
+	background: rgba(0, 0, 0, 0.15);
+
+	overflow: hidden;
+}
+
+.areonix-brandbook-progress-fill {
+	height: 100%;
+
+	background: var(--areonix-black);
+}
+
+
+/* =========================================
+   HINT
+========================================= */
+
+.areonix-brandbook-hint {
+	margin: 22px 0 0;
+
+	text-align: center;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem !important;
+
+	letter-spacing: 0.08em;
+
+	color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+	.areonix-brand-intro {
+		grid-template-columns: 1fr;
+
+		gap: 30px;
+
+		margin-bottom: 65px;
+	}
+
+	.areonix-book-viewer {
+		grid-template-columns: 50px minmax(0, 1fr) 50px;
+
+		gap: 15px;
+	}
+
+	.areonix-book-arrow {
+		width: 46px;
+		height: 46px;
+
+		font-size: 1.2rem;
+	}
+
+	.areonix-brandbook-progress {
+		width: calc(100% - 130px);
+	}
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+	.areonix-brand-intro {
+		margin-bottom: 45px;
+	}
+
+	.areonix-brandbook {
+		margin-top: 10px;
+	}
+
+
+	/* TOP INFO */
+
+	.areonix-brandbook-top {
+		margin-bottom: 22px;
+
+		padding-bottom: 12px;
+
+		font-size: 0.7rem;
+
+		letter-spacing: 0.08em;
+	}
+
+
+	/* VIEWER */
+
+	.areonix-book-viewer {
+		grid-template-columns: 36px minmax(0, 1fr) 36px;
+
+		gap: 7px;
+	}
+
+
+	/* ARROWS */
+
+	.areonix-book-arrow {
+		width: 34px;
+		height: 34px;
+
+		font-size: 0.9rem;
+	}
+
+
+	/* BOOK */
+
+	.areonix-book {
+		grid-template-columns: 1fr;
+
+		max-width: 430px;
+	}
+
+
+	/*
+		On mobile we only show one page
+		so the brandbook stays readable.
+	*/
+
+	.areonix-book-page-right {
+		display: none;
+	}
+
+	.areonix-book-spine {
+		display: none;
+	}
+
+
+	/* PROGRESS */
+
+	.areonix-brandbook-progress {
+		width: calc(100% - 85px);
+
+		margin-top: 25px;
+	}
+
+
+	/* HINT */
+
+	.areonix-brandbook-hint {
+		margin-top: 16px;
+
+		font-size: 0.7rem !important;
+	}
+}
+/* LOGO VIDEO */
+
+.areonix-logo-video-wrapper {
+	width: 100%;
+}
+
+.areonix-logo-video {
+	display: block;
+
+	width: 100%;
+	max-height: 600px;
+
+	object-fit: contain;
+
+	background: #1c2025;
+}
+
+.areonix-video-caption {
+	display: block;
+
+	margin-top: 15px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.78rem;
+
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	color: #a8a8a8;
+}
+
+/* =========================================
+   PROTOTYPE
+========================================= */
+
+.areonix-prototype {
+	background: var(--areonix-white);
+
+	border-bottom: 1px solid var(--areonix-black);
+}
+
+.areonix-prototype-grid {
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 1fr)
+		minmax(350px, 0.8fr);
+
+	gap: 8vw;
+
+	align-items: end;
+}
+
+.areonix-prototype-copy {
+	max-width: 700px;
+}
+
+.areonix-prototype-copy > p:last-child {
+	max-width: 570px;
+
+	color: var(--areonix-grey);
+}
+
+/* =========================================
+   FIGMA LINK
+========================================= */
+
+.areonix-figma-link {
+	padding: 25px 0;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: flex-end;
+
+	gap: 25px;
+
+	border-top: 1px solid var(--areonix-black);
+	border-bottom: 1px solid var(--areonix-black);
+
+	color: var(--areonix-black);
+
+	text-decoration: none;
+}
+
+.areonix-figma-link span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	color: var(--areonix-grey);
+}
+
+.areonix-figma-link strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+	font-weight: 300;
+
+	text-align: right;
+
+	transition:
+		transform 0.25s ease,
+		opacity 0.25s ease;
+}
+
+.areonix-figma-link:hover strong {
+	transform: translateX(6px);
+
+	opacity: 0.55;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.areonix-navigation {
+	padding: 75px 7vw;
+
+	display: flex;
+
+	align-items: flex-end;
+	justify-content: space-between;
+
+	gap: 40px;
+}
+
+.areonix-back-link,
+.areonix-next-project {
+	color: var(--areonix-black);
+
+	text-decoration: none;
+}
+
+.areonix-back-link {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1rem;
+	letter-spacing: 0.06em;
+
+	transition: opacity 0.25s ease;
+}
+
+.areonix-next-project {
+	display: flex;
+	flex-direction: column;
+
+	align-items: flex-end;
+
+	gap: 8px;
+}
+
+.areonix-next-project span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+
+	letter-spacing: 0.1em;
+
+	color: var(--areonix-grey);
+}
+
+.areonix-next-project strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 300;
+
+	transition:
+		transform 0.25s ease,
+		opacity 0.25s ease;
+}
+
+.areonix-back-link:hover {
+	opacity: 0.55;
+}
+
+.areonix-next-project:hover strong {
+	transform: translateX(5px);
+
+	opacity: 0.55;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+	.areonix-hero {
+		min-height: auto;
+
+		padding: 130px 7vw 90px;
+
+		grid-template-columns: 1fr;
+
+		gap: 70px;
+	}
+
+	.areonix-main-title {
+		font-size: clamp(5rem, 15vw, 9rem);
+	}
+
+	.areonix-hero-image {
+		max-width: 650px;
+	}
+
+	/* OVERVIEW */
+
+	.areonix-overview-grid {
+		grid-template-columns: 1fr;
+
+		gap: 70px;
+	}
+
+	/* CAMPAIGN */
+
+	.areonix-campaign-intro {
+		margin-left: 0;
+	}
+
+	.areonix-advertising {
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	/* BRAND */
+
+	.areonix-brand-grid {
+		grid-template-columns: 1fr;
+
+		gap: 60px;
+	}
+
+	.areonix-logo-video-wrapper {
+		max-width: 750px;
+	}
+
+	/* PROTOTYPE */
+
+	.areonix-prototype-grid {
+		grid-template-columns: 1fr;
+
+		gap: 55px;
+	}
+
+	.areonix-figma-link {
+		max-width: 650px;
+
+		align-items: flex-start;
+	}
+
+	.areonix-figma-link strong {
+		text-align: left;
+	}
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+	.areonix-page p {
+		font-size: 1.05rem;
+	}
+
+	.areonix-section {
+		padding: 85px 24px;
+	}
+
+	/* HERO */
+
+	.areonix-hero {
+		min-height: auto;
+
+		padding: 100px 24px 65px;
+
+		grid-template-columns: 1fr;
+
+		gap: 50px;
+	}
+
+	.areonix-project-number {
+		margin-bottom: 30px;
+
+		font-size: 0.78rem !important;
+	}
+
+	.areonix-main-title {
+		margin-bottom: 35px;
+
+		font-size: clamp(3.8rem, 19vw, 6rem);
+
+		line-height: 0.9;
+	}
+
+	.areonix-meta {
+		padding: 16px 0;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 6px;
+	}
+
+	.areonix-meta p {
+		font-size: 0.78rem;
+	}
+
+	.areonix-intro {
+		margin-top: 28px;
+
+		font-size: 1.12rem !important;
+	}
+
+	.areonix-hero-image {
+		max-height: 520px;
+	}
+
+	/* HEADINGS */
+
+	.areonix-section-heading {
+		margin-bottom: 50px;
+
+		align-items: flex-start;
+
+		gap: 18px;
+	}
+
+	.areonix-section-heading > span {
+		padding-top: 7px;
+
+		font-size: 0.8rem;
+	}
+
+	.areonix-section-heading h2 {
+		font-size: clamp(3rem, 15vw, 5rem);
+
+		line-height: 0.9;
+	}
+
+	/* OVERVIEW */
+
+	.areonix-overview-grid {
+		grid-template-columns: 1fr;
+
+		gap: 55px;
+	}
+
+	.areonix-overview-copy p:first-child {
+		font-size: 1.6rem;
+	}
+
+	.areonix-details {
+		grid-template-columns: 1fr;
+
+		gap: 30px;
+	}
+
+	/* CAMPAIGN */
+
+	.areonix-campaign-intro {
+		margin-bottom: 55px;
+	}
+
+	.areonix-large-text {
+		font-size: 1.6rem !important;
+	}
+
+	.areonix-social-grid {
+		grid-template-columns: 1fr;
+
+		gap: 15px;
+	}
+
+	.areonix-social-middle {
+		transform: none;
+	}
+
+	.areonix-social-card {
+		max-width: 500px;
+
+		margin: 0 auto;
+	}
+
+	.areonix-advertising {
+		margin-top: 70px;
+
+		grid-template-columns: 1fr;
+
+		gap: 35px;
+	}
+
+	/* BRAND */
+
+	.areonix-brand-grid {
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	.areonix-logo-video {
+		max-height: 450px;
+	}
+
+	/* PROTOTYPE */
+
+	.areonix-prototype-grid {
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	.areonix-figma-link {
+		width: 100%;
+
+		align-items: flex-start;
+	}
+
+	.areonix-figma-link strong {
+		font-size: 1.6rem;
+
+		text-align: left;
+	}
+
+	/* NAVIGATION */
+
+	.areonix-navigation {
+		padding: 60px 24px;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 55px;
+	}
+
+	.areonix-next-project {
+		width: 100%;
+
+		align-items: flex-start;
+	}
+
+	.areonix-next-project strong {
+		font-size: 2.3rem;
+	}
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+	.areonix-hero {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.areonix-main-title {
+		font-size: clamp(3.4rem, 18vw, 5rem);
+	}
+
+	.areonix-section {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.areonix-navigation {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

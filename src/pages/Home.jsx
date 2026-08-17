@@ -52,7 +52,7 @@ export default function Home() {
       {/* Navigatie */}
       <header className="top">
         <nav className="tags">
-          <a href="#">UX/UI</a>
+          <a href="#">UX/UI Designer</a>
         </nav>
       </header>
 

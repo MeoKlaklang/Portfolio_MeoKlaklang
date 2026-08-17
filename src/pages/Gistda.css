@@ -1,0 +1,2548 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Afacad:wght@300;400;500;600&display=swap");
+
+:root {
+	--gistda-dark: #233a50;
+	--gistda-deep: #1c2d40;
+	--gistda-cream: #f6ddbc;
+	--gistda-blue: #6696c0;
+	--gistda-orange: #eb8b3a;
+	--gistda-red: #bd584a;
+	--gistda-light: #f3f3f1;
+	--gistda-white: #ffffff;
+	--gistda-black: #111111;
+	--gistda-grey: #777777;
+}
+
+.gistda-page {
+	width: 100%;
+	overflow: hidden;
+	background: var(--gistda-white);
+	color: var(--gistda-black);
+	font-family: "Afacad", sans-serif;
+}
+
+.gistda-page * {
+	box-sizing: border-box;
+}
+
+.gistda-page h1,
+.gistda-page h2,
+.gistda-page h3,
+.gistda-page p {
+	margin-top: 0;
+}
+
+.gistda-page p {
+	font-size: 1.15rem;
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.gistda-hero {
+	min-height: 100vh;
+	padding: 90px 7vw 70px;
+
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	align-items: center;
+	gap: 7vw;
+
+	background: var(--gistda-deep);
+	color: white;
+}
+
+.gistda-project-number {
+	margin-bottom: 42px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.95rem !important;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.gistda-main-title {
+	margin-bottom: 45px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(5rem, 10vw, 10rem);
+	font-weight: 300;
+	line-height: 0.82;
+	letter-spacing: -0.05em;
+
+	color: var(--gistda-cream);
+}
+
+.gistda-meta {
+	padding: 20px 0;
+
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.7);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.gistda-meta p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.07em;
+}
+
+.gistda-intro {
+	max-width: 620px;
+	margin-top: 38px;
+
+	font-size: 1.35rem !important;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+/* =========================================
+   HERO PHOTO STACK
+========================================= */
+
+.gistda-hero-visual {
+	position: relative;
+
+	width: 100%;
+	height: 650px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* STACK CONTAINER */
+
+.gistda-photo-stack {
+	position: relative;
+
+	width: 100%;
+	max-width: 720px;
+	height: 620px;
+}
+
+/* =========================================
+   GENERAL PHOTO
+========================================= */
+
+.gistda-hero-photo {
+	position: absolute;
+
+	overflow: hidden;
+
+	background: #ffffff;
+
+	box-shadow:
+		0 25px 60px rgba(0, 0, 0, 0.3),
+		0 8px 20px rgba(0, 0, 0, 0.15);
+
+	cursor: pointer;
+
+	transform-origin: center;
+}
+
+/* IMAGE */
+
+.gistda-hero-photo img {
+	width: 100%;
+	height: 100%;
+
+	display: block;
+
+	object-fit: cover;
+
+	transition: transform 0.5s ease;
+}
+
+/* SUBTLE IMAGE ZOOM */
+
+.gistda-hero-photo:hover img {
+	transform: scale(1.035);
+}
+
+/* PHOTO NUMBER */
+
+.gistda-hero-photo > span {
+	position: absolute;
+
+	right: 15px;
+	bottom: 13px;
+
+	width: 35px;
+	height: 35px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 50%;
+
+	background: rgba(28, 45, 64, 0.85);
+
+	color: white;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.65rem;
+	letter-spacing: 0.08em;
+
+	backdrop-filter: blur(5px);
+}
+
+/* =========================================
+   PHOTO 1 — LEFT
+========================================= */
+
+.gistda-photo-1 {
+	width: 42%;
+	height: 56%;
+
+	left: 0;
+	top: 17%;
+
+	z-index: 1;
+
+	transform: rotate(-7deg);
+}
+
+/* =========================================
+   PHOTO 2 — MAIN
+========================================= */
+
+.gistda-photo-2 {
+	width: 55%;
+	height: 75%;
+
+	left: 22%;
+	top: 5%;
+
+	z-index: 3;
+
+	transform: rotate(1deg);
+}
+
+/* =========================================
+   PHOTO 3 — RIGHT
+========================================= */
+
+.gistda-photo-3 {
+	width: 41%;
+	height: 54%;
+
+	right: 0;
+	top: 28%;
+
+	z-index: 2;
+
+	transform: rotate(7deg);
+}
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.gistda-photo-caption {
+	position: absolute;
+
+	left: 4%;
+	bottom: 2%;
+
+	z-index: 6;
+
+	padding-left: 15px;
+
+	border-left: 1px solid var(--gistda-cream);
+}
+
+.gistda-photo-caption span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.65rem;
+
+	letter-spacing: 0.18em;
+
+	color: var(--gistda-cream);
+}
+
+.gistda-photo-caption p {
+	margin: 4px 0 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+
+	letter-spacing: 0.05em;
+
+	color: rgba(255, 255, 255, 0.65);
+}
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+.gistda-section {
+	padding: 120px 7vw;
+}
+
+.gistda-section-heading {
+	margin-bottom: 70px;
+
+	display: flex;
+	align-items: baseline;
+	gap: 40px;
+}
+
+.gistda-section-heading > span,
+.gistda-experience-title > span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.16em;
+}
+
+.gistda-section-heading h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(4rem, 8vw, 7rem);
+	font-weight: 200;
+
+	line-height: 0.85;
+	letter-spacing: -0.045em;
+}
+
+.gistda-large-text {
+	font-size: clamp(1.8rem, 3vw, 3rem) !important;
+	line-height: 1.25 !important;
+	letter-spacing: -0.02em;
+}
+
+/* =========================================
+   01 — INTERNSHIP
+========================================= */
+
+.gistda-internship {
+	background: white;
+
+	border-bottom: 1px solid var(--gistda-black);
+}
+
+.gistda-overview-grid {
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
+	gap: 9vw;
+}
+
+.gistda-overview-copy {
+	max-width: 750px;
+}
+
+.gistda-details {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 45px 35px;
+}
+
+.gistda-details > div {
+	padding-top: 15px;
+
+	border-top: 1px solid var(--gistda-black);
+}
+
+.gistda-details h3 {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.gistda-details p {
+	margin-bottom: 0;
+	color: var(--gistda-grey);
+}
+
+/* =========================================
+   02 — CAL/VAL
+========================================= */
+
+.gistda-calval {
+	background: var(--gistda-dark);
+	color: white;
+}
+
+.gistda-light-heading {
+	color: white;
+}
+
+.gistda-calval-intro {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 9vw;
+
+	margin-bottom: 120px;
+}
+
+.gistda-calval-intro > div:last-child {
+	max-width: 600px;
+	padding-top: 15px;
+
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================
+   CAL/VAL INTRO
+========================================= */
+
+.gistda-calval-copy {
+	max-width: 620px;
+}
+
+.gistda-calval-copy p {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.gistda-calval-copy p:last-child {
+	margin-bottom: 0;
+}
+
+/* =========================================
+   CAL/VAL TEAM GALLERY
+========================================= */
+
+.gistda-calval-gallery {
+	width: 100%;
+
+	margin: 0 0 130px;
+
+	display: grid;
+	grid-template-columns: 1.25fr 0.75fr;
+
+	gap: 18px;
+}
+
+/* RIGHT COLUMN */
+
+.gistda-calval-gallery-side {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+
+	gap: 18px;
+}
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.gistda-calval-photo {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	min-height: 280px;
+
+	overflow: hidden;
+
+	background: rgba(255, 255, 255, 0.08);
+}
+
+/* MAIN PHOTO */
+
+.gistda-calval-photo-main {
+	min-height: 650px;
+}
+
+/* IMAGE */
+
+.gistda-calval-photo img {
+	width: 100%;
+	height: 100%;
+
+	display: block;
+
+	object-fit: cover;
+
+	transition: transform 0.6s ease;
+}
+
+/* HOVER */
+
+.gistda-calval-photo:hover img {
+	transform: scale(1.04);
+}
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.gistda-calval-photo-caption {
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	padding: 45px 20px 18px;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 20px;
+
+	background: linear-gradient(to top, rgba(20, 35, 50, 0.85), transparent);
+
+	pointer-events: none;
+}
+
+.gistda-calval-photo-caption span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.7rem;
+
+	letter-spacing: 0.14em;
+
+	color: var(--gistda-cream);
+}
+
+.gistda-calval-photo-caption p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+
+	letter-spacing: 0.06em;
+
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================
+   CAL/VAL BRANDING
+========================================= */
+
+.gistda-calval-branding {
+	margin-top: 20px;
+	margin-bottom: 150px;
+}
+
+/* BRAND VISUAL */
+
+.gistda-calval-branding-visual {
+	position: relative;
+
+	width: 100%;
+
+	margin-top: 55px;
+
+	overflow: hidden;
+
+	background: #17384d;
+}
+
+/* IMAGE */
+
+.gistda-calval-branding-visual img {
+	width: 100%;
+	height: auto;
+
+	display: block;
+
+	transition:
+		transform 0.8s ease,
+		filter 0.8s ease;
+}
+
+/* VERY SUBTLE INTERACTION */
+
+.gistda-calval-branding-visual:hover img {
+	transform: scale(1.015);
+}
+
+/* CAPTION */
+
+.gistda-branding-caption {
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	padding: 70px 30px 25px;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 30px;
+
+	background: linear-gradient(to top, rgba(13, 34, 49, 0.9), transparent);
+
+	pointer-events: none;
+}
+
+.gistda-branding-caption span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.75rem;
+
+	letter-spacing: 0.16em;
+
+	color: #f6dcbc;
+}
+
+.gistda-branding-caption p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+
+	letter-spacing: 0.06em;
+
+	color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 700px) {
+	.gistda-calval-branding {
+		margin-bottom: 90px;
+	}
+
+	.gistda-calval-branding-visual {
+		margin-top: 35px;
+	}
+
+	.gistda-calval-branding-visual img {
+		min-height: 260px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.gistda-branding-caption {
+		padding: 60px 18px 16px;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 5px;
+	}
+
+	.gistda-branding-caption span {
+		font-size: 0.65rem;
+	}
+
+	.gistda-branding-caption p {
+		font-size: 0.7rem;
+	}
+}
+
+/* =========================================
+   WORK LABEL
+========================================= */
+
+.gistda-work-label {
+	padding: 20px 0;
+	margin-bottom: 45px;
+
+	display: grid;
+	grid-template-columns: 60px 1fr auto;
+	gap: 30px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.gistda-work-label > span:first-child {
+	font-family: "Josefin Sans", sans-serif;
+	letter-spacing: 0.12em;
+}
+
+.gistda-work-label h3 {
+	margin-bottom: 8px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.gistda-work-label p {
+	max-width: 550px;
+	margin-bottom: 0;
+
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.gistda-drag-label {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.7rem;
+	letter-spacing: 0.15em;
+
+	color: var(--gistda-cream);
+}
+
+/* =========================================
+   STICKER SLIDER
+========================================= */
+
+.gistda-sticker-section {
+	margin-bottom: 150px;
+}
+
+.gistda-sticker-window {
+	width: calc(100% + 7vw);
+
+	overflow: hidden;
+
+	cursor: grab;
+}
+
+.gistda-sticker-window:active {
+	cursor: grabbing;
+}
+
+.gistda-sticker-track {
+	width: max-content;
+
+	padding: 30px 7vw 50px 0;
+
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+/* STICKER CARD */
+
+.gistda-sticker-card {
+	width: 260px;
+	height: 260px;
+
+	flex: 0 0 auto;
+
+	padding: 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(255, 255, 255, 0.08);
+
+	border: 1px solid rgba(255, 255, 255, 0.15);
+
+	cursor: grab;
+}
+
+/* Slightly different shapes */
+
+.gistda-sticker-card:nth-child(3n + 1) {
+	border-radius: 50%;
+}
+
+.gistda-sticker-card:nth-child(3n + 2) {
+	border-radius: 35px;
+}
+
+.gistda-sticker-card:nth-child(3n + 3) {
+	border-radius: 50% 50% 20px 20px;
+}
+
+.gistda-sticker-placeholder {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	border: 1px dashed rgba(255, 255, 255, 0.3);
+
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.gistda-sticker-placeholder span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 2rem;
+	font-weight: 200;
+}
+
+.gistda-sticker-placeholder p {
+	margin: 10px 0 0;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.75rem;
+
+	letter-spacing: 0.1em;
+}
+
+/* =========================================
+   POSTER SHOWCASE
+========================================= */
+
+.gistda-poster-showcase {
+	margin-top: 150px;
+}
+
+/* =========================================
+   POSTER GRID
+========================================= */
+
+.gistda-poster-grid {
+	margin-top: 65px;
+
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(350px, 0.65fr);
+
+	justify-content: space-between;
+	align-items: center;
+
+	gap: 10vw;
+}
+
+/* =========================================
+   COPY
+========================================= */
+
+.gistda-poster-copy {
+	max-width: 600px;
+}
+
+.gistda-poster-copy > p:not(.gistda-large-text) {
+	max-width: 520px;
+
+	color: rgba(255, 255, 255, 0.65);
+}
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.gistda-poster-details {
+	margin-top: 60px;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	gap: 20px;
+}
+
+.gistda-poster-details > div {
+	padding-top: 14px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.gistda-poster-details span {
+	display: block;
+
+	margin-bottom: 8px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.65rem;
+	letter-spacing: 0.16em;
+
+	color: var(--gistda-cream);
+}
+
+.gistda-poster-details p {
+	margin: 0;
+
+	font-size: 0.9rem;
+
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================
+   POSTER
+========================================= */
+
+.gistda-poster-visual {
+	position: relative;
+
+	width: 100%;
+	max-width: 480px;
+
+	justify-self: end;
+
+	padding: 12px;
+
+	background: rgba(255, 255, 255, 0.06);
+
+	box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* IMAGE */
+
+.gistda-poster-visual img {
+	width: 100%;
+	height: auto;
+
+	display: block;
+}
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.gistda-poster-caption {
+	position: absolute;
+
+	left: -55px;
+	bottom: 10px;
+
+	transform: rotate(-90deg);
+	transform-origin: left bottom;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.6rem;
+
+	letter-spacing: 0.14em;
+
+	text-transform: uppercase;
+
+	color: rgba(255, 255, 255, 0.45);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+	.gistda-poster-grid {
+		grid-template-columns: 1fr 0.75fr;
+
+		gap: 60px;
+	}
+
+	.gistda-poster-visual {
+		max-width: 420px;
+	}
+
+	.gistda-poster-details {
+		grid-template-columns: 1fr;
+		gap: 15px;
+	}
+}
+
+/* =========================================
+   THEOS EARTH MAGAZINE
+========================================= */
+
+.gistda-magazine-section {
+	width: 100%;
+
+	padding: 120px 7vw 140px;
+
+	background: #ffffff;
+	color: #111111;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.gistda-magazine-heading {
+	margin-bottom: 80px;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	gap: 40px;
+}
+
+.gistda-magazine-heading > div {
+	display: flex;
+	align-items: baseline;
+
+	gap: 35px;
+}
+
+.gistda-magazine-heading > div > span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.85rem;
+	letter-spacing: 0.16em;
+}
+
+.gistda-magazine-heading h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(3.5rem, 6vw, 6.5rem);
+
+	font-weight: 300;
+	line-height: 0.9;
+
+	letter-spacing: -0.04em;
+}
+
+.gistda-magazine-type {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.7rem;
+	letter-spacing: 0.14em;
+
+	color: #777777;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.gistda-magazine-intro {
+	margin-bottom: 100px;
+
+	display: grid;
+	grid-template-columns: 1fr 0.75fr;
+
+	gap: 10vw;
+}
+
+.gistda-magazine-large-text {
+	max-width: 750px;
+
+	margin: 0;
+
+	font-size: clamp(2rem, 3.5vw, 3.5rem) !important;
+
+	line-height: 1.2 !important;
+	letter-spacing: -0.025em;
+}
+
+.gistda-magazine-intro > div {
+	max-width: 550px;
+}
+
+.gistda-magazine-intro > div p {
+	color: #666666;
+}
+
+/* =========================================
+   VIEWER
+========================================= */
+
+.gistda-magazine-viewer {
+	width: 100%;
+
+	border-top: 1px solid #cccccc;
+}
+
+/* TOP BAR */
+
+.gistda-magazine-toolbar {
+	padding: 22px 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-bottom: 1px solid #cccccc;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.75rem;
+
+	letter-spacing: 0.16em;
+}
+
+/* =========================================
+   BOOK
+========================================= */
+
+.gistda-magazine-book {
+	position: relative;
+
+	width: 100%;
+
+	padding: 65px 95px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 35px;
+}
+
+/* =========================================
+   MAGAZINE SPREAD
+========================================= */
+
+.gistda-magazine-spread {
+	position: relative;
+
+	width: 100%;
+	max-width: 1450px;
+
+	display: flex;
+	justify-content: center;
+
+	background: #ffffff;
+
+	box-shadow:
+		0 25px 65px rgba(0, 0, 0, 0.09),
+		0 5px 15px rgba(0, 0, 0, 0.04);
+
+	overflow: hidden;
+}
+
+.gistda-magazine-spread img {
+	width: 100%;
+	height: auto;
+
+	display: block;
+
+	object-fit: contain;
+}
+
+/* small centre line to emphasise that it's a spread */
+
+.gistda-magazine-spread::after {
+	content: "";
+
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 50%;
+
+	width: 1px;
+
+	background: rgba(0, 0, 0, 0.16);
+
+	pointer-events: none;
+}
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.gistda-magazine-arrow {
+	width: 68px;
+	height: 68px;
+
+	flex: 0 0 68px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 1px solid #111111;
+	border-radius: 50%;
+
+	background: #ffffff;
+
+	color: #111111;
+
+	font-size: 1.6rem;
+
+	cursor: pointer;
+
+	transition:
+		background 0.25s ease,
+		color 0.25s ease,
+		transform 0.25s ease;
+}
+
+.gistda-magazine-arrow:hover {
+	background: #111111;
+	color: #ffffff;
+
+	transform: scale(1.05);
+}
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.gistda-magazine-bottom {
+	display: grid;
+	grid-template-columns: 1fr auto;
+
+	align-items: center;
+
+	gap: 50px;
+
+	padding-top: 25px;
+
+	border-top: 1px solid #cccccc;
+}
+
+.gistda-magazine-progress {
+	position: relative;
+
+	width: 100%;
+	height: 1px;
+
+	overflow: hidden;
+
+	background: #d5d5d5;
+}
+
+.gistda-magazine-progress-fill {
+	height: 100%;
+
+	background: #111111;
+
+	transition: width 0.4s ease;
+}
+
+.gistda-magazine-bottom p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.7rem;
+
+	letter-spacing: 0.12em;
+
+	color: #999999;
+}
+
+@media (max-width: 700px) {
+	.gistda-magazine-section {
+		padding: 85px 24px 95px;
+	}
+
+	/* HEADING */
+
+	.gistda-magazine-heading {
+		margin-bottom: 55px;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 20px;
+	}
+
+	.gistda-magazine-heading > div {
+		gap: 18px;
+	}
+
+	.gistda-magazine-heading h2 {
+		font-size: clamp(3rem, 14vw, 4.5rem);
+	}
+
+	/* INTRO */
+
+	.gistda-magazine-intro {
+		margin-bottom: 65px;
+
+		grid-template-columns: 1fr;
+
+		gap: 30px;
+	}
+
+	.gistda-magazine-large-text {
+		font-size: 1.8rem !important;
+	}
+
+	/* TOOLBAR */
+
+	.gistda-magazine-toolbar {
+		font-size: 0.58rem;
+
+		letter-spacing: 0.1em;
+	}
+
+	/* BOOK */
+
+	.gistda-magazine-book {
+		padding: 40px 0 30px;
+
+		gap: 8px;
+	}
+
+	/* ARROWS */
+
+	.gistda-magazine-arrow {
+		width: 38px;
+		height: 38px;
+
+		flex-basis: 38px;
+
+		font-size: 1rem;
+	}
+
+	/* MAGAZINE */
+
+	.gistda-magazine-spread {
+		box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+	}
+
+	/* BOTTOM */
+
+	.gistda-magazine-bottom {
+		grid-template-columns: 1fr;
+
+		gap: 15px;
+
+		padding-top: 18px;
+	}
+
+	.gistda-magazine-bottom p {
+		font-size: 0.58rem;
+	}
+}
+
+//* =========================================
+   SPACE PROMOTION
+========================================= */
+
+.gistda-space-promotion {
+	background: #ffffff;
+	color: #111111;
+}
+
+.gistda-rahu-grid {
+	display: grid;
+	grid-template-columns: 0.85fr 1.15fr;
+	gap: 8vw;
+	align-items: center;
+}
+
+.gistda-rahu-copy {
+	max-width: 620px;
+}
+
+.gistda-rahu-copy > p:not(.gistda-large-text) {
+	max-width: 560px;
+	color: #666666;
+}
+
+.gistda-rahu-copy strong {
+	font-weight: 600;
+	color: #111111;
+}
+
+/* STATUS */
+
+.gistda-project-status {
+	margin-top: 55px;
+	padding-top: 20px;
+	border-top: 1px solid #111111;
+}
+
+.gistda-project-status > span {
+	display: block;
+	margin-bottom: 12px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.78rem;
+	font-weight: 500;
+	letter-spacing: 0.18em;
+}
+
+.gistda-project-status p {
+	margin: 0;
+	max-width: 480px;
+}
+
+/* LOGO VISUAL */
+
+.gistda-rahu-visual {
+	width: 100%;
+}
+
+.gistda-rahu-image-wrapper {
+	position: relative;
+
+	width: 100%;
+	min-height: 650px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 50px;
+
+	background: #000000;
+
+	overflow: hidden;
+}
+
+/* subtle background detail */
+
+.gistda-rahu-image-wrapper::before {
+	content: "";
+	position: absolute;
+
+	width: 420px;
+	height: 420px;
+
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 50%;
+}
+
+/* actual artwork */
+
+.gistda-rahu-image {
+	position: relative;
+	z-index: 1;
+
+	display: block;
+
+	width: min(100%, 650px);
+	max-height: 600px;
+
+	object-fit: contain;
+
+	transition:
+		transform 0.5s ease,
+		filter 0.5s ease;
+}
+
+.gistda-rahu-visual:hover .gistda-rahu-image {
+	transform: scale(1.035);
+}
+
+/* CAPTION */
+
+.gistda-rahu-caption {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+
+	padding-top: 18px;
+
+	border-top: 1px solid #111111;
+}
+
+.gistda-rahu-caption span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.75rem;
+	letter-spacing: 0.16em;
+}
+
+.gistda-rahu-caption p {
+	margin: 0;
+
+	font-size: 0.95rem;
+	color: #777777;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+	.gistda-rahu-grid {
+		grid-template-columns: 1fr;
+		gap: 70px;
+	}
+
+	.gistda-rahu-copy {
+		max-width: 700px;
+	}
+
+	.gistda-rahu-image-wrapper {
+		min-height: 580px;
+	}
+}
+
+/* =========================================
+   MOBILE — COMPLETE
+========================================= */
+
+@media (max-width: 700px) {
+	/* =========================================
+	   GLOBAL
+	========================================= */
+
+	.gistda-page {
+		overflow-x: hidden;
+	}
+
+	.gistda-page p {
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+
+	/* remove unnecessary CSS interactions on mobile */
+
+	.gistda-hero-photo img,
+	.gistda-calval-photo img,
+	.gistda-calval-branding-visual img,
+	.gistda-rahu-image,
+	.gistda-magazine-progress-fill,
+	.gistda-back-link,
+	.gistda-next-project strong {
+		transition: none !important;
+	}
+
+	.gistda-hero-photo:hover img,
+	.gistda-calval-photo:hover img,
+	.gistda-calval-branding-visual:hover img,
+	.gistda-rahu-visual:hover .gistda-rahu-image {
+		transform: none !important;
+	}
+
+	/* =========================================
+	   HERO
+	========================================= */
+
+	.gistda-hero {
+		min-height: auto;
+
+		padding: 95px 24px 55px;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: stretch;
+
+		gap: 45px;
+	}
+
+	/* HERO COPY */
+
+	.gistda-hero-copy {
+		width: 100%;
+	}
+
+	.gistda-project-number {
+		margin-bottom: 28px;
+
+		font-size: 0.72rem !important;
+
+		letter-spacing: 0.13em;
+	}
+
+	.gistda-main-title {
+		margin-bottom: 30px;
+
+		font-size: clamp(4rem, 20vw, 5.8rem);
+
+		line-height: 0.9;
+	}
+
+	.gistda-meta {
+		padding: 16px 0;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 4px;
+	}
+
+	.gistda-meta p {
+		font-size: 0.75rem;
+		line-height: 1.5;
+	}
+
+	.gistda-intro {
+		max-width: none;
+
+		margin-top: 25px;
+
+		font-size: 1.1rem !important;
+
+		line-height: 1.55;
+	}
+
+	/* =========================================
+	   HERO — SWIPE GALLERY
+	========================================= */
+
+	.gistda-hero-visual {
+		width: calc(100% + 48px);
+
+		height: auto;
+
+		margin-left: -24px;
+
+		display: block;
+
+		overflow: hidden;
+	}
+
+	/*
+	   Turn old desktop photo stack
+	   into horizontal mobile carousel
+	*/
+
+	.gistda-photo-stack {
+		position: relative;
+
+		width: 100%;
+		max-width: none;
+
+		height: auto;
+
+		display: flex;
+
+		gap: 14px;
+
+		padding: 10px 24px 30px;
+
+		overflow-x: auto;
+		overflow-y: hidden;
+
+		scroll-snap-type: x mandatory;
+
+		-webkit-overflow-scrolling: touch;
+
+		scrollbar-width: none;
+
+		cursor: default;
+	}
+
+	.gistda-photo-stack::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* EACH PHOTO */
+
+	.gistda-hero-photo,
+	.gistda-photo-1,
+	.gistda-photo-2,
+	.gistda-photo-3 {
+		position: relative;
+
+		top: auto;
+		left: auto;
+		right: auto;
+
+		width: 82vw;
+		height: 480px;
+
+		max-width: 390px;
+
+		flex: 0 0 82vw;
+
+		z-index: auto;
+
+		transform: none !important;
+
+		scroll-snap-align: center;
+
+		background: rgba(255, 255, 255, 0.04);
+
+		box-shadow: none;
+
+		cursor: default;
+	}
+
+	/* FULL PHOTO VISIBLE */
+
+	.gistda-hero-photo img {
+		width: 100%;
+		height: 100%;
+
+		display: block;
+
+		object-fit: contain;
+
+		object-position: center;
+
+		transform: none !important;
+	}
+
+	/* number */
+
+	.gistda-hero-photo > span {
+		right: 12px;
+		bottom: 12px;
+
+		width: 30px;
+		height: 30px;
+
+		font-size: 0.58rem;
+	}
+
+	/* HERO CAPTION */
+
+	.gistda-photo-caption {
+		position: relative;
+
+		left: auto;
+		bottom: auto;
+
+		width: calc(100% - 48px);
+
+		margin: 0 24px;
+
+		padding: 15px 0 0 12px;
+	}
+
+	.gistda-photo-caption span {
+		font-size: 0.58rem;
+	}
+
+	.gistda-photo-caption p {
+		font-size: 0.7rem;
+	}
+
+	/* =========================================
+	   GENERAL SECTIONS
+	========================================= */
+
+	.gistda-section {
+		padding: 80px 24px;
+	}
+
+	.gistda-section-heading {
+		margin-bottom: 45px;
+
+		align-items: baseline;
+
+		gap: 15px;
+	}
+
+	.gistda-section-heading > span {
+		font-size: 0.7rem;
+	}
+
+	.gistda-section-heading h2 {
+		font-size: clamp(3rem, 14vw, 4.5rem);
+
+		line-height: 0.9;
+	}
+
+	.gistda-large-text {
+		font-size: 1.5rem !important;
+
+		line-height: 1.3 !important;
+	}
+
+	/* =========================================
+	   01 — INTERNSHIP
+	========================================= */
+
+	.gistda-overview-grid {
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 45px;
+	}
+
+	.gistda-overview-copy {
+		max-width: none;
+	}
+
+	.gistda-details {
+		grid-template-columns: 1fr;
+
+		gap: 25px;
+	}
+
+	/* =========================================
+	   02 — CAL/VAL INTRO
+	========================================= */
+
+	.gistda-calval-intro {
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 20px;
+
+		margin-bottom: 65px;
+	}
+
+	.gistda-calval-intro > div:last-child {
+		max-width: none;
+
+		padding-top: 0;
+	}
+
+	.gistda-calval-copy {
+		max-width: none;
+	}
+
+	/* =========================================
+	   CAL/VAL PHOTOS
+	========================================= */
+
+	.gistda-calval-gallery {
+		margin-bottom: 80px;
+
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 12px;
+	}
+
+	.gistda-calval-gallery-side {
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 12px;
+	}
+
+	.gistda-calval-photo,
+	.gistda-calval-photo-main {
+		width: 100%;
+
+		height: auto;
+
+		min-height: 0;
+
+		aspect-ratio: 4 / 3;
+	}
+
+	.gistda-calval-photo img {
+		object-fit: cover;
+
+		transform: none !important;
+	}
+
+	.gistda-calval-photo-caption {
+		padding: 50px 15px 14px;
+	}
+
+	.gistda-calval-photo-caption span {
+		font-size: 0.6rem;
+	}
+
+	.gistda-calval-photo-caption p {
+		font-size: 0.7rem;
+	}
+
+	/* =========================================
+	   CAL/VAL BRANDING
+	========================================= */
+
+	.gistda-calval-branding {
+		margin-top: 0;
+
+		margin-bottom: 80px;
+	}
+
+	.gistda-calval-branding-visual {
+		margin-top: 30px;
+	}
+
+	.gistda-calval-branding-visual img {
+		width: 100%;
+
+		height: auto;
+
+		min-height: 0;
+
+		object-fit: contain;
+	}
+
+	.gistda-branding-caption {
+		position: relative;
+
+		padding: 15px 0 0;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 3px;
+
+		background: none;
+	}
+
+	.gistda-branding-caption span {
+		font-size: 0.6rem;
+	}
+
+	.gistda-branding-caption p {
+		font-size: 0.7rem;
+	}
+
+	/* =========================================
+	   WORK LABEL
+	========================================= */
+
+	.gistda-work-label {
+		padding: 15px 0;
+
+		margin-bottom: 30px;
+
+		grid-template-columns: 28px 1fr;
+
+		gap: 12px;
+	}
+
+	.gistda-work-label h3 {
+		font-size: 1.25rem;
+	}
+
+	.gistda-work-label p {
+		font-size: 0.95rem;
+	}
+
+	.gistda-drag-label {
+		display: none;
+	}
+
+	/* =========================================
+	   STICKERS
+	========================================= */
+
+	.gistda-sticker-section {
+		margin-bottom: 80px;
+	}
+
+	.gistda-sticker-window {
+		width: calc(100% + 24px);
+
+		overflow-x: auto;
+
+		scrollbar-width: none;
+
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.gistda-sticker-window::-webkit-scrollbar {
+		display: none;
+	}
+
+	.gistda-sticker-track {
+		padding: 20px 24px 30px 0;
+
+		gap: 12px;
+	}
+
+	.gistda-sticker-card {
+		width: 175px;
+		height: 175px;
+
+		padding: 10px;
+
+		cursor: default;
+	}
+
+	/* =========================================
+	   POSTER
+	========================================= */
+
+	.gistda-poster-showcase {
+		margin-top: 80px;
+	}
+
+	.gistda-poster-grid {
+		margin-top: 35px;
+
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 40px;
+	}
+
+	.gistda-poster-copy {
+		max-width: none;
+	}
+
+	.gistda-poster-details {
+		margin-top: 35px;
+
+		grid-template-columns: 1fr 1fr;
+
+		gap: 15px;
+	}
+
+	.gistda-poster-visual {
+		width: 88%;
+
+		max-width: 360px;
+
+		align-self: center;
+
+		padding: 7px;
+	}
+
+	.gistda-poster-caption {
+		display: none;
+	}
+
+	/* =========================================
+	   MAGAZINE
+	========================================= */
+
+	.gistda-magazine-section {
+		padding: 80px 24px 90px;
+	}
+
+	.gistda-magazine-heading {
+		margin-bottom: 45px;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 15px;
+	}
+
+	.gistda-magazine-heading > div {
+		gap: 12px;
+	}
+
+	.gistda-magazine-heading h2 {
+		font-size: clamp(2.8rem, 13vw, 4.2rem);
+	}
+
+	.gistda-magazine-intro {
+		margin-bottom: 55px;
+
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 25px;
+	}
+
+	.gistda-magazine-large-text {
+		font-size: 1.55rem !important;
+	}
+
+	.gistda-magazine-toolbar {
+		padding: 15px 0;
+
+		font-size: 0.55rem;
+
+		letter-spacing: 0.08em;
+	}
+
+	/* BOOK */
+
+	.gistda-magazine-book {
+		padding: 30px 0 25px;
+
+		gap: 6px;
+	}
+
+	.gistda-magazine-arrow {
+		width: 34px;
+		height: 34px;
+
+		flex: 0 0 34px;
+
+		font-size: 0.9rem;
+
+		transition: none;
+	}
+
+	.gistda-magazine-arrow:hover {
+		background: white;
+
+		color: black;
+
+		transform: none;
+	}
+
+	.gistda-magazine-spread {
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+	}
+
+	.gistda-magazine-bottom {
+		padding-top: 15px;
+
+		grid-template-columns: 1fr;
+
+		gap: 12px;
+	}
+
+	.gistda-magazine-bottom p {
+		font-size: 0.55rem;
+	}
+
+	/* =========================================
+	   03 — SPACE PROMOTION
+	========================================= */
+
+	.gistda-rahu-grid {
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 45px;
+	}
+
+	.gistda-rahu-copy {
+		max-width: none;
+	}
+
+	.gistda-project-status {
+		margin-top: 35px;
+	}
+
+	.gistda-rahu-image-wrapper {
+		width: 100%;
+
+		min-height: 350px;
+
+		padding: 20px;
+	}
+
+	.gistda-rahu-image-wrapper::before {
+		width: 230px;
+		height: 230px;
+	}
+
+	.gistda-rahu-image {
+		width: 100%;
+
+		max-height: 330px;
+
+		transform: none !important;
+	}
+
+	.gistda-rahu-caption {
+		padding-top: 14px;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 4px;
+	}
+
+	/* =========================================
+	   04 — EXPERIENCE
+	========================================= */
+
+	.gistda-experience {
+		display: flex;
+
+		flex-direction: column;
+
+		gap: 40px;
+	}
+
+	.gistda-experience-title {
+		gap: 15px;
+	}
+
+	.gistda-experience-title h2 {
+		font-size: clamp(3.2rem, 15vw, 4.7rem);
+	}
+
+	.gistda-experience-copy {
+		padding-top: 0;
+	}
+
+	.gistda-experience-tags {
+		margin-top: 35px;
+
+		gap: 7px;
+	}
+
+	.gistda-experience-tags span {
+		padding: 8px 13px;
+
+		font-size: 0.65rem;
+	}
+
+	/* =========================================
+	   NAVIGATION
+	========================================= */
+
+	.gistda-navigation {
+		padding: 55px 24px;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 40px;
+	}
+
+	.gistda-next-project {
+		align-items: flex-start;
+	}
+
+	.gistda-next-project strong {
+		font-size: 2.1rem;
+	}
+}
+
+/* =========================================
+   EXTRA SMALL PHONE
+========================================= */
+
+@media (max-width: 420px) {
+	.gistda-hero-photo,
+	.gistda-photo-1,
+	.gistda-photo-2,
+	.gistda-photo-3 {
+		width: 84vw;
+		height: 430px;
+
+		flex-basis: 84vw;
+	}
+
+	.gistda-main-title {
+		font-size: 4rem;
+	}
+
+	.gistda-section-heading h2 {
+		font-size: 2.8rem;
+	}
+
+	.gistda-poster-details {
+		grid-template-columns: 1fr;
+	}
+
+	.gistda-sticker-card {
+		width: 160px;
+		height: 160px;
+	}
+}
+
+/* =========================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+	.gistda-page *,
+	.gistda-page *::before,
+	.gistda-page *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+
+		transition-duration: 0.01ms !important;
+
+		scroll-behavior: auto !important;
+	}
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+	.gistda-rahu-grid {
+		gap: 50px;
+	}
+
+	.gistda-project-status {
+		margin-top: 40px;
+	}
+
+	.gistda-rahu-image-wrapper {
+		min-height: 420px;
+		padding: 25px;
+	}
+
+	.gistda-rahu-image-wrapper::before {
+		width: 270px;
+		height: 270px;
+	}
+
+	.gistda-rahu-image {
+		width: 100%;
+		max-height: 390px;
+	}
+
+	.gistda-rahu-caption {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 5px;
+	}
+}
+
+/* =========================================
+   04 — EXPERIENCE
+========================================= */
+
+.gistda-experience {
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	gap: 9vw;
+
+	background: var(--gistda-light);
+}
+
+.gistda-experience-title {
+	display: flex;
+	gap: 35px;
+}
+
+.gistda-experience-title h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(4rem, 8vw, 7rem);
+	font-weight: 200;
+
+	line-height: 0.85;
+	letter-spacing: -0.045em;
+}
+
+.gistda-experience-copy {
+	padding-top: 60px;
+}
+
+/* TAGS */
+
+.gistda-experience-tags {
+	margin-top: 50px;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	gap: 10px;
+}
+
+.gistda-experience-tags span {
+	padding: 10px 18px;
+
+	border: 1px solid var(--gistda-black);
+	border-radius: 100px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.75rem;
+	letter-spacing: 0.07em;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.gistda-navigation {
+	padding: 75px 7vw;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	gap: 40px;
+}
+
+.gistda-back-link,
+.gistda-next-project {
+	color: var(--gistda-black);
+	text-decoration: none;
+}
+
+.gistda-back-link {
+	font-family: "Josefin Sans", sans-serif;
+
+	letter-spacing: 0.06em;
+}
+
+.gistda-next-project {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	gap: 8px;
+}
+
+.gistda-next-project span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.85rem;
+	letter-spacing: 0.1em;
+
+	color: var(--gistda-grey);
+}
+
+.gistda-next-project strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 300;
+}
+
+.gistda-back-link,
+.gistda-next-project strong {
+	transition: opacity 0.25s ease;
+}
+
+.gistda-back-link:hover,
+.gistda-next-project:hover strong {
+	opacity: 0.5;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+	.gistda-hero,
+	.gistda-overview-grid,
+	.gistda-calval-intro,
+	.gistda-poster-grid,
+	.gistda-rahu-grid,
+	.gistda-experience {
+		grid-template-columns: 1fr;
+	}
+
+	.gistda-hero {
+		padding-top: 130px;
+		gap: 70px;
+	}
+
+	.gistda-hero-placeholder {
+		min-height: 550px;
+	}
+
+	.gistda-calval-intro {
+		gap: 20px;
+	}
+
+	.gistda-poster-grid {
+		gap: 50px;
+	}
+
+	.gistda-rahu-grid {
+		gap: 60px;
+	}
+
+	.gistda-experience-copy {
+		padding-top: 0;
+	}
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+	.gistda-page p {
+		font-size: 1.05rem;
+	}
+
+	/* HERO */
+
+	.gistda-hero {
+		min-height: auto;
+
+		padding: 100px 24px 70px;
+
+		gap: 55px;
+	}
+
+	.gistda-main-title {
+		font-size: clamp(4rem, 20vw, 6rem);
+	}
+
+	.gistda-meta {
+		flex-direction: column;
+
+		gap: 5px;
+	}
+
+	.gistda-hero-placeholder {
+		min-height: 400px;
+	}
+
+	/* GENERAL */
+
+	.gistda-section {
+		padding: 85px 24px;
+	}
+
+	.gistda-section-heading {
+		margin-bottom: 50px;
+
+		gap: 20px;
+	}
+
+	.gistda-section-heading h2 {
+		font-size: clamp(3.2rem, 15vw, 5rem);
+	}
+
+	.gistda-large-text {
+		font-size: 1.65rem !important;
+	}
+
+	/* DETAILS */
+
+	.gistda-details {
+		grid-template-columns: 1fr;
+
+		gap: 25px;
+	}
+
+	/* CAL VAL */
+
+	.gistda-calval-intro {
+		margin-bottom: 80px;
+	}
+
+	/* LABEL */
+
+	.gistda-work-label {
+		grid-template-columns: 35px 1fr;
+
+		gap: 15px;
+	}
+
+	.gistda-drag-label {
+		display: none;
+	}
+
+	/* STICKERS */
+
+	.gistda-sticker-section {
+		margin-bottom: 100px;
+	}
+
+	.gistda-sticker-window {
+		width: calc(100% + 24px);
+	}
+
+	.gistda-sticker-track {
+		padding-right: 24px;
+
+		gap: 15px;
+	}
+
+	.gistda-sticker-card {
+		width: 190px;
+		height: 190px;
+
+		padding: 13px;
+	}
+
+	/* POSTER */
+
+	.gistda-poster-placeholder {
+		min-height: 550px;
+	}
+
+	/* RAHU */
+
+	.gistda-rahu-placeholder {
+		min-height: 430px;
+	}
+
+	/* EXPERIENCE */
+
+	.gistda-experience-title {
+		gap: 20px;
+	}
+
+	.gistda-experience-title h2 {
+		font-size: clamp(3.5rem, 16vw, 5rem);
+	}
+
+	/* NAVIGATION */
+
+	.gistda-navigation {
+		padding: 60px 24px;
+
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.gistda-next-project {
+		align-items: flex-start;
+	}
+
+	.gistda-next-project strong {
+		font-size: 2.3rem;
+	}
+}

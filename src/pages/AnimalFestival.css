@@ -1,0 +1,924 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Afacad:wght@300;400;500;600&display=swap");
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+	--festival-dark: #24282e;
+	--festival-accent: #ffffff;
+	--festival-grey: #777777;
+	--festival-light: #f3f3f3;
+	--festival-white: #ffffff;
+	--festival-black: #111111;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+.festival-page {
+	width: 100%;
+	overflow-x: hidden;
+
+	background-color: var(--festival-white);
+	color: var(--festival-black);
+
+	font-family: "Afacad", sans-serif;
+}
+
+.festival-page * {
+	box-sizing: border-box;
+}
+
+.festival-page h1,
+.festival-page h2,
+.festival-page h3,
+.festival-page p {
+	margin-top: 0;
+}
+
+.festival-page p {
+	font-size: 1.15rem;
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.festival-hero {
+	min-height: 100vh;
+
+	padding: 90px 7vw 70px;
+
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 0.9fr)
+		minmax(430px, 1.1fr);
+
+	align-items: center;
+
+	gap: 6vw;
+
+	background-color: var(--festival-dark);
+	color: var(--festival-white);
+}
+
+
+/* HERO COPY */
+
+.festival-hero-copy {
+	min-width: 0;
+}
+
+.festival-project-number {
+	margin-bottom: 42px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.95rem !important;
+
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.festival-main-title {
+	margin-bottom: 45px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(4.5rem, 8vw, 9rem);
+	font-weight: 300;
+
+	line-height: 0.83;
+
+	letter-spacing: -0.05em;
+
+	color: var(--festival-accent);
+}
+
+.festival-meta {
+	padding: 20px 0;
+
+	display: flex;
+
+	align-items: center;
+	justify-content: space-between;
+
+	gap: 30px;
+
+	border-top: 1px solid rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.festival-meta p {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+
+	letter-spacing: 0.07em;
+}
+
+.festival-intro {
+	max-width: 570px;
+
+	margin: 38px 0 0;
+
+	font-size: 1.3rem !important;
+
+	color: #c7c7c7;
+}
+
+
+/* =========================================
+   PHONE SHOWCASE
+========================================= */
+
+.festival-hero-media {
+	width: 100%;
+	min-width: 0;
+
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.festival-phone-showcase {
+	position: relative;
+
+	width: min(100%, 760px);
+	height: 650px;
+
+	margin: 0 auto;
+}
+
+
+/* ALL PHONES */
+
+.festival-phone {
+	position: absolute;
+
+	display: block;
+
+	width: auto;
+	height: 78%;
+
+	max-width: 38%;
+
+	object-fit: contain;
+
+	filter: drop-shadow(
+		0 25px 30px rgba(0, 0, 0, 0.28)
+	);
+
+	transition:
+		transform 0.45s ease,
+		filter 0.45s ease;
+}
+
+
+/* LEFT PHONE */
+
+.festival-phone-1 {
+	left: 2%;
+	top: 14%;
+
+	transform: rotate(-7deg);
+
+	z-index: 1;
+}
+
+
+/* CENTER PHONE */
+
+.festival-phone-2 {
+	left: 50%;
+	top: 5%;
+
+	height: 88%;
+
+	transform: translateX(-50%);
+
+	z-index: 3;
+}
+
+
+/* RIGHT PHONE */
+
+.festival-phone-3 {
+	right: 2%;
+	top: 14%;
+
+	transform: rotate(7deg);
+
+	z-index: 2;
+}
+
+
+/* HOVER */
+
+.festival-phone-1:hover {
+	transform:
+		rotate(-4deg)
+		translateY(-12px);
+
+	z-index: 5;
+}
+
+.festival-phone-2:hover {
+	transform:
+		translateX(-50%)
+		translateY(-12px)
+		scale(1.02);
+
+	z-index: 5;
+}
+
+.festival-phone-3:hover {
+	transform:
+		rotate(4deg)
+		translateY(-12px);
+
+	z-index: 5;
+}
+
+.festival-phone:hover {
+	filter: drop-shadow(
+		0 35px 35px rgba(0, 0, 0, 0.38)
+	);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.festival-section {
+	padding: 120px 7vw;
+}
+
+.festival-section-heading {
+	margin-bottom: 65px;
+
+	display: flex;
+
+	align-items: baseline;
+
+	gap: 40px;
+}
+
+.festival-section-heading > span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1rem;
+
+	letter-spacing: 0.16em;
+}
+
+.festival-section-heading h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(4rem, 8vw, 7rem);
+
+	font-weight: 200;
+
+	line-height: 0.85;
+
+	letter-spacing: -0.04em;
+}
+
+
+/* =========================================
+   OVERVIEW
+========================================= */
+
+.festival-overview {
+	border-bottom: 1px solid var(--festival-black);
+}
+
+.festival-overview-grid {
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 1.1fr)
+		minmax(0, 1fr);
+
+	gap: 9vw;
+
+	align-items: start;
+}
+
+
+/* OVERVIEW COPY */
+
+.festival-overview-copy {
+	max-width: 720px;
+}
+
+.festival-overview-copy p:first-child {
+	margin-bottom: 30px;
+
+	font-size: clamp(1.7rem, 2.7vw, 2.7rem);
+
+	line-height: 1.3;
+
+	letter-spacing: -0.02em;
+}
+
+.festival-overview-copy p:last-child {
+	max-width: 600px;
+
+	color: var(--festival-grey);
+}
+
+
+/* DETAILS */
+
+.festival-details {
+	display: grid;
+
+	grid-template-columns:
+		repeat(2, minmax(0, 1fr));
+
+	gap: 45px 35px;
+}
+
+.festival-details div {
+	padding-top: 15px;
+
+	border-top: 1px solid var(--festival-black);
+}
+
+.festival-details h3 {
+	margin-bottom: 14px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	letter-spacing: 0.08em;
+
+	text-transform: uppercase;
+}
+
+.festival-details p {
+	margin-bottom: 0;
+
+	color: var(--festival-grey);
+}
+
+
+/* =========================================
+   PROTOTYPE
+========================================= */
+
+.festival-prototype {
+	background-color: var(--festival-light);
+
+	border-bottom: 1px solid var(--festival-black);
+}
+
+.festival-prototype-content {
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 1fr)
+		minmax(350px, 0.8fr);
+
+	align-items: end;
+
+	gap: 8vw;
+}
+
+.festival-prototype-copy {
+	max-width: 700px;
+}
+
+.festival-large-text {
+	margin-bottom: 28px;
+
+	font-size: clamp(1.8rem, 3vw, 3rem) !important;
+
+	line-height: 1.25 !important;
+
+	letter-spacing: -0.02em;
+}
+
+.festival-prototype-copy > p:last-child {
+	max-width: 580px;
+
+	margin-bottom: 0;
+
+	color: var(--festival-grey);
+}
+
+
+/* =========================================
+   XD LINK
+========================================= */
+
+.festival-prototype-link {
+	padding: 25px 0;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: flex-end;
+
+	gap: 25px;
+
+	border-top: 1px solid var(--festival-black);
+	border-bottom: 1px solid var(--festival-black);
+
+	color: var(--festival-black);
+
+	text-decoration: none;
+}
+
+.festival-prototype-link span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+
+	letter-spacing: 0.1em;
+
+	text-transform: uppercase;
+
+	color: var(--festival-grey);
+}
+
+.festival-prototype-link strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+
+	font-weight: 300;
+
+	text-align: right;
+
+	transition:
+		transform 0.25s ease,
+		opacity 0.25s ease;
+}
+
+.festival-prototype-link:hover strong {
+	transform: translateX(6px);
+
+	opacity: 0.55;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.festival-navigation {
+	padding: 75px 7vw;
+
+	display: flex;
+
+	align-items: flex-end;
+	justify-content: space-between;
+
+	gap: 40px;
+}
+
+.festival-back-link,
+.festival-next-project {
+	color: var(--festival-black);
+
+	text-decoration: none;
+}
+
+.festival-back-link {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1rem;
+
+	letter-spacing: 0.06em;
+
+	transition: opacity 0.25s ease;
+}
+
+.festival-next-project {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: flex-end;
+
+	gap: 8px;
+}
+
+.festival-next-project span {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+
+	letter-spacing: 0.1em;
+
+	color: var(--festival-grey);
+}
+
+.festival-next-project strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(2rem, 4vw, 4rem);
+
+	font-weight: 300;
+
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+}
+
+.festival-back-link:hover {
+	opacity: 0.55;
+}
+
+.festival-next-project:hover strong {
+	opacity: 0.55;
+
+	transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+	/* HERO */
+
+	.festival-hero {
+		min-height: auto;
+
+		padding:
+			130px 7vw
+			90px;
+
+		grid-template-columns: 1fr;
+
+		gap: 60px;
+	}
+
+	.festival-hero-copy {
+		max-width: 800px;
+	}
+
+	.festival-main-title {
+		font-size: clamp(5rem, 14vw, 8rem);
+	}
+
+	.festival-intro {
+		max-width: 650px;
+	}
+
+
+	/* PHONES */
+
+	.festival-phone-showcase {
+		width: min(100%, 720px);
+
+		height: 600px;
+	}
+
+	.festival-phone {
+		height: 76%;
+
+		max-width: 37%;
+	}
+
+	.festival-phone-2 {
+		height: 86%;
+	}
+
+
+	/* OVERVIEW */
+
+	.festival-overview-grid {
+		grid-template-columns: 1fr;
+
+		gap: 70px;
+	}
+
+	.festival-overview-copy {
+		max-width: 760px;
+	}
+
+	.festival-details {
+		max-width: 750px;
+	}
+
+
+	/* PROTOTYPE */
+
+	.festival-prototype-content {
+		grid-template-columns: 1fr;
+
+		gap: 55px;
+	}
+
+	.festival-prototype-link {
+		max-width: 650px;
+
+		align-items: flex-start;
+	}
+
+	.festival-prototype-link strong {
+		text-align: left;
+	}
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+	/* GENERAL */
+
+	.festival-page p {
+		font-size: 1.05rem;
+	}
+
+	.festival-section {
+		padding: 85px 24px;
+	}
+
+
+	/* =====================================
+	   HERO
+	===================================== */
+
+	.festival-hero {
+		min-height: auto;
+
+		padding:
+			100px 24px
+			60px;
+
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	.festival-project-number {
+		margin-bottom: 30px;
+
+		font-size: 0.78rem !important;
+	}
+
+	.festival-main-title {
+		margin-bottom: 35px;
+
+		font-size: clamp(3.7rem, 18vw, 5.7rem);
+
+		line-height: 0.88;
+	}
+
+	.festival-meta {
+		padding: 16px 0;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 6px;
+	}
+
+	.festival-meta p {
+		font-size: 0.78rem;
+	}
+
+	.festival-intro {
+		margin-top: 28px;
+
+		font-size: 1.12rem !important;
+	}
+
+
+	/* =====================================
+	   PHONE SHOWCASE
+	===================================== */
+
+	.festival-hero-media {
+		width: calc(100% + 20px);
+
+		margin-left: -10px;
+	}
+
+	.festival-phone-showcase {
+		width: 100%;
+
+		height: 430px;
+	}
+
+	.festival-phone {
+		height: 65%;
+
+		max-width: 43%;
+
+		filter: drop-shadow(
+			0 15px 18px rgba(0, 0, 0, 0.25)
+		);
+	}
+
+	.festival-phone-1 {
+		left: -1%;
+		top: 19%;
+
+		transform: rotate(-6deg);
+	}
+
+	.festival-phone-2 {
+		left: 50%;
+		top: 5%;
+
+		height: 78%;
+
+		transform: translateX(-50%);
+	}
+
+	.festival-phone-3 {
+		right: -1%;
+		top: 19%;
+
+		transform: rotate(6deg);
+	}
+
+
+	/* NO MOVEMENT ON TOUCH */
+
+	.festival-phone-1:hover {
+		transform: rotate(-6deg);
+	}
+
+	.festival-phone-2:hover {
+		transform: translateX(-50%);
+	}
+
+	.festival-phone-3:hover {
+		transform: rotate(6deg);
+	}
+
+
+	/* =====================================
+	   HEADINGS
+	===================================== */
+
+	.festival-section-heading {
+		margin-bottom: 50px;
+
+		align-items: flex-start;
+
+		gap: 18px;
+	}
+
+	.festival-section-heading > span {
+		padding-top: 7px;
+
+		font-size: 0.8rem;
+	}
+
+	.festival-section-heading h2 {
+		font-size: clamp(3rem, 15vw, 5rem);
+
+		line-height: 0.9;
+	}
+
+
+	/* =====================================
+	   OVERVIEW
+	===================================== */
+
+	.festival-overview-grid {
+		grid-template-columns: 1fr;
+
+		gap: 55px;
+	}
+
+	.festival-overview-copy p:first-child {
+		font-size: 1.6rem;
+
+		line-height: 1.3;
+	}
+
+	.festival-details {
+		grid-template-columns: 1fr;
+
+		gap: 30px;
+	}
+
+	.festival-details div {
+		padding-top: 12px;
+	}
+
+
+	/* =====================================
+	   PROTOTYPE
+	===================================== */
+
+	.festival-prototype-content {
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	.festival-large-text {
+		font-size: 1.6rem !important;
+	}
+
+	.festival-prototype-link {
+		width: 100%;
+
+		align-items: flex-start;
+	}
+
+	.festival-prototype-link strong {
+		font-size: 1.6rem;
+
+		text-align: left;
+	}
+
+
+	/* =====================================
+	   NAVIGATION
+	===================================== */
+
+	.festival-navigation {
+		padding: 60px 24px;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 55px;
+	}
+
+	.festival-next-project {
+		width: 100%;
+
+		align-items: flex-start;
+	}
+
+	.festival-next-project strong {
+		font-size: 2.3rem;
+	}
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+	.festival-hero {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.festival-main-title {
+		font-size: clamp(3.4rem, 17vw, 5rem);
+	}
+
+	.festival-phone-showcase {
+		height: 380px;
+	}
+
+	.festival-phone {
+		height: 63%;
+
+		max-width: 44%;
+	}
+
+	.festival-phone-2 {
+		height: 76%;
+	}
+
+	.festival-section {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.festival-navigation {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

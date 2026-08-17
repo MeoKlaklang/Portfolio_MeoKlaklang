@@ -1,0 +1,1350 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Afacad:wght@300;400;500;600&display=swap");
+
+:root {
+	--thumb-black: #111111;
+	--thumb-grey: #707070;
+	--thumb-light: #f4f4f4;
+	--thumb-border: #d8d8d8;
+	--thumb-white: #ffffff;
+}
+
+.thumbelina-hero-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: contain;
+}
+
+.thumbelina-page {
+	width: 100%;
+	overflow: hidden;
+	background: var(--thumb-white);
+	color: var(--thumb-black);
+	font-family: "Afacad", sans-serif;
+}
+
+.thumbelina-page * {
+	box-sizing: border-box;
+}
+
+.thumbelina-page h1,
+.thumbelina-page h2,
+.thumbelina-page h3,
+.thumbelina-page p {
+	margin-top: 0;
+}
+
+.thumbelina-page p {
+	font-size: 1.15rem;
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+/* HERO */
+
+.thumbelina-hero {
+	min-height: 100vh;
+	padding: 90px 7vw 70px;
+	display: grid;
+	grid-template-columns: minmax(0, 0.9fr) minmax(450px, 1.1fr);
+	align-items: center;
+	gap: 7vw;
+	background: #000000;
+	color: #ffffff;
+}
+
+.thumbelina-project-number {
+	margin-bottom: 42px;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.95rem !important;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.thumbelina-main-title {
+	margin-bottom: 45px;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(5.5rem, 10vw, 11rem);
+	font-weight: 200;
+	line-height: 0.82;
+	letter-spacing: -0.06em;
+}
+
+.thumbelina-meta {
+	padding: 20px 0;
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+
+.thumbelina-meta p {
+	margin: 0;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.08em;
+}
+
+.thumbelina-intro {
+	max-width: 620px;
+	margin: 38px 0 30px;
+	font-size: 1.35rem !important;
+	color: #cccccc;
+}
+
+.thumbelina-live-link {
+	display: inline-block;
+	padding-bottom: 8px;
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.08em;
+	text-decoration: none;
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+}
+
+.thumbelina-live-link:hover {
+	opacity: 0.65;
+	transform: translateX(5px);
+}
+
+/* GENERAL */
+
+.thumbelina-section {
+	padding: 130px 7vw;
+}
+
+.thumbelina-section-heading {
+	margin-bottom: 70px;
+	display: flex;
+	align-items: baseline;
+	gap: 40px;
+}
+
+.thumbelina-section-heading > span,
+.thumbelina-split-title > span,
+.thumbelina-development-title > span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.16em;
+}
+
+.thumbelina-section-heading h2 {
+	margin: 0;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(4rem, 8vw, 8rem);
+	font-weight: 200;
+	line-height: 0.85;
+	letter-spacing: -0.04em;
+}
+
+.thumbelina-split-title {
+	display: flex;
+	align-items: flex-start;
+	gap: 40px;
+}
+
+.thumbelina-split-title h2,
+.thumbelina-development-title h2 {
+	margin: 0;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(4.5rem, 9vw, 9rem);
+	font-weight: 200;
+	line-height: 0.83;
+	letter-spacing: -0.05em;
+}
+
+.thumbelina-large-text {
+	font-size: clamp(1.8rem, 3vw, 3.1rem) !important;
+	line-height: 1.25 !important;
+	letter-spacing: -0.02em;
+}
+
+/* PLACEHOLDER */
+
+.thumbelina-placeholder {
+	width: 100%;
+	min-height: 420px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+	background:
+		linear-gradient(
+			135deg,
+			transparent 49.7%,
+			#cfcfcf 50%,
+			transparent 50.3%
+		),
+		linear-gradient(
+			45deg,
+			transparent 49.7%,
+			#cfcfcf 50%,
+			transparent 50.3%
+		),
+		#eeeeee;
+	border: 1px solid var(--thumb-border);
+	text-align: center;
+}
+
+.thumbelina-placeholder > span {
+	width: 55px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--thumb-black);
+	border-radius: 50%;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.7rem;
+}
+
+.thumbelina-placeholder p {
+	max-width: 290px;
+	margin: 0;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.08em;
+	color: var(--thumb-grey);
+}
+
+.thumbelina-hero .thumbelina-placeholder {
+	min-height: 650px;
+	background:
+		linear-gradient(
+			135deg,
+			transparent 49.8%,
+			#4a4f56 50%,
+			transparent 50.2%
+		),
+		linear-gradient(
+			45deg,
+			transparent 49.8%,
+			#4a4f56 50%,
+			transparent 50.2%
+		),
+		#30353c;
+	border-color: #50555c;
+}
+
+.thumbelina-hero .thumbelina-placeholder > span {
+	border-color: #ffffff;
+}
+
+.thumbelina-hero .thumbelina-placeholder p {
+	color: #c8c8c8;
+}
+
+/* =========================================
+   OVERVIEW
+========================================= */
+
+.thumbelina-overview {
+	border-bottom: 1px solid var(--thumb-black);
+}
+
+
+/* TOP */
+
+.thumbelina-overview-grid {
+	display: grid;
+	grid-template-columns: 1.15fr 1fr;
+	gap: 10vw;
+}
+
+.thumbelina-overview-copy {
+	max-width: 720px;
+}
+
+.thumbelina-overview-copy p:first-child {
+	font-size: clamp(1.8rem, 3vw, 3rem);
+	line-height: 1.3;
+	letter-spacing: -0.02em;
+}
+
+.thumbelina-overview-copy p:last-child {
+	max-width: 620px;
+	color: var(--thumb-grey);
+}
+
+
+/* DETAILS */
+
+.thumbelina-details {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 50px 40px;
+}
+
+.thumbelina-details div {
+	padding-top: 15px;
+	border-top: 1px solid var(--thumb-black);
+}
+
+.thumbelina-details h3 {
+	margin-bottom: 15px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.thumbelina-details p {
+	margin-bottom: 0;
+	color: var(--thumb-grey);
+}
+
+
+/* =========================================
+   FIREFLY VISUALS
+========================================= */
+
+.thumbelina-visuals {
+	margin-top: 100px;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+.thumbelina-visual-card {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+
+	overflow: hidden;
+
+	background: var(--thumb-light);
+}
+
+.thumbelina-visual-card img {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+
+	transition: transform 0.5s ease;
+}
+
+.thumbelina-visual-card:hover img {
+	transform: scale(1.035);
+}
+
+
+/* =========================================
+   DESIGN NOTE + FIGMA
+========================================= */
+
+.thumbelina-design-note {
+	margin-top: 45px;
+	padding-top: 30px;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8vw;
+
+	border-top: 1px solid var(--thumb-black);
+}
+
+.thumbelina-small-label {
+	display: block;
+	margin-bottom: 18px;
+
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.8rem;
+	font-weight: 500;
+
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+}
+
+.thumbelina-design-note p {
+	max-width: 600px;
+	margin-bottom: 0;
+
+	color: var(--thumb-grey);
+}
+
+
+/* FIGMA LINK */
+
+.thumbelina-figma-link {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 35px;
+
+	color: var(--thumb-black);
+	text-decoration: none;
+}
+
+.thumbelina-figma-link span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.8rem;
+
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+
+	color: var(--thumb-grey);
+}
+
+.thumbelina-figma-link strong {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(1.4rem, 2.3vw, 2.3rem);
+	font-weight: 300;
+
+	border-bottom: 1px solid var(--thumb-black);
+
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+}
+
+.thumbelina-figma-link:hover strong {
+	opacity: 0.55;
+	transform: translateX(5px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+	.thumbelina-overview-grid {
+		grid-template-columns: 1fr;
+		gap: 55px;
+	}
+
+	.thumbelina-details {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 35px 20px;
+	}
+
+	.thumbelina-visuals {
+		margin-top: 65px;
+		grid-template-columns: 1fr;
+		gap: 15px;
+	}
+
+	.thumbelina-visual-card {
+		aspect-ratio: 1 / 1;
+	}
+
+	.thumbelina-design-note {
+		margin-top: 30px;
+
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.thumbelina-figma-link {
+		align-items: flex-start;
+	}
+
+	.thumbelina-figma-link strong {
+		font-size: 1.5rem;
+	}
+}
+
+/* CONCEPT */
+
+.thumbelina-concept {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10vw;
+	background: var(--thumb-light);
+}
+
+.thumbelina-concept-copy {
+	padding-top: 70px;
+}
+
+/* STORY */
+
+.thumbelina-story-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 30px;
+}
+
+.thumbelina-story-large {
+	grid-column: span 2;
+}
+
+.thumbelina-story-large .thumbelina-placeholder {
+	min-height: 720px;
+}
+
+.thumbelina-story-grid > div:not(.thumbelina-story-large)
+	.thumbelina-placeholder {
+	min-height: 550px;
+}
+
+/* DEVELOPMENT */
+
+.thumbelina-development {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 9vw;
+	background: #24282e;
+	color: #ffffff;
+}
+
+.thumbelina-development-title > span {
+	display: block;
+	margin-bottom: 35px;
+}
+
+.thumbelina-development-copy {
+	padding-top: 70px;
+}
+
+.thumbelina-development-copy > p:not(.thumbelina-large-text) {
+	color: #c2c2c2;
+}
+
+.thumbelina-tech-list {
+	margin-top: 55px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.thumbelina-tech-list span {
+	padding: 10px 18px;
+	border: 1px solid #74787e;
+	border-radius: 100px;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.06em;
+}
+
+/* FEATURES */
+
+.thumbelina-feature-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border-top: 1px solid var(--thumb-black);
+}
+
+.thumbelina-feature-item {
+	min-height: 330px;
+	padding: 35px;
+	border-right: 1px solid var(--thumb-black);
+	border-bottom: 1px solid var(--thumb-black);
+}
+
+.thumbelina-feature-item:nth-child(2n) {
+	border-right: none;
+}
+
+.thumbelina-feature-item > span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.95rem;
+	letter-spacing: 0.14em;
+}
+
+.thumbelina-feature-item h3 {
+	margin: 80px 0 20px;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+
+.thumbelina-feature-item p {
+	color: var(--thumb-grey);
+}
+
+/* PORTAL */
+
+.thumbelina-portal {
+	background: var(--thumb-light);
+}
+
+.thumbelina-portal-intro {
+	max-width: 900px;
+	margin: 0 0 80px auto;
+}
+
+.thumbelina-portal-gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 30px;
+}
+
+.thumbelina-portal-gallery .thumbelina-placeholder {
+	min-height: 580px;
+}
+
+/* VIDEO */
+
+.thumbelina-video-section {
+	border-bottom: 1px solid var(--thumb-black);
+}
+
+.thumbelina-video-placeholder {
+	min-height: 680px;
+	background:
+		linear-gradient(
+			135deg,
+			transparent 49.85%,
+			#cecece 50%,
+			transparent 50.15%
+		),
+		linear-gradient(
+			45deg,
+			transparent 49.85%,
+			#cecece 50%,
+			transparent 50.15%
+		),
+		#eeeeee;
+}
+
+/* REFLECTION */
+
+.thumbelina-reflection {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10vw;
+	background: #24282e;
+	color: #ffffff;
+}
+
+.thumbelina-reflection-copy {
+	padding-top: 60px;
+}
+
+.thumbelina-reflection-copy > p:not(.thumbelina-large-text) {
+	color: #c2c2c2;
+}
+
+.thumbelina-reflection-copy ul {
+	margin: 50px 0 0;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid #797979;
+}
+
+.thumbelina-reflection-copy li {
+	padding: 18px 0;
+	border-bottom: 1px solid #797979;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.1rem;
+	letter-spacing: 0.04em;
+}
+
+/* NAVIGATION */
+
+.thumbelina-navigation {
+	padding: 80px 7vw;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.thumbelina-back-link,
+.thumbelina-next-project {
+	color: var(--thumb-black);
+	text-decoration: none;
+}
+
+.thumbelina-back-link {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.06em;
+}
+
+.thumbelina-next-project {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 8px;
+}
+
+.thumbelina-next-project span {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.1em;
+	color: var(--thumb-grey);
+}
+
+.thumbelina-next-project strong {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 300;
+}
+
+.thumbelina-back-link,
+.thumbelina-next-project strong {
+	transition: opacity 0.25s ease;
+}
+
+.thumbelina-back-link:hover,
+.thumbelina-next-project:hover strong {
+	opacity: 0.55;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+	/* HERO */
+
+	.thumbelina-hero {
+		min-height: auto;
+		grid-template-columns: 1fr;
+		gap: 70px;
+		padding: 120px 6vw 90px;
+	}
+
+	.thumbelina-hero-copy {
+		width: 100%;
+		max-width: 800px;
+	}
+
+	.thumbelina-hero-media {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.thumbelina-main-title {
+		font-size: clamp(5rem, 13vw, 8rem);
+	}
+
+	/* GENERAL */
+
+	.thumbelina-section {
+		padding: 100px 6vw;
+	}
+
+	/* OVERVIEW */
+
+	.thumbelina-overview-grid {
+		grid-template-columns: 1fr;
+		gap: 60px;
+	}
+
+	.thumbelina-overview-copy {
+		max-width: 800px;
+	}
+
+	/* VISUALS */
+
+	.thumbelina-visuals {
+		margin-top: 70px;
+	}
+
+	/* DESIGN NOTE */
+
+	.thumbelina-design-note {
+		gap: 60px;
+	}
+
+	/* OTHER GRIDS */
+
+	.thumbelina-concept,
+	.thumbelina-development,
+	.thumbelina-reflection {
+		grid-template-columns: 1fr;
+		gap: 60px;
+	}
+
+	.thumbelina-concept-copy,
+	.thumbelina-development-copy,
+	.thumbelina-reflection-copy {
+		padding-top: 0;
+	}
+
+	.thumbelina-reflection-copy {
+		max-width: 750px;
+	}
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+	/* =====================================
+	   GLOBAL
+	===================================== */
+
+	.thumbelina-page {
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	.thumbelina-page p {
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+
+	/* =====================================
+	   HERO
+	===================================== */
+
+	.thumbelina-hero {
+		min-height: auto;
+
+		display: flex;
+		flex-direction: column;
+
+		gap: 45px;
+
+		padding:
+			100px
+			20px
+			60px;
+	}
+
+	.thumbelina-hero-copy {
+		width: 100%;
+	}
+
+	.thumbelina-project-number {
+		margin-bottom: 28px;
+
+		font-size: 0.75rem !important;
+		line-height: 1.4;
+
+		letter-spacing: 0.12em;
+	}
+
+	.thumbelina-main-title {
+		margin-bottom: 32px;
+
+		font-size: clamp(
+			3.7rem,
+			18vw,
+			5.3rem
+		);
+
+		line-height: 0.9;
+		letter-spacing: -0.05em;
+
+		word-break: normal;
+		overflow-wrap: normal;
+	}
+
+	.thumbelina-meta {
+		padding: 15px 0;
+
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 5px;
+	}
+
+	.thumbelina-meta p {
+		font-size: 0.78rem;
+		line-height: 1.5;
+	}
+
+	.thumbelina-intro {
+		max-width: none;
+
+		margin:
+			25px
+			0
+			25px;
+
+		font-size: 1.1rem !important;
+		line-height: 1.5;
+	}
+
+	.thumbelina-live-link {
+		font-size: 0.85rem;
+	}
+
+	/* HERO IMAGE */
+
+	.thumbelina-hero-media {
+		width: 100%;
+	}
+
+	.thumbelina-hero-image {
+		width: 100%;
+		height: auto;
+
+		display: block;
+
+		object-fit: contain;
+	}
+
+	.thumbelina-hero .thumbelina-placeholder {
+		min-height: 350px;
+	}
+
+
+	/* =====================================
+	   GENERAL SECTIONS
+	===================================== */
+
+	.thumbelina-section {
+		padding:
+			75px
+			20px;
+	}
+
+	.thumbelina-section-heading {
+		margin-bottom: 45px;
+
+		display: flex;
+		align-items: baseline;
+
+		gap: 15px;
+	}
+
+	.thumbelina-section-heading > span,
+	.thumbelina-split-title > span,
+	.thumbelina-development-title > span {
+		flex-shrink: 0;
+
+		font-size: 0.75rem;
+		letter-spacing: 0.12em;
+	}
+
+	.thumbelina-section-heading h2 {
+		font-size: clamp(
+			2.8rem,
+			14vw,
+			4.2rem
+		);
+
+		line-height: 0.9;
+	}
+
+
+	/* =====================================
+	   LARGE TEXT
+	===================================== */
+
+	.thumbelina-large-text {
+		font-size: 1.45rem !important;
+		line-height: 1.3 !important;
+	}
+
+
+	/* =====================================
+	   OVERVIEW
+	===================================== */
+
+	.thumbelina-overview-grid {
+		display: flex;
+		flex-direction: column;
+
+		gap: 50px;
+	}
+
+	.thumbelina-overview-copy {
+		width: 100%;
+		max-width: none;
+	}
+
+	.thumbelina-overview-copy p:first-child {
+		font-size: 1.55rem;
+		line-height: 1.3;
+
+		margin-bottom: 25px;
+	}
+
+	.thumbelina-overview-copy p:last-child {
+		max-width: none;
+
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+
+
+	/* DETAILS */
+
+	.thumbelina-details {
+		width: 100%;
+
+		display: grid;
+		grid-template-columns:
+			1fr
+			1fr;
+
+		gap:
+			30px
+			18px;
+	}
+
+	.thumbelina-details div {
+		padding-top: 12px;
+	}
+
+	.thumbelina-details h3 {
+		margin-bottom: 10px;
+
+		font-size: 0.75rem;
+	}
+
+	.thumbelina-details p {
+		font-size: 0.95rem;
+		line-height: 1.45;
+	}
+
+
+	/* =====================================
+	   FIREFLY VISUALS
+	===================================== */
+
+	.thumbelina-visuals {
+		margin-top: 55px;
+
+		display: grid;
+		grid-template-columns: 1fr;
+
+		gap: 14px;
+	}
+
+	.thumbelina-visual-card {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+	}
+
+	.thumbelina-visual-card img {
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+	}
+
+
+	/* =====================================
+	   DESIGN NOTE + FIGMA
+	===================================== */
+
+	.thumbelina-design-note {
+		margin-top: 35px;
+		padding-top: 25px;
+
+		display: flex;
+		flex-direction: column;
+
+		gap: 35px;
+	}
+
+	.thumbelina-small-label {
+		margin-bottom: 12px;
+
+		font-size: 0.7rem;
+	}
+
+	.thumbelina-design-note p {
+		max-width: none;
+
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+
+	.thumbelina-figma-link {
+		width: 100%;
+
+		align-items: flex-start;
+
+		gap: 15px;
+	}
+
+	.thumbelina-figma-link span {
+		font-size: 0.7rem;
+	}
+
+	.thumbelina-figma-link strong {
+		font-size: 1.35rem;
+		line-height: 1.3;
+	}
+
+
+	/* =====================================
+	   CONCEPT
+	===================================== */
+
+	.thumbelina-concept {
+		display: flex;
+		flex-direction: column;
+
+		gap: 45px;
+	}
+
+	.thumbelina-split-title {
+		gap: 15px;
+	}
+
+	.thumbelina-split-title h2,
+	.thumbelina-development-title h2 {
+		font-size: clamp(
+			3rem,
+			15vw,
+			4.5rem
+		);
+
+		line-height: 0.88;
+	}
+
+	.thumbelina-concept-copy {
+		padding-top: 0;
+	}
+
+
+	/* =====================================
+	   STORY
+	===================================== */
+
+	.thumbelina-story-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		gap: 15px;
+	}
+
+	.thumbelina-story-large {
+		grid-column: auto;
+	}
+
+	.thumbelina-story-large
+		.thumbelina-placeholder,
+	.thumbelina-story-grid
+		> div:not(.thumbelina-story-large)
+		.thumbelina-placeholder {
+		min-height: 350px;
+	}
+
+
+	/* =====================================
+	   DEVELOPMENT
+	===================================== */
+
+	.thumbelina-development {
+		display: flex;
+		flex-direction: column;
+
+		gap: 45px;
+	}
+
+	.thumbelina-development-title > span {
+		margin-bottom: 20px;
+	}
+
+	.thumbelina-development-copy {
+		padding-top: 0;
+	}
+
+	.thumbelina-tech-list {
+		margin-top: 35px;
+
+		gap: 8px;
+	}
+
+	.thumbelina-tech-list span {
+		padding:
+			8px
+			13px;
+
+		font-size: 0.75rem;
+	}
+
+
+	/* =====================================
+	   FEATURES
+	===================================== */
+
+	.thumbelina-feature-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		border-top:
+			1px solid
+			var(--thumb-black);
+	}
+
+	.thumbelina-feature-item {
+		min-height: auto;
+
+		padding:
+			30px
+			0;
+
+		border-right: none;
+		border-bottom:
+			1px solid
+			var(--thumb-black);
+	}
+
+	.thumbelina-feature-item h3 {
+		margin:
+			45px
+			0
+			15px;
+
+		font-size: 1.5rem;
+	}
+
+	.thumbelina-feature-item p {
+		margin-bottom: 0;
+	}
+
+
+	/* =====================================
+	   PORTAL
+	===================================== */
+
+	.thumbelina-portal-intro {
+		max-width: none;
+
+		margin:
+			0
+			0
+			45px;
+	}
+
+	.thumbelina-portal-gallery {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		gap: 15px;
+	}
+
+	.thumbelina-portal-gallery
+		.thumbelina-placeholder {
+		min-height: 350px;
+	}
+
+
+	/* =====================================
+	   VIDEO
+	===================================== */
+
+	.thumbelina-video-placeholder {
+		min-height: 350px;
+	}
+
+
+	/* =====================================
+	   REFLECTION
+	===================================== */
+
+	.thumbelina-reflection {
+		display: flex;
+		flex-direction: column;
+
+		gap: 45px;
+	}
+
+	.thumbelina-reflection-copy {
+		padding-top: 0;
+	}
+
+	.thumbelina-reflection-copy ul {
+		margin-top: 35px;
+	}
+
+	.thumbelina-reflection-copy li {
+		padding:
+			15px
+			0;
+
+		font-size: 0.95rem;
+	}
+
+
+	/* =====================================
+	   NAVIGATION
+	===================================== */
+
+	.thumbelina-navigation {
+		padding:
+			55px
+			20px;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 45px;
+	}
+
+	.thumbelina-back-link {
+		font-size: 0.85rem;
+	}
+
+	.thumbelina-next-project {
+		width: 100%;
+
+		align-items: flex-start;
+	}
+
+	.thumbelina-next-project span {
+		font-size: 0.75rem;
+	}
+
+	.thumbelina-next-project strong {
+		font-size: 2rem;
+		line-height: 1.15;
+	}
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+	.thumbelina-hero {
+		padding:
+			90px
+			16px
+			55px;
+	}
+
+	.thumbelina-section {
+		padding:
+			65px
+			16px;
+	}
+
+	.thumbelina-main-title {
+		font-size: 3.6rem;
+	}
+
+	.thumbelina-section-heading h2 {
+		font-size: 2.8rem;
+	}
+
+	.thumbelina-overview-copy p:first-child {
+		font-size: 1.4rem;
+	}
+
+	.thumbelina-details {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+
+	.thumbelina-navigation {
+		padding:
+			50px
+			16px;
+	}
+}
