@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Persona from "../pages/Persona";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+const base = import.meta.env.BASE_URL;
 
 const fadeUp = {
 	hidden: {
@@ -97,7 +98,7 @@ const features = [
 		number: "01",
 		title: "Interactive animal map",
 		text: "Foster families can discover available dogs and cats through an interactive map, making it easier to find animals and shelters in their area.",
-		image: "interactive_map.png",
+		image: `${base}interactive_map.png`,
 		roles: "Foster families",
 		className: "feature-large",
 	},
@@ -105,7 +106,7 @@ const features = [
 		number: "02",
 		title: "Foster applications",
 		text: "A clear application flow allows foster families to apply for an animal, while shelters can review and manage incoming requests from one central place.",
-		image: "aanvraag.png",
+		image: `${base}aanvraag.png`,
 		roles: "Foster families · Shelters",
 		className: "",
 	},
@@ -113,7 +114,7 @@ const features = [
 		number: "03",
 		title: "Animal medical records",
 		text: "Shelters and veterinarians can access a central record for each dog or cat, containing medical information, appointments and notes to keep everyone involved up to date.",
-		image: "dossier.png",
+		image: `${base}dossier.png`,
 		roles: "Shelters · Veterinarians",
 		className: "feature-large",
 	},
@@ -121,7 +122,7 @@ const features = [
 		number: "04",
 		title: "Centralised reminders",
 		text: "Foster families receive a clear overview of appointments, reminders and notes in their dashboard, including whether an update comes from the shelter or veterinarian.",
-		image: "reminder.png",
+		image: `${base}reminder.png`,
 		roles: "Foster families",
 		className: "",
 	},
@@ -129,7 +130,7 @@ const features = [
 		number: "05",
 		title: "Task management",
 		text: "Shelters and veterinarians can organise and follow up their daily tasks, such as blood tests, medical follow-ups and other animal-related actions.",
-		image: "task.png",
+		image: `${base}task.png`,
 		roles: "Shelters · Veterinarians",
 		className: "",
 	},
@@ -152,17 +153,17 @@ export default function HetMandje() {
 		{
 			id: "pleeg",
 			label: "Pleeggezin",
-			images: ["Dieren zoeken.png", "Dieren zoeken-2.png", "Dieren zoeken-3.png", "hoe werkt opvang.png", "Aanmelding pleeggezin.png"],
+			images: [`${base}Dieren zoeken.png`, `${base}Dieren zoeken-2.png`, `${base}Dieren zoeken-3.png`, `${base}hoe werkt opvang.png`, `${base}Aanmelding pleeggezin.png`],
 		},
 		{
 			id: "asiel",
 			label: "Dierenasiel",
-			images: ["Asiel-wire-1.png", "Asiel-wire-2.png", "Asiel-wire-3.png", "Asiel-wire-4.png", "Asiel-wire-5.png"],
+			images: [`${base}Asiel-wire-1.png`, `${base}Asiel-wire-2.png`, `${base}Asiel-wire-3.png`, `${base}Asiel-wire-4.png`, `${base}Asiel-wire-5.png`],
 		},
 		{
 			id: "arts",
 			label: "Dierenarts",
-			images: ["dierenarts-wireframe-1.png", "dierenarts-wireframe-2.png", "dierenarts-wireframe-3.png", "dierenarts-wireframe-4.png", "dierenarts-wireframe-5.png"],
+			images: [`${base}dierenarts-wireframe-1.png`, `${base}dierenarts-wireframe-2.png`, `${base}dierenarts-wireframe-3.png`, `${base}dierenarts-wireframe-4.png`, `${base}dierenarts-wireframe-5.png`],
 		},
 	];
 
@@ -203,9 +204,8 @@ export default function HetMandje() {
 					}}
 				>
 					<div className="mandje-mockup-composition">
-						<img src="search-desk.png" alt="Desktopversie van Het Mandje" className="mandje-desktop-mockup" />
-
-						<img src="home-app.png" alt="Mobiele versie van Het Mandje" className="mandje-mobile-mockup" />
+						<img src={`${base}search-desk.png`} alt="Desktopversie van Het Mandje" className="mandje-desktop-mockup" />
+						<img src={`${base}home-app.png`} alt="Mobiele versie van Het Mandje" className="mandje-mobile-mockup" />{" "}
 					</div>
 				</motion.div>
 			</section>
@@ -266,7 +266,8 @@ export default function HetMandje() {
 					</div>
 
 					<div className="challenge-video-wrapper">
-						<video className="challenge-video" src="PROMO-VIDEO-mandje.mp4" controls playsInline preload="metadata">
+						<video className="challenge-video" src={`${base}PROMO-VIDEO-mandje.mp4`} controls playsInline preload="metadata">
+							{" "}
 							Your browser does not support this video.
 						</video>
 					</div>
@@ -319,16 +320,16 @@ export default function HetMandje() {
 					{/* 👉 ENKEL dit toegevoegd rechts */}
 					<motion.div className="research-carousel" variants={fadeUp} onMouseEnter={(e) => e.currentTarget.classList.add("active")}>
 						<div className="carousel-track">
-							<img src="asiel-1.png" />
-							<img src="asiel-2.png" />
-							<img src="asiel-3.png" />
-							<img src="asiel-5.png" />
+							<img src={`${base}asiel-1.png`} alt="" loading="lazy" />
+							<img src={`${base}asiel-2.png`} alt="" loading="lazy" />
+							<img src={`${base}asiel-3.png`} alt="" loading="lazy" />
+							<img src={`${base}asiel-5.png`} alt="" loading="lazy" />
 
 							{/* duplicate voor infinite */}
-							<img src="asiel-1.png" />
-							<img src="asiel-2.png" />
-							<img src="asiel-3.png" />
-							<img src="asiel-5.png" />
+							<img src={`${base}asiel-1.png`} alt="" loading="lazy" />
+							<img src={`${base}asiel-2.png`} alt="" loading="lazy" />
+							<img src={`${base}asiel-3.png`} alt="" loading="lazy" />
+							<img src={`${base}asiel-5.png`} alt="" loading="lazy" />
 						</div>
 					</motion.div>
 				</div>
@@ -463,8 +464,7 @@ export default function HetMandje() {
 
 								<p className="design-description">The hand-drawn logo gives Het Mandje a warm, authentic and personal identity. Its organic lines reinforce the caring character of the platform.</p>
 							</div>
-
-							<img src="logo_mandje.png" alt="Het Mandje logo" className="mandje-design-logo" />
+							<img src={`${base}logo_mandje.png`} alt="Het Mandje logo" className="mandje-design-logo" loading="lazy" />{" "}
 						</div>
 					</motion.div>
 				</motion.div>
@@ -536,7 +536,7 @@ export default function HetMandje() {
 						transition={{ duration: 0.3 }}
 					>
 						<div className="reflection-image-wrapper">
-							<img src="bruzz.png" alt="Interview with BRUZZ about Het Mandje" />
+							<img src={`${base}bruzz.png`} alt="Interview with BRUZZ about Het Mandje" loading="lazy" />{" "}
 						</div>
 
 						<div className="reflection-feature-info">

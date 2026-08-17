@@ -2,6 +2,8 @@ import "./AnimalFestival.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+const base = import.meta.env.BASE_URL;
+
 const fadeUp = {
 	hidden: {
 		opacity: 0,
@@ -97,19 +99,19 @@ export default function AnimalFestival() {
 					<div className="festival-phone-showcase">
 
 						<img
-							src="festi1.png"
+							src={`${base}festi1.png`}
 							alt="Animal Festival mobile interface"
 							className="festival-phone festival-phone-1"
 						/>
 
 						<img
-							src="festi2.png"
+							src={`${base}festi2.png`}
 							alt="Animal Festival mobile timetable"
 							className="festival-phone festival-phone-2"
 						/>
 
 						<img
-							src="festi3.png"
+							src={`${base}festi3.png`}
 							alt="Animal Festival mobile application"
 							className="festival-phone festival-phone-3"
 						/>

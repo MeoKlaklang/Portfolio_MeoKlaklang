@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
+const base = import.meta.env.BASE_URL;
+
 const fadeUp = {
 	hidden: {
 		opacity: 0,
@@ -30,7 +32,7 @@ const staggerContainer = {
 /* Temporary sticker placeholders */
 const stickers = Array.from({ length: 10 }, (_, index) => ({
 	id: index + 2,
-	image: `sticker-${String(index + 2).padStart(2, "0")}.png`,
+	image: `${base}sticker-${String(index + 2).padStart(2, "0")}.png`,
 }));
 
 function MediaPlaceholder({ label, className = "" }) {
@@ -45,7 +47,24 @@ function MediaPlaceholder({ label, className = "" }) {
 export default function Gistda() {
 	const [magazinePage, setMagazinePage] = useState(0);
 
-	const magazinePages = ["3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "15.png", "16.png", "18.png", "20.png", "22.png", "26.png", "27.png", "28.png"];
+	const magazinePages = [
+		`${base}3.png`,
+		`${base}4.png`,
+		`${base}5.png`,
+		`${base}6.png`,
+		`${base}7.png`,
+		`${base}8.png`,
+		`${base}9.png`,
+		`${base}10.png`,
+		`${base}15.png`,
+		`${base}16.png`,
+		`${base}18.png`,
+		`${base}20.png`,
+		`${base}22.png`,
+		`${base}26.png`,
+		`${base}27.png`,
+		`${base}28.png`,
+	];
 	const nextMagazinePage = () => {
 		setMagazinePage((prev) => (prev === magazinePages.length - 1 ? 0 : prev + 1));
 	};
@@ -137,8 +156,7 @@ export default function Gistda() {
 								ease: "easeOut",
 							}}
 						>
-							<img src="gistda1.jpg" alt="During my internship at GISTDA" />
-
+							<img src={`${base}gistda1.jpg`} alt="During my internship at GISTDA" />
 							<span>01</span>
 						</motion.div>
 
@@ -156,8 +174,7 @@ export default function Gistda() {
 								ease: "easeOut",
 							}}
 						>
-							<img src="gistda2.jpg" alt="My internship experience at GISTDA" />
-
+							<img src={`${base}gistda2.jpg`} alt="My internship experience at GISTDA" />
 							<span>02</span>
 						</motion.div>
 
@@ -175,8 +192,7 @@ export default function Gistda() {
 								ease: "easeOut",
 							}}
 						>
-							<img src="gistda3.jpg" alt="Working at GISTDA in Thailand" />
-
+							<img src={`${base}gistda3.jpg`} alt="Working at GISTDA in Thailand" />
 							<span>03</span>
 						</motion.div>
 
@@ -286,8 +302,7 @@ export default function Gistda() {
 					{/* LARGE IMAGE */}
 
 					<motion.div className="gistda-calval-photo gistda-calval-photo-main" variants={fadeUp} whileHover={{ scale: 0.985 }} transition={{ duration: 0.35 }}>
-						<img src="calval1.jpg" alt="Working with the Cal/Val team at GISTDA" />
-
+						<img src={`${base}calval1.jpg`} alt="Working with the Cal/Val team at GISTDA" loading="lazy" />
 						<div className="gistda-calval-photo-caption">
 							<span>01</span>
 							<p>Working with the Cal/Val team</p>
@@ -298,16 +313,14 @@ export default function Gistda() {
 
 					<div className="gistda-calval-gallery-side">
 						<motion.div className="gistda-calval-photo" variants={fadeUp} whileHover={{ scale: 0.975 }} transition={{ duration: 0.35 }}>
-							<img src="calval2.jpg" alt="My internship experience with the Cal/Val team" />
-
+							<img src={`${base}calval2.jpg`} alt="My internship experience with the Cal/Val team" loading="lazy" />
 							<div className="gistda-calval-photo-caption">
 								<span>02</span>
 							</div>
 						</motion.div>
 
 						<motion.div className="gistda-calval-photo" variants={fadeUp} whileHover={{ scale: 0.975 }} transition={{ duration: 0.35 }}>
-							<img src="calval3.jpg" alt="Cal/Val team at GISTDA" />
-
+							<img src={`${base}calval3.jpg`} alt="Cal/Val team at GISTDA" loading="lazy" />
 							<div className="gistda-calval-photo-caption">
 								<span>03</span>
 							</div>
@@ -388,8 +401,7 @@ export default function Gistda() {
 					</motion.div>
 
 					<motion.div className="gistda-calval-branding-visual" variants={fadeUp}>
-						<img src="calval-back-13.jpg" alt="Cal/Val team visual identity and branding" />
-
+						<img src={`${base}calval-back-13.jpg`} alt="Cal/Val team visual identity and branding" loading="lazy" />
 						<div className="gistda-branding-caption">
 							<span>CAL/VAL × GISTDA</span>
 							<p>Visual identity · Pixel art · Space communication</p>
@@ -451,7 +463,7 @@ export default function Gistda() {
 								ease: "easeOut",
 							}}
 						>
-							<img src="calvalPoster-02.jpg" alt="GISTDA Technology Watch and Foresight Forum poster" />
+							<img src={`${base}calvalPoster-02.jpg`} alt="GISTDA Technology Watch and Foresight Forum poster" loading="lazy" />
 
 							<span className="gistda-poster-caption">GISTDA Technology Watch & Foresight Forum</span>
 						</motion.div>
@@ -614,7 +626,7 @@ export default function Gistda() {
 						}}
 					>
 						<div className="gistda-rahu-image-wrapper">
-							<img src="rahu-03.png" alt="Rahu eating the moon logo designed for GISTDA" className="gistda-rahu-image" />
+							<img src={`${base}rahu-03.png`} alt="Rahu eating the moon logo designed for GISTDA" className="gistda-rahu-image" loading="lazy" />{" "}
 						</div>
 
 						<div className="gistda-rahu-caption">
