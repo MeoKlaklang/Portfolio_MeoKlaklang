@@ -1,132 +1,470 @@
 import "./Home.css";
-import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import {
+	motion,
+	useMotionValue,
+	useTransform,
+} from "framer-motion";
+import {
+	useEffect,
+	useRef,
+	useState,
+} from "react";
+
+
+/* =========================================
+   TRAIL SYMBOLS
+========================================= */
+
+const trailSymbols = [
+	"✦",
+	"○",
+	"＋",
+	"◇",
+	"·",
+	"✧",
+	"—",
+	"⌁",
+];
+
 
 export default function Home() {
-  const constraintsRef = useRef(null);
 
-  // ✅ Base path voor GitHub Pages: "/Portfolio_MeoKlaklang/"
-  const base = import.meta.env.BASE_URL;
+	const constraintsRef = useRef(null);
 
-  // Katpositie (x, y)
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+	const base = import.meta.env.BASE_URL;
 
-  // Huidig actieve zone (1–4 of null)
-  const [activeZone, setActiveZone] = useState(null);
+	const asset = (file) => `${base}${file}`;
 
-  // Achtergrondkleur (optioneel subtiele tint)
-  const background = useTransform(x, [-300, 0, 300], ["#f5f5ff", "#ffffff", "#f5f5ff"]);
 
-  // Functie: bepaal in welke zone de kat zit
-  useEffect(() => {
-    const unsubscribeX = x.on("change", updateZone);
-    const unsubscribeY = y.on("change", updateZone);
-    return () => {
-      unsubscribeX();
-      unsubscribeY();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+	/* =========================================
+	   CAT POSITION
+	========================================= */
 
-  function updateZone() {
-    if (!constraintsRef.current) return;
+	const x = useMotionValue(0);
+	const y = useMotionValue(0);
 
-    const currentX = x.get();
-    const currentY = y.get();
 
-    let zone = null;
-    if (currentX < 0 && currentY < 0) zone = 1; // linksboven
-    else if (currentX > 0 && currentY < 0) zone = 2; // rechtsboven
-    else if (currentX < 0 && currentY > 0) zone = 3; // linksonder
-    else if (currentX > 0 && currentY > 0) zone = 4; // rechtsonder
+	/* =========================================
+	   BACKGROUND
+	========================================= */
 
-    setActiveZone(zone);
-  }
+	const background = useTransform(
+		x,
+		[-300, 0, 300],
+		["#f7f7ff", "#ffffff", "#f7f7ff"]
+	);
 
-  // ✅ Helper om makkelijk files in /public te laden
-  const asset = (file) => `${base}${file}`;
 
-  return (
-    <motion.div className="home" style={{ background }}>
-      {/* Navigatie */}
-      <header className="top">
-        <nav className="tags">
-          <a href="#">UX/UI Designer</a>
-        </nav>
-      </header>
+	/* =========================================
+	   DEVICE
+	========================================= */
 
-      {/* Hero */}
-      <main className="hero" ref={constraintsRef}>
-        <img className="portfolio" src={asset("port.png")} alt="portfolio" />
+	const [isMobile, setIsMobile] = useState(
+		() => window.innerWidth <= 700
+	);
 
-        <div className="name">
-          Meo <br /> Klaklang
-        </div>
+	useEffect(() => {
 
-        {/* ====== Project Preview ====== */}
-        <AnimatePresence>
-          {activeZone && (
-            <motion.img
-              key={activeZone}
-              className="project-preview"
-              src={
-                activeZone === 1
-                  ? asset("Datavisualitie_Meo_klaklang_titelblad.jpg")
-                  : activeZone === 2
-                  ? asset("Datavisualitie_Meo_klaklang_inspiratiebord.jpg")
-                  : activeZone === 3
-                  ? asset("Datavisualitie_Meo_klaklang_neerslag analyse.jpg")
-                  : asset("Datavisualitie_Meo_klaklang_affiche.jpg")
-              }
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{
-                opacity: 0,
-                scale: 0.9,
-                transition: { duration: 0.25, ease: "easeInOut" },
-              }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              alt="project preview"
-            />
-          )}
-        </AnimatePresence>
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 700);
+		};
 
-        {/* ====== Draggable Cat ====== */}
-        <motion.img
-          className="cat"
-          src={asset("cat-home.png")}
-          alt="draggable cat"
-          drag
-          dragConstraints={constraintsRef}
-          dragElastic={0.4}
-          dragSnapToOrigin
-          style={{ x, y }}
-          whileTap={{ scale: 1.1, rotate: 5 }}
-          transition={{
-            type: "spring",
-            stiffness: 60,
-            damping: 10,
-            mass: 0.9,
-          }}
-        />
+		window.addEventListener("resize", handleResize);
 
-        {/* ====== Vlieger rechtsboven ====== */}
-        <img className="kite" src={asset("vlieger.png")} alt="vlieger" aria-hidden="true" />
+		return () => {
+			window.removeEventListener(
+				"resize",
+				handleResize
+			);
+		};
 
-        <div className="mill-wrapper">
-          <img className="mill" src={asset("molen.png")} alt="molen" aria-hidden="true" />
-          <img
-            className="mill-steel"
-            src={asset("molen-steel.png")}
-            alt="molen steel"
-            aria-hidden="true"
-          />
-        </div>
-      </main>
+	}, []);
 
-      {/* Footer */}
-      <footer className="foot">klaklang.m@outlook.com</footer>
-    </motion.div>
-  );
+
+	/* =========================================
+	   TRAIL
+	========================================= */
+
+	const [trail, setTrail] = useState([]);
+
+	const lastTrailPosition = useRef({
+		x: 0,
+		y: 0,
+	});
+
+	const trailId = useRef(0);
+
+
+	/* =========================================
+	   CREATE TRAIL PARTICLE
+	========================================= */
+
+	const createTrailParticle = () => {
+
+		if (
+			isMobile ||
+			!constraintsRef.current
+		) {
+			return;
+		}
+
+		const currentX = x.get();
+		const currentY = y.get();
+
+
+		/* Distance since last particle */
+
+		const dx =
+			currentX -
+			lastTrailPosition.current.x;
+
+		const dy =
+			currentY -
+			lastTrailPosition.current.y;
+
+		const distance = Math.sqrt(
+			dx * dx + dy * dy
+		);
+
+
+		/*
+		 * Don't create hundreds of particles.
+		 * Only create one after the cat moved
+		 * approximately 25px.
+		 */
+
+		if (distance < 25) return;
+
+
+		lastTrailPosition.current = {
+			x: currentX,
+			y: currentY,
+		};
+
+
+		const id = trailId.current++;
+
+		const symbol =
+			trailSymbols[
+				Math.floor(
+					Math.random() *
+						trailSymbols.length
+				)
+			];
+
+
+		const particle = {
+			id,
+			x:
+				currentX +
+				(Math.random() - 0.5) * 55,
+
+			y:
+				currentY +
+				(Math.random() - 0.5) * 55,
+
+			symbol,
+
+			size:
+				10 +
+				Math.random() * 14,
+
+			rotation:
+				Math.random() * 100 - 50,
+		};
+
+
+		setTrail((current) => [
+			...current.slice(-24),
+			particle,
+		]);
+
+
+		/* Remove automatically */
+
+		setTimeout(() => {
+
+			setTrail((current) =>
+				current.filter(
+					(item) => item.id !== id
+				)
+			);
+
+		}, 1200);
+	};
+
+
+	/* =========================================
+	   LISTEN TO CAT MOVEMENT
+	========================================= */
+
+	useEffect(() => {
+
+		if (isMobile) return;
+
+		const unsubscribeX =
+			x.on("change", createTrailParticle);
+
+		const unsubscribeY =
+			y.on("change", createTrailParticle);
+
+
+		return () => {
+
+			unsubscribeX();
+			unsubscribeY();
+
+		};
+
+	}, [isMobile]);
+
+
+	/* =========================================
+	   DRAG START
+	========================================= */
+
+	const handleDragStart = () => {
+
+		lastTrailPosition.current = {
+			x: x.get(),
+			y: y.get(),
+		};
+
+	};
+
+
+	return (
+
+		<motion.div
+			className="home"
+			style={{
+				background:
+					isMobile
+						? "#ffffff"
+						: background,
+			}}
+		>
+
+			{/* =====================================
+			    TOP
+			===================================== */}
+
+			<header className="top">
+
+				<nav className="tags">
+
+					<span>
+						UX/UI Designer
+					</span>
+
+				</nav>
+
+			</header>
+
+
+			{/* =====================================
+			    HERO
+			===================================== */}
+
+			<main
+				className="hero"
+				ref={constraintsRef}
+			>
+
+				{/* Portfolio typography */}
+
+				<img
+					className="portfolio"
+					src={asset("port.png")}
+					alt="Portfolio"
+				/>
+
+
+				{/* Name */}
+
+				<div className="name">
+
+					Meo
+					<br />
+					Klaklang
+
+				</div>
+
+
+				{/* =================================
+				    CAT TRAIL — DESKTOP ONLY
+				================================= */}
+
+				{!isMobile && (
+
+					<div
+						className="cat-trail"
+						aria-hidden="true"
+					>
+
+						{trail.map((particle) => (
+
+							<motion.span
+								key={particle.id}
+								className="trail-particle"
+
+								style={{
+									left: `calc(50% + ${particle.x}px)`,
+									top: `calc(50% + ${particle.y}px)`,
+									fontSize: `${particle.size}px`,
+								}}
+
+								initial={{
+									opacity: 0,
+									scale: 0.3,
+									rotate:
+										particle.rotation -
+										20,
+								}}
+
+								animate={{
+									opacity: [
+										0,
+										0.7,
+										0.5,
+										0,
+									],
+
+									scale: [
+										0.3,
+										1,
+										0.9,
+										0.6,
+									],
+
+									rotate:
+										particle.rotation,
+
+									y: -20,
+								}}
+
+								transition={{
+									duration: 1.2,
+									ease: "easeOut",
+								}}
+							>
+
+								{particle.symbol}
+
+							</motion.span>
+
+						))}
+
+					</div>
+
+				)}
+
+
+				{/* =================================
+				    CAT
+				================================= */}
+
+				<motion.img
+					className="cat"
+
+					src={asset("cat-home.png")}
+
+					alt="Illustrated cat"
+
+					drag={!isMobile}
+
+					dragConstraints={
+						isMobile
+							? undefined
+							: constraintsRef
+					}
+
+					dragElastic={0.25}
+
+					dragSnapToOrigin
+
+					style={
+						isMobile
+							? {}
+							: { x, y }
+					}
+
+					onDragStart={
+						handleDragStart
+					}
+
+					whileTap={
+						isMobile
+							? {}
+							: {
+									scale: 1.07,
+									rotate: 4,
+							  }
+					}
+
+					transition={{
+						type: "spring",
+						stiffness: 80,
+						damping: 14,
+						mass: 0.8,
+					}}
+				/>
+
+
+				{/* =================================
+				    KITE — DESKTOP
+				================================= */}
+
+				<img
+					className="kite"
+					src={asset("vlieger.png")}
+					alt=""
+					aria-hidden="true"
+				/>
+
+
+				{/* =================================
+				    WINDMILL — DESKTOP
+				================================= */}
+
+				<div
+					className="mill-wrapper"
+					aria-hidden="true"
+				>
+
+					<img
+						className="mill"
+						src={asset("molen.png")}
+						alt=""
+					/>
+
+					<img
+						className="mill-steel"
+						src={asset(
+							"molen-steel.png"
+						)}
+						alt=""
+					/>
+
+				</div>
+
+			</main>
+
+
+			{/* =====================================
+			    FOOTER
+			===================================== */}
+
+			<footer className="foot">
+
+				<a href="mailto:klaklang.m@outlook.com">
+					klaklang.m@outlook.com
+				</a>
+
+			</footer>
+
+		</motion.div>
+
+	);
+
 }

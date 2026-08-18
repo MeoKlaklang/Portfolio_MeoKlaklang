@@ -1,54 +1,106 @@
 import "./End.css";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function End() {
-	const constraintsRef = useRef(null);
-
-	const x = useMotionValue(0);
-	const background = useTransform(x, [-300, 0, 300], ["#f5f5ff", "#ffffff", "#f5f5ff"]);
-
 	return (
-		<motion.div className="home" style={{ background }}>
-			{/* Navigatie */}
-			<header className="top">
-				<nav className="tags">
-					<a href="#">UX/UI</a>
-				</nav>
-			</header>
+		<section className="contact-end" id="contact">
 
-			{/* Hero */}
-			<main className="hero" ref={constraintsRef}>
-				{/* ====== Grote "Dankjewel" ====== */}
-				<h1 className="thankyou">Dankjewel</h1>
+			{/* Decorative kite — desktop only */}
+			<motion.img
+				className="contact-kite"
+				src={`${import.meta.env.BASE_URL}vlieger.png`}
+				alt=""
+				aria-hidden="true"
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 0.75, y: 0 }}
+				viewport={{ once: true }}
+				transition={{
+					duration: 0.8,
+					ease: "easeOut",
+				}}
+			/>
 
-				{/* ====== Vlieger rechtsboven ====== */}
-				<img
-					className="kite"
-					src={`${import.meta.env.BASE_URL}vlieger.png`}
-					alt="vlieger"
-					aria-hidden="true"
-				/>
+			{/* Main content */}
+			<motion.div
+				className="contact-content"
+				initial={{ opacity: 0, y: 40 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.25 }}
+				transition={{
+					duration: 0.75,
+					ease: "easeOut",
+				}}
+			>
+				<div className="contact-heading">
+					<h2>Thank you</h2>
 
-				{/* ====== Molen linksonder ====== */}
-				<div className="mill-wrapper">
-					<img
-						className="mill"
-						src={`${import.meta.env.BASE_URL}molen.png`}
-						alt="molen"
-						aria-hidden="true"
-					/>
-					<img
-						className="mill-steel"
-						src={`${import.meta.env.BASE_URL}molen-steel.png`}
-						alt="molen steel"
-						aria-hidden="true"
-					/>
+					<p>
+						Thank you for taking the time to explore my work.
+						<br />
+						Hope to hear from you soon.
+					</p>
 				</div>
-			</main>
+
+				<div className="contact-details">
+
+					<div className="contact-detail">
+						<span>Email</span>
+
+						<a href="mailto:klaklang.m@outlook.com">
+							klaklang.m@outlook.com ↗
+						</a>
+					</div>
+
+					<div className="contact-detail">
+						<span>Phone</span>
+
+						<a href="tel:+32472675037">
+							+32 472 67 50 37
+						</a>
+					</div>
+
+					<div className="contact-detail">
+						<span>LinkedIn</span>
+
+						<a
+							href="https://www.linkedin.com/in/meo-klaklang-9838782a0/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Meo Klaklang ↗
+						</a>
+					</div>
+
+					<div className="contact-detail">
+						<span>Based in</span>
+
+						<p>
+							Boortmeerbeek, Belgium
+						</p>
+					</div>
+
+				</div>
+			</motion.div>
 
 			{/* Footer */}
-			<footer className="foot">klaklang.m@outlook.com</footer>
-		</motion.div>
+			<footer className="contact-footer">
+				<span>
+					© {new Date().getFullYear()} Meo Klaklang
+				</span>
+
+				<button
+					type="button"
+					onClick={() =>
+						window.scrollTo({
+							top: 0,
+							behavior: "smooth",
+						})
+					}
+				>
+					Back to top ↑
+				</button>
+			</footer>
+
+		</section>
 	);
 }

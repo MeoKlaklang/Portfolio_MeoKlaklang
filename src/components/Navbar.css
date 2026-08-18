@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Afacad:wght@300;400;500;600&display=swap");
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.portfolio-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 86px;
+
+	padding: 0 55px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	box-sizing: border-box;
+
+	z-index: 1000;
+
+	background: transparent;
+
+	transition:
+		background 0.35s ease,
+		height 0.35s ease,
+		border-color 0.35s ease;
+}
+
+/* When scrolling */
+
+.portfolio-navbar-scrolled {
+	height: 72px;
+
+	background: rgba(255, 255, 255, 0.92);
+
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.portfolio-logo {
+	display: flex;
+	flex-direction: column;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	line-height: 0.95;
+	letter-spacing: 0.04em;
+
+	color: #111;
+
+	text-decoration: none;
+
+	z-index: 1002;
+}
+
+.portfolio-logo span:last-child {
+	font-weight: 300;
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.portfolio-desktop-nav {
+	display: flex;
+	align-items: center;
+
+	gap: 38px;
+}
+
+.portfolio-desktop-nav button {
+	position: relative;
+
+	padding: 5px 0;
+
+	border: 0;
+	border-radius: 0;
+
+	background: transparent;
+
+	font-family: "Afacad", sans-serif;
+	font-size: 0.95rem;
+	font-weight: 400;
+
+	color: #111;
+
+	cursor: pointer;
+}
+
+/* underline */
+
+.portfolio-desktop-nav button::after {
+	content: "";
+
+	position: absolute;
+
+	left: 0;
+	bottom: 0;
+
+	width: 100%;
+	height: 1px;
+
+	background: #111;
+
+	transform: scaleX(0);
+	transform-origin: right;
+
+	transition: transform 0.3s ease;
+}
+
+.portfolio-desktop-nav button:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+
+/* =========================================
+   MOBILE BUTTON
+========================================= */
+
+.portfolio-menu-button {
+	display: none;
+
+	width: 42px;
+	height: 42px;
+
+	padding: 0;
+
+	border: 0;
+
+	background: transparent;
+
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	gap: 7px;
+
+	z-index: 1002;
+
+	cursor: pointer;
+}
+
+.portfolio-menu-button span {
+	display: block;
+
+	width: 27px;
+	height: 1px;
+
+	background: #111;
+
+	transition:
+		transform 0.35s ease,
+		background 0.35s ease;
+}
+
+
+/* =========================================
+   FULL SCREEN MOBILE MENU
+========================================= */
+
+.portfolio-mobile-menu {
+	position: fixed;
+
+	inset: 0;
+
+	min-height: 100dvh;
+
+	padding: 28px 24px 30px;
+
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
+
+	background: #111;
+
+	color: #fff;
+
+	z-index: 2000;
+}
+
+
+/* TOP */
+
+.portfolio-mobile-menu-top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 0.8rem;
+	font-weight: 400;
+
+	letter-spacing: 0.05em;
+}
+
+.portfolio-mobile-menu-top button {
+	padding: 0;
+
+	border: none;
+
+	background: transparent;
+
+	color: #fff;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 2.4rem;
+	font-weight: 200;
+
+	line-height: 0.7;
+
+	cursor: pointer;
+}
+
+
+/* =========================================
+   MOBILE LINKS
+========================================= */
+
+.portfolio-mobile-links {
+	margin-top: auto;
+	margin-bottom: auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.portfolio-mobile-links button {
+	width: 100%;
+
+	padding: 17px 0;
+
+	display: grid;
+
+	grid-template-columns: 45px 1fr;
+
+	align-items: baseline;
+
+	text-align: left;
+
+	border: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 0;
+
+	background: transparent;
+
+	color: #fff;
+
+	cursor: pointer;
+}
+
+.portfolio-mobile-links button:first-child {
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.portfolio-mobile-links span {
+	font-family: "Afacad", sans-serif;
+
+	font-size: 0.75rem;
+	font-weight: 300;
+
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.portfolio-mobile-links strong {
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(2.7rem, 12vw, 4.8rem);
+
+	font-weight: 200;
+
+	line-height: 1;
+
+	text-transform: uppercase;
+}
+
+
+/* =========================================
+   MOBILE FOOTER
+========================================= */
+
+.portfolio-mobile-footer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	gap: 20px;
+
+	font-family: "Afacad", sans-serif;
+
+	font-size: 0.8rem;
+
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.portfolio-mobile-footer p {
+	margin: 0;
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+	.portfolio-navbar {
+		height: 70px;
+
+		padding: 0 20px;
+	}
+
+	.portfolio-navbar-scrolled {
+		height: 62px;
+	}
+
+	.portfolio-desktop-nav {
+		display: none;
+	}
+
+	.portfolio-menu-button {
+		display: flex;
+	}
+
+	.portfolio-logo {
+		font-size: 0.78rem;
+	}
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+	.portfolio-mobile-menu {
+		padding:
+			24px
+			20px
+			calc(24px + env(safe-area-inset-bottom));
+	}
+
+	.portfolio-mobile-links {
+		width: 100%;
+	}
+
+	.portfolio-mobile-links button {
+		padding: 15px 0;
+
+		grid-template-columns: 38px 1fr;
+	}
+
+	.portfolio-mobile-links strong {
+		font-size: clamp(2.5rem, 12vw, 3.7rem);
+	}
+
+}

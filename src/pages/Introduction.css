@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=Afacad:wght@300;400;500&display=swap");
 
-
 /* =========================================
    INTRODUCTION
 ========================================= */
@@ -24,7 +23,6 @@
 	overflow: hidden;
 }
 
-
 /* =========================================
    LEFT
 ========================================= */
@@ -33,7 +31,6 @@
 	position: relative;
 	z-index: 2;
 }
-
 
 /* TITLES */
 
@@ -49,7 +46,6 @@
 	color: #000;
 }
 
-
 .intro-subtitle {
 	margin: 15px 0 45px;
 	padding-left: 90px;
@@ -63,11 +59,9 @@
 	color: #000;
 }
 
-
 .intro-subtitle span {
 	font-weight: 400;
 }
-
 
 /* =========================================
    BODY TEXT
@@ -86,12 +80,10 @@
 	font-family: "Afacad", sans-serif;
 }
 
-
 .intro-text .col {
 	display: flex;
 	flex-direction: column;
 }
-
 
 .intro-text p {
 	margin: 0 0 22px;
@@ -102,7 +94,6 @@
 
 	color: #333;
 }
-
 
 /* =========================================
    PHOTO COLLAGE
@@ -119,7 +110,6 @@
 	justify-content: center;
 }
 
-
 .intro-photo-collage {
 	position: relative;
 
@@ -127,7 +117,6 @@
 	max-width: 500px;
 	height: 620px;
 }
-
 
 /* GENERAL IMAGE */
 
@@ -140,22 +129,18 @@
 
 	border-radius: 18px;
 
-	box-shadow:
-		0 20px 50px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 
 	transition:
 		box-shadow 0.3s ease,
 		z-index 0s;
 }
 
-
 .intro-photo:hover {
 	z-index: 10;
 
-	box-shadow:
-		0 28px 65px rgba(0, 0, 0, 0.18);
+	box-shadow: 0 28px 65px rgba(0, 0, 0, 0.18);
 }
-
 
 /* MAIN */
 
@@ -171,7 +156,6 @@
 	object-position: center;
 }
 
-
 /* VERTICAL PHOTO */
 
 .intro-photo-secondary {
@@ -185,7 +169,6 @@
 
 	object-position: center;
 }
-
 
 /* GROUP PHOTO */
 
@@ -201,7 +184,6 @@
 	object-position: center;
 }
 
-
 /* =========================================
    ARROW
 ========================================= */
@@ -213,7 +195,7 @@
 
 	width: min(42vw, 750px);
 
-	bottom: 35px;
+	bottom: 205px;
 	left: 27%;
 
 	opacity: 0.55;
@@ -224,9 +206,7 @@
 	animation: arrow-wiggle 3s ease-in-out infinite;
 }
 
-
 @keyframes arrow-wiggle {
-
 	0% {
 		transform: translateY(0) rotate(-3deg);
 	}
@@ -238,32 +218,25 @@
 	100% {
 		transform: translateY(0) rotate(-3deg);
 	}
-
 }
-
 
 /* =========================================
    TABLET
 ========================================= */
 
 @media (max-width: 1100px) {
-
 	.intro-container {
 		grid-template-columns: 1.1fr 0.9fr;
 
 		gap: 40px;
 
-		padding:
-			90px 45px
-			100px;
+		padding: 90px 45px 100px;
 	}
-
 
 	.intro-subtitle,
 	.intro-text {
 		padding-left: 45px;
 	}
-
 
 	.intro-text {
 		grid-template-columns: 1fr;
@@ -271,47 +244,63 @@
 		max-width: 600px;
 	}
 
-
 	.intro-right {
 		height: 620px;
 	}
 
-
 	.intro-photo-collage {
 		height: 570px;
 	}
-
 
 	.intro-photo-main {
 		width: 68%;
 		height: 370px;
 	}
 
-
 	.intro-photo-secondary {
 		width: 53%;
 		height: 330px;
 	}
-
 
 	.intro-photo-third {
 		width: 60%;
 		height: 200px;
 	}
 
-
 	.intro-arrow {
 		display: none;
 	}
-
 }
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
 @media (max-width: 700px) {
+	/* Geen animaties/transitions op mobiel */
+	.intro-container,
+	.intro-left,
+	.intro-right,
+	.intro-title,
+	.intro-subtitle,
+	.intro-text,
+	.intro-photo-collage,
+	.intro-photo {
+		animation: none !important;
+		transition: none !important;
+		transform: none;
+	}
+
+	/* Foto's mogen niet meer reageren op hover */
+	.intro-photo:hover {
+		box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+	}
+
+	/* Decoratieve pijl volledig weg */
+	.intro-arrow {
+		display: none !important;
+		animation: none !important;
+	}
 
 	.intro-container {
 		min-height: auto;
@@ -321,13 +310,10 @@
 
 		gap: 45px;
 
-		padding:
-			75px 22px
-			80px;
+		padding: 75px 22px 80px;
 
 		overflow: hidden;
 	}
-
 
 	/* TITLES */
 
@@ -337,17 +323,13 @@
 		line-height: 0.85;
 	}
 
-
 	.intro-subtitle {
-		margin:
-			10px 0
-			35px;
+		margin: 10px 0 35px;
 
 		padding-left: 28px;
 
 		font-size: clamp(3rem, 15vw, 4.4rem);
 	}
-
 
 	/* TEXT */
 
@@ -362,14 +344,12 @@
 		max-width: none;
 	}
 
-
 	.intro-text p {
 		margin-bottom: 18px;
 
 		font-size: 1rem;
 		line-height: 1.5;
 	}
-
 
 	/*
 	Instead of visually maintaining
@@ -381,7 +361,6 @@
 		display: contents;
 	}
 
-
 	/* PHOTOS */
 
 	.intro-right {
@@ -390,7 +369,6 @@
 
 		margin-top: 5px;
 	}
-
 
 	.intro-photo-collage {
 		width: 100%;
@@ -401,14 +379,11 @@
 		margin: 0 auto;
 	}
 
-
 	.intro-photo {
 		border-radius: 12px;
 
-		box-shadow:
-			0 15px 35px rgba(0, 0, 0, 0.12);
+		box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 	}
-
 
 	.intro-photo-main {
 		width: 64%;
@@ -417,7 +392,6 @@
 		top: 0;
 		left: 0;
 	}
-
 
 	.intro-photo-secondary {
 		width: 49%;
@@ -430,7 +404,6 @@
 		z-index: 4;
 	}
 
-
 	.intro-photo-third {
 		width: 53%;
 		height: 180px;
@@ -441,32 +414,26 @@
 		z-index: 5;
 	}
 
-
 	/* No arrow on mobile */
 
 	.intro-arrow {
 		display: none;
 	}
-
 }
-
 
 /* =========================================
    VERY SMALL MOBILE
 ========================================= */
 
 @media (max-width: 420px) {
-
 	.intro-container {
 		padding-left: 18px;
 		padding-right: 18px;
 	}
 
-
 	.intro-title {
 		font-size: 4.5rem;
 	}
-
 
 	.intro-subtitle {
 		padding-left: 18px;
@@ -474,22 +441,18 @@
 		font-size: 3rem;
 	}
 
-
 	.intro-text {
 		padding-left: 18px;
 	}
-
 
 	.intro-photo-collage {
 		height: 440px;
 	}
 
-
 	.intro-photo-main {
 		width: 67%;
 		height: 270px;
 	}
-
 
 	.intro-photo-secondary {
 		width: 50%;
@@ -498,10 +461,8 @@
 		top: 150px;
 	}
 
-
 	.intro-photo-third {
 		width: 54%;
 		height: 155px;
 	}
-
 }

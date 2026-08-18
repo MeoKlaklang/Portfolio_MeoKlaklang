@@ -1,84 +1,238 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=Afacad:wght@300;400;500&display=swap");
 
+
+/* =========================================
+   SKILLS
+========================================= */
+
 .skills-container {
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 80px 120px;
-  gap: 60px;
-  box-sizing: border-box;
-    position: relative; /* nodig zodat absolute positioning werkt */
+	width: 100%;
+	min-height: 100vh;
 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	padding: 80px 120px;
+	gap: 60px;
+
+	box-sizing: border-box;
+
+	position: relative;
 }
 
-/* Positie vlieger */
+
+/* =========================================
+   KITE
+========================================= */
+
 .skills-kite {
-  position: absolute;
-  right: 29%;     /* perfect zoals op jouw voorbeeld */
-  top: 53%;       /* horizontaal goed */
-  width: 350px;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.9;
-  animation: kiteFloat 6s ease-in-out infinite;
+	position: absolute;
+
+	right: 29%;
+	top: 53%;
+
+	width: 350px;
+
+	pointer-events: none;
+	user-select: none;
+
+	opacity: 0.9;
+
+	animation: kiteFloat 6s ease-in-out infinite;
 }
 
-/* Zelfde animatie als op home */
 @keyframes kiteFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(2deg);
-  }
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+
+	50% {
+		transform: translateY(-12px) rotate(2deg);
+	}
 }
+
+
+/* =========================================
+   COLUMNS
+========================================= */
 
 .skills-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+
+	gap: 10px;
 }
+
+
+/* =========================================
+   BLOCK
+========================================= */
 
 .skills-block {
-  font-family: "Afacad", sans-serif;
-  font-size: 1rem;
-  line-height: 1.45;
-  color: black;
+	font-family: "Afacad", sans-serif;
 
+	font-size: 1rem;
+	line-height: 1.5;
 
-  
+	color: #111;
 }
+
+
+/* =========================================
+   TITLES
+========================================= */
 
 .skills-title {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 2rem;
-  font-weight: 300;
-  margin-bottom: 10px;
+	margin: 0 0 14px;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 2rem;
+	font-weight: 300;
+
+	line-height: 1.1;
 }
+
+
+/* =========================================
+   TEXT
+========================================= */
 
 .skills-block p {
-  margin-top: -9px;      /* verwijder grote browser-marge */
-  margin-bottom: 40px;   /* subtiele ruimte onder paragrafen */
-    
+	margin-top: -5px;
+	margin-bottom: 40px;
 
+	color: #333;
 }
+
+
+/* =========================================
+   DIVIDERS
+========================================= */
 
 .skills-divider {
-  height: 1px;
-  background: #000;
-  margin: -10px 0 20px 0;
+	width: 100%;
+	height: 1px;
+
+	margin: -5px 0 24px;
+
+	background: rgba(0, 0, 0, 0.16);
 }
 
 
-/* Responsive */
-@media (max-width: 900px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-    padding: 40px;
-  }
+/* =========================================
+   TABLET
+========================================= */
 
-  .skills-column {
-    gap: 30px;
-  }
+@media (max-width: 1100px) {
+
+	.skills-container {
+		padding: 70px 60px;
+
+		gap: 45px;
+	}
+
+	.skills-kite {
+		width: 280px;
+	}
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+	.skills-container {
+		min-height: auto;
+
+		grid-template-columns: 1fr;
+
+		padding: 70px 24px;
+
+		gap: 45px;
+	}
+
+
+	/* No kite on mobile */
+
+	.skills-kite {
+		display: none;
+	}
+
+
+	/* Columns */
+
+	.skills-column {
+		gap: 15px;
+	}
+
+
+	/* Titles */
+
+	.skills-title {
+		font-size: 1.8rem;
+
+		margin-bottom: 12px;
+	}
+
+
+	/* Text */
+
+	.skills-block {
+		font-size: 0.95rem;
+
+		line-height: 1.5;
+	}
+
+	.skills-block p {
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+
+
+	/* Softer dividers */
+
+	.skills-divider {
+		margin: 0 0 20px;
+
+		background: rgba(0, 0, 0, 0.12);
+	}
+
+
+	/* Remove CSS animations on mobile */
+
+	.skills-container *,
+	.skills-container *::before,
+	.skills-container *::after {
+		animation: none !important;
+		transition: none !important;
+	}
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+	.skills-container {
+		padding: 60px 20px;
+
+		gap: 35px;
+	}
+
+	.skills-title {
+		font-size: 1.65rem;
+	}
+
+	.skills-divider {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
 }

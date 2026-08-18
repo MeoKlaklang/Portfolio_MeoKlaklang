@@ -1,262 +1,336 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Josefin+Sans:wght@100;300;400;600&display=swap");
-
-/* ======= BASIS ======= */
-html,
-body,
-#root {
-    width: 100%;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: "Josefin Sans", sans-serif;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Josefin+Sans:wght@100;200;300;400;500&display=swap");
 
 
-/* ======= CONTAINER ======= */
-.home {
-	overflow: visible; /* laat content onder de pagina doorlopen */
+/* =========================================
+   CONTACT / END
+========================================= */
+
+.contact-end {
+	position: relative;
 
 	width: 100%;
 	min-height: 100vh;
+
+	padding: 70px 6vw 35px;
+
+	box-sizing: border-box;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 50px;
-	box-sizing: border-box;
-	transition: background 0.4s ease;
+
+	background: #f7f7f7;
+	color: #111;
+
+	overflow: hidden;
 }
 
-/* ======= NAV ======= */
-.top {
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.contact-content {
+	position: relative;
+
+	width: min(1200px, 100%);
+
+	margin: auto;
+
+	display: grid;
+	grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+
+	align-items: center;
+
+	gap: clamp(70px, 10vw, 160px);
+
+	z-index: 3;
+}
+
+
+/* =========================================
+   THANK YOU
+========================================= */
+
+.contact-heading h2 {
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: clamp(6rem, 12vw, 11rem);
+	font-weight: 200;
+
+	line-height: 0.82;
+
+	letter-spacing: -0.055em;
+}
+
+.contact-heading p {
+	max-width: 470px;
+
+	margin: 40px 0 0;
+
+	font-family: "Outfit", sans-serif;
+
+	font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+	font-weight: 300;
+
+	line-height: 1.7;
+
+	color: #666;
+}
+
+
+/* =========================================
+   CONTACT DETAILS
+========================================= */
+
+.contact-details {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-detail {
+	padding: 24px 0;
+
+	border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.contact-detail:first-child {
+	border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.contact-detail > span {
+	display: block;
+
+	margin-bottom: 8px;
+
+	font-family: "Outfit", sans-serif;
+
+	font-size: 0.65rem;
+	font-weight: 400;
+
+	letter-spacing: 0.12em;
+
+	text-transform: uppercase;
+
+	color: #888;
+}
+
+.contact-detail a,
+.contact-detail p {
+	display: inline-block;
+
+	margin: 0;
+
+	font-family: "Josefin Sans", sans-serif;
+
+	font-size: 1.05rem;
+	font-weight: 300;
+
+	line-height: 1.45;
+
+	color: #111;
+
+	text-decoration: none;
+}
+
+.contact-detail a {
+	transition:
+		opacity 0.2s ease,
+		transform 0.2s ease;
+}
+
+.contact-detail a:hover {
+	opacity: 0.55;
+}
+
+
+/* =========================================
+   KITE
+========================================= */
+
+.contact-kite {
+	position: absolute;
+
+	top: 30px;
+	right: -25px;
+
+	width: clamp(170px, 18vw, 290px);
+
+	opacity: 0.75;
+
+	z-index: 1;
+
+	pointer-events: none;
+	user-select: none;
+
+	animation: contact-kite-float 6s ease-in-out infinite;
+}
+
+@keyframes contact-kite-float {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+
+	50% {
+		transform: translateY(-10px) rotate(2deg);
+	}
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.contact-footer {
+	position: relative;
+
+	width: 100%;
+
+	padding-top: 22px;
+
 	display: flex;
 	align-items: center;
-}
+	justify-content: space-between;
 
-.tags {
-	display: flex;
-	gap: clamp(1.5rem, 4vw, 4rem);
-	padding-left: clamp(1rem, 4vw, 3rem);
+	border-top: 1px solid #111;
+
 	font-family: "Outfit", sans-serif;
-	font-size: 0.95rem;
-	letter-spacing: 0.06em;
+
+	font-size: 0.7rem;
+	font-weight: 300;
+
+	z-index: 3;
 }
 
-.tags a {
-	color: inherit;
-	text-decoration: none;
+.contact-footer button {
+	padding: 0;
+
+	border: none;
+
+	background: transparent;
+
+	color: #111;
+
+	font-family: inherit;
+	font-size: inherit;
+
+	cursor: pointer;
+
 	transition: opacity 0.2s ease;
 }
 
-.tags a:hover {
-	opacity: 0.6;
+.contact-footer button:hover {
+	opacity: 0.5;
 }
 
-/* ======= HERO ======= */
-.hero {
-	flex: 1;
-	position: relative;
-	display: grid;
-	place-items: center;
-	overflow: hidden;
-	padding-bottom: 4rem;
-}
 
-.hero img.portfolio {
-	width: min(78vw, 900px);
-	height: auto;
-	display: block;
-	z-index: 2;
-}
+/* =========================================
+   TABLET
+========================================= */
 
-.name {
-	position: absolute;
-	left: 23%;
-	top: 50%;
-	transform: translateY(-50%);
-	font-weight: 300;
-	line-height: 1.1;
-	font-size: clamp(2rem, 1.2vw, 1.2rem);
-}
+@media (max-width: 900px) {
 
-/* ======= PROJECT PREVIEW ======= */
-.project-preview {
-	position: absolute;
-	width: 50%;
-	max-width: 400px;
-	border-radius: 12px;
-	z-index: 2;
-	pointer-events: none;
-}
-
-/* ======= DRAGGABLE CAT ======= */
-.cat {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: min(20vw, 200px);
-	z-index: 3;
-	cursor: grab;
-	user-select: none;
-	pointer-events: auto;
-	transform: translate(-50%, -50%);
-	animation: cat-wiggle 3s ease-in-out infinite;
-	transition: filter 0.3s ease;
-}
-
-.cat:hover {
-	filter: brightness(1.1);
-}
-
-.cat:active {
-	cursor: grabbing;
-	animation: none;
-}
-
-@keyframes cat-wiggle {
-	0%,
-	100% {
-		rotate: 0deg;
-	}
-	25% {
-		rotate: 2deg;
-	}
-	50% {
-		rotate: -2deg;
-	}
-	75% {
-		rotate: 1deg;
-	}
-}
-
-/* ======= FOOTER ======= */
-.foot {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	padding-top: 15px;
-	font-size: 0.9rem;
-	padding-right: 50px; /* ⬅︎ zelfde marge als .home rechts */
-}
-
-.foot::before {
-	content: "";
-	position: absolute;
-	top: 0; /* lijn boven de tekst */
-	left: 0;
-	right: 0;
-	height: 1px;
-	background-color: #000000;
-	margin: 0 50px; /* zelfde marge als .home */
-}
-
-/* ======= RESPONSIVE ======= */
-@media (max-width: 700px) {
-	.home {
-		padding: 30px;
+	.contact-end {
+		padding: 100px 35px 30px;
 	}
 
-	.name {
+	.contact-content {
+		grid-template-columns: 1fr;
+
+		align-items: start;
+
+		gap: 80px;
+
+		margin: auto 0;
+	}
+
+	.contact-heading p {
+		margin-top: 30px;
+	}
+
+	.contact-details {
+		max-width: 500px;
+	}
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+	.contact-end {
+		min-height: 100svh;
+
+		padding:
+			90px
+			20px
+			25px;
+	}
+
+
+	/* Remove decoration on mobile */
+
+	.contact-kite {
 		display: none;
 	}
 
-	.hero img.portfolio {
-		width: 90vw;
+
+	/* Layout */
+
+	.contact-content {
+		gap: 65px;
+
+		margin: auto 0;
 	}
 
-	.cat {
-		width: 140px;
+
+	/* Thank you */
+
+	.contact-heading h2 {
+		font-size: clamp(4.8rem, 23vw, 6.5rem);
+
+		line-height: 0.85;
 	}
-}
 
-/* ======= VLIEGER RECHTSBOVEN ======= */
-.kite {
-	position: absolute;
-	top: -100px; /* of -5%, wat beter uitkomt */
-	right: 4%;
-	width: min(30vw, 360px); /* ← groter */
-	z-index: 2;
-	pointer-events: none;
-	user-select: none;
-	animation: kite-float 6s ease-in-out infinite;
-}
+	.contact-heading p {
+		max-width: 320px;
 
-@keyframes kite-float {
-	0%,
-	100% {
-		transform: translateY(0) rotate(0deg);
+		margin-top: 28px;
+
+		font-size: 0.9rem;
+
+		line-height: 1.65;
 	}
-	50% {
-		transform: translateY(-12px) rotate(2deg);
+
+
+	/* Details */
+
+	.contact-detail {
+		padding: 19px 0;
 	}
-}
 
-@keyframes kite-float {
-	0%,
-	100% {
-		transform: translateY(0) rotate(0deg);
+	.contact-detail a,
+	.contact-detail p {
+		font-size: 1rem;
 	}
-	50% {
-		transform: translateY(-12px) rotate(2deg);
+
+
+	/* Footer */
+
+	.contact-footer {
+		margin-top: 70px;
+
+		padding-top: 18px;
+
+		font-size: 0.63rem;
 	}
+
 }
-
-/* ======= MOLEN CONTAINER ======= */
-.mill-wrapper {
-	position: absolute;
-	bottom: -50px; /* laat onderkant van de steel mooi op de lijn */
-	left: 4%;
-	width: clamp(100px, 12vw, 180px);
-	height: auto;
-	z-index: 5;
-	pointer-events: none;
-	user-select: none;
-}
-
-/* ======= STEEL (staat stil) ======= */
-.mill-steel {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: auto;
-	z-index: 2;
-}
-
-/* ======= WIEKEN (draaien erbovenop) ======= */
-.mill {
-	position: absolute;
-	top: -10px;
-	left: 20px;
-	width: 100%;
-	height: auto;
-	transform-origin: 42% 48%; /* pas dit aan */
-	animation: mill-spin 20s linear infinite;
-	z-index: 3;
-}
-
-/* ======= ANIMATIE ======= */
-@keyframes mill-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-
-
-/* ======= DANKJEWEL ======= */
-.thankyou {
-	font-size: clamp(3rem, 10vw, 8rem);
-	font-weight: 300;
-	text-align: center;
-	z-index: 2;
-	color: #000;
-}
-
