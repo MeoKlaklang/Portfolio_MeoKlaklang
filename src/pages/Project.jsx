@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 const MotionLink = motion.create(Link);
 
-
 /* =========================================
    MOBILE DETECTION
 ========================================= */
@@ -36,7 +35,6 @@ function useMediaQuery(query) {
 	return matches;
 }
 
-
 /* =========================================
    ANIMATION VARIANTS
 ========================================= */
@@ -59,7 +57,6 @@ const containerVariants = {
 	},
 };
 
-
 const titleVariants = {
 	hidden: {
 		opacity: 0,
@@ -77,7 +74,6 @@ const titleVariants = {
 	},
 };
 
-
 const lineVariants = {
 	hidden: {
 		scaleX: 0,
@@ -92,7 +88,6 @@ const lineVariants = {
 		},
 	},
 };
-
 
 const projectVariants = {
 	hidden: {
@@ -111,7 +106,6 @@ const projectVariants = {
 	},
 };
 
-
 /* =========================================
    PROJECT DATA
 ========================================= */
@@ -119,15 +113,15 @@ const projectVariants = {
 const projects = [
 	{
 		index: "0.1",
-		title: "Het Mandje",
-		category: "UX/UI · Full-stack · Web platform",
-		href: "/Het-Mandje",
+		title: "GISTDA",
+		category: "Editorial · Graphic design · Web",
+		href: "/Gistda",
 	},
 	{
 		index: "0.2",
-		title: "Thumbelina",
-		category: "React · Interactive Web Experience",
-		href: "/Thumbelina",
+		title: "Het Mandje",
+		category: "UX/UI · Full-stack · Web platform",
+		href: "/Het-Mandje",
 	},
 	{
 		index: "0.3",
@@ -149,186 +143,101 @@ const projects = [
 	},
 	{
 		index: "0.6",
-		title: "GISTDA",
-		category: "Editorial · Graphic design · Web",
-		href: "/Gistda",
+		title: "Thumbelina",
+		category: "React · Interactive Web Experience",
+		href: "/Thumbelina",
 	},
 ];
-
 
 /* =========================================
    PROJECTS
 ========================================= */
 
 export default function Projects() {
-
 	const isMobile = useMediaQuery("(max-width: 700px)");
 
 	return (
 		<motion.section
 			id="projects"
 			className="projects-container"
-
-			variants={
-				isMobile
-					? undefined
-					: containerVariants
-			}
-
-			initial={
-				isMobile
-					? false
-					: "hidden"
-			}
-
-			whileInView={
-				isMobile
-					? undefined
-					: "show"
-			}
-
+			variants={isMobile ? undefined : containerVariants}
+			initial={isMobile ? false : "hidden"}
+			whileInView={isMobile ? undefined : "show"}
 			viewport={
 				isMobile
 					? undefined
 					: {
 							once: true,
 							amount: 0.2,
-					  }
+						}
 			}
 		>
-
 			{/* =====================================
 			    HEADER
 			===================================== */}
 
 			<header className="projects-header">
-
-				<motion.h1
-					className="projects-title"
-					variants={
-						isMobile
-							? undefined
-							: titleVariants
-					}
-				>
+				<motion.h1 className="projects-title" variants={isMobile ? undefined : titleVariants}>
 					Selected
 				</motion.h1>
 
-
 				<div className="projects-subrow">
-
-					<motion.h2
-						className="projects-subtitle"
-						variants={
-							isMobile
-								? undefined
-								: titleVariants
-						}
-					>
+					<motion.h2 className="projects-subtitle" variants={isMobile ? undefined : titleVariants}>
 						projects
 					</motion.h2>
 
-
-					<motion.div
-						className="projects-line"
-						variants={
-							isMobile
-								? undefined
-								: lineVariants
-						}
-					/>
-
+					<motion.div className="projects-line" variants={isMobile ? undefined : lineVariants} />
 				</div>
-
 			</header>
-
 
 			{/* =====================================
 			    PROJECT GRID
 			===================================== */}
 
 			<motion.div className="projects-grid">
-
 				{projects.map((project) => (
-
 					<MotionLink
 						key={project.index}
-
 						to={project.href}
-
 						className="project-card"
-
-						variants={
-							isMobile
-								? undefined
-								: projectVariants
-						}
-
+						variants={isMobile ? undefined : projectVariants}
 						whileHover={
 							isMobile
 								? undefined
 								: {
 										y: -5,
-								  }
+									}
 						}
-
 						transition={
 							isMobile
 								? undefined
 								: {
 										duration: 0.2,
-								  }
+									}
 						}
-
 						aria-label={`View ${project.title} project`}
-
-						onClick={() =>
-							window.scrollTo(0, 0)
-						}
+						onClick={() => window.scrollTo(0, 0)}
 					>
-
 						<div className="project-main">
-
-							<span className="projects-index">
-								{project.index}
-							</span>
-
+							<span className="projects-index">{project.index}</span>
 
 							<div className="project-content">
-
 								<div className="project-title-row">
+									<h3 className="projects-label">{project.title}</h3>
 
-									<h3 className="projects-label">
-										{project.title}
-									</h3>
-
-									<span
-										className="project-arrow"
-										aria-hidden="true"
-									>
+									<span className="project-arrow" aria-hidden="true">
 										↗
 									</span>
-
 								</div>
 
-
-								<p className="project-category">
-									{project.category}
-								</p>
-
+								<p className="project-category">{project.category}</p>
 							</div>
-
 						</div>
 
-
 						<span className="project-bottom-line" />
-
 					</MotionLink>
-
 				))}
-
 			</motion.div>
-
 		</motion.section>
 	);
 }

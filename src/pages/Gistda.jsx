@@ -106,7 +106,7 @@ export default function Gistda() {
 			<section className="gistda-hero">
 				<motion.div className="gistda-hero-copy" initial="hidden" animate="show" variants={staggerContainer}>
 					<motion.p className="gistda-project-number" variants={fadeUp}>
-						06 — Internship · Graphic Design
+						06 — Internship · Creative Design
 					</motion.p>
 
 					<motion.h1 className="gistda-main-title" variants={fadeUp}>
@@ -119,7 +119,7 @@ export default function Gistda() {
 					</motion.div>
 
 					<motion.p className="gistda-intro" variants={fadeUp}>
-						A three-month creative design internship in Thailand, working across space technology, science communication and visual identity.
+						A three-month creative design internship in Thailand at GISTDA (Geo-Informatics and Space Technology Development Agency), working across space technology, science communication and visual identity.
 					</motion.p>
 				</motion.div>
 
@@ -196,12 +196,7 @@ export default function Gistda() {
 							<span>03</span>
 						</motion.div>
 
-						{/* SMALL LABEL */}
-
-						<div className="gistda-photo-caption">
-							<span>INTERNSHIP</span>
-							<p>Thailand — 2026</p>
-						</div>
+				
 					</div>
 				</motion.div>
 			</section>
@@ -233,12 +228,12 @@ export default function Gistda() {
 
 						<div>
 							<h3>Location</h3>
-							<p>Thailand</p>
+							<p>88 Moo 9 Tungsukla Sriracha Chonburi 20230</p>
 						</div>
 
 						<div>
 							<h3>Role</h3>
-							<p>Graphic Design Intern</p>
+							<p>Creative Design Intern</p>
 						</div>
 
 						<div>
