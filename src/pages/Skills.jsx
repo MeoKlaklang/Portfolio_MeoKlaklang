@@ -199,22 +199,7 @@ export default function Skills() {
 				/>
 
 
-				{/* CONTACT */}
-
-				<motion.div
-					className="skills-block"
-					{...blockMotion(0.2)}
-				>
-					<h2 className="skills-title">
-						contact
-					</h2>
-
-					<p>
-						email: klaklang.m@outlook.com
-						<br />
-						Telefoon: +32 471 67 50 37
-					</p>
-				</motion.div>
+				
 
 			</motion.div>
 
